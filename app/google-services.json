@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "97408280747",
+    "firebase_url": "https://fst-cloud-3bee6-default-rtdb.firebaseio.com",
+    "project_id": "fst-cloud-3bee6",
+    "storage_bucket": "fst-cloud-3bee6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97408280747:android:78984919fe2fac537defee",
+        "android_client_info": {
+          "package_name": "com.example.fst_cloud_new"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97408280747-ketnc69kvk65lgafh68kasjq1dk6bu66.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fst_cloud_new",
+            "certificate_hash": "b43a63f1a492a6286b7bc50c2c47cc5278b5cff2"
+          }
+        },
+        {
+          "client_id": "97408280747-0lebhd0sp346gamo6ermmm0t0jgpehhi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWXmUNCva0PlAaxcU6EFCxfjIhP6xZmsI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97408280747-0lebhd0sp346gamo6ermmm0t0jgpehhi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

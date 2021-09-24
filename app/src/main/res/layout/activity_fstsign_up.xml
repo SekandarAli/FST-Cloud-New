@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:gravity="center"
+    tools:context=".SIGN_UP.FSTSignUp">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.8"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="0.3"
+            >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/signinlogo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="top"
+            android:layout_weight="0.55"
+            android:gravity="center"
+
+            >
+
+            <Switch
+                android:id="@+id/switch1"
+                style="@style/switch_signup"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button"
+                android:gravity="center"
+                android:text="User"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="0.45"
+        >
+
+
+        <TextView
+            android:id="@+id/tv1"
+            style="@style/heading"
+            android:text="Create Account for User" />
+
+        <EditText
+
+            android:id="@+id/signupusername"
+            style="@style/editTextsignup"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/logo"
+            android:drawablePadding="10dp"
+            android:hint="Enter username"
+            android:singleLine="true"
+            android:drawableRight="@drawable/ic_user" />
+
+        <EditText
+
+            style="@style/editTextsignup"
+            android:hint="Enter email"
+            android:background="@drawable/logo"
+            android:drawableRight="@drawable/ic_email"
+            android:paddingRight="15dp"
+            android:layout_marginTop="10dp"
+            android:singleLine="true"
+            android:id="@+id/signupemail"
+            ></EditText>
+
+
+        <EditText
+
+            style="@style/editTextsignup"
+            android:layout_marginTop="10dp"
+            android:hint="Enter phoneno(Optional)"
+            android:background="@drawable/logo"
+            android:inputType="number"
+            android:drawableRight="@drawable/ic_phone"
+            android:id="@+id/signupphoneno"
+            android:singleLine="true"
+            ></EditText>
+
+        <EditText
+
+            style="@style/editTextsignup"
+            android:layout_marginTop="10dp"
+            android:hint="Enter password"
+            android:background="@drawable/logo"
+            android:inputType="textPassword"
+            android:drawableRight="@drawable/ic_password"
+            android:id="@+id/signuppassword"
+            android:singleLine="true"
+            ></EditText>
+
+
+        <EditText
+
+            style="@style/editTextsignup"
+            android:layout_marginTop="10dp"
+            android:hint="Enter password again"
+            android:background="@drawable/logo"
+            android:inputType="textPassword"
+            android:drawableRight="@drawable/ic_password"
+            android:id="@+id/signuprepassword"
+            android:singleLine="true"
+            ></EditText>
+
+        <Button
+            style="@style/buttonsign"
+            android:text="SignUp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button"
+            android:id="@+id/signup"
+            ></Button>
+
+
+        <TextView
+            android:id="@+id/tv2"
+            style="@style/heading"
+            android:layout_marginTop="20dp"
+            android:text="Click for phone Authentication" />
+
+    </LinearLayout>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="fill_parent"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_weight="1"-->
+<!--        >-->
+
+<!--        <ImageView-->
+<!--            style="@style/socialmediaicon"-->
+<!--            android:src="@drawable/facebook"-->
+<!--            ></ImageView>-->
+
+<!--        <ImageView-->
+<!--            style="@style/socialmediaicon"-->
+<!--            android:src="@drawable/google"-->
+<!--            ></ImageView>-->
+
+<!--&lt;!&ndash;        <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;            style="@style/socialmediaicon"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:src="@drawable/twitter"&ndash;&gt;-->
+<!--&lt;!&ndash;            ></ImageView>&ndash;&gt;-->
+
+
+<!--    </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/tv3"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:text="Already Have An Account?"
+            android:layout_height="30sp"
+            android:layout_width="wrap_content"
+            />
+
+
+        <TextView
+            android:id="@+id/user_signin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/logo"
+            android:textStyle="bold"
+            android:text="SignIn"  />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:gravity="center"
+    tools:context=".SIGN_UP.FSTSignUp">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.01"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        >
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/signinlogo" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="0.1"
+        >
+
+
+        <TextView
+            android:id="@+id/tv1"
+            style="@style/heading"
+            android:layout_gravity="center"
+            android:textSize="25sp"
+            android:text="OTP Verification" />
+
+
+
+
+
+        <EditText
+
+            style="@style/editTextsignup"
+            android:layout_marginTop="10dp"
+            android:hint="Enter phoneno without first zero"
+            android:background="@drawable/logo"
+            android:inputType="number"
+            android:drawableRight="@drawable/ic_phone"
+            android:id="@+id/USEROTP"
+            android:layout_height="70dp"
+            android:textSize="18sp"
+            android:singleLine="true"
+            android:maxLength="10"
+            ></EditText>
+
+
+        <Button
+            android:id="@+id/send_otp_btn"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button"
+            android:layout_gravity="center"
+            style="@style/buttonsign"
+            android:text="Send OTP"
+            android:layout_height="50dp"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv2"
+            style="@style/heading"
+            android:textSize="20sp"
+            android:layout_marginTop="30dp"
+            android:gravity="end"
+            android:text="Enter Verification Code Below"
+            android:layout_gravity="center"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/root_otp_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.04"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:gravity="top"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+        <EditText
+            android:id="@+id/otp_edit_box1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_curve_bg"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/logo"
+            android:textSize="30sp"
+            android:imeOptions="actionNext"/>
+
+        <EditText
+            android:id="@+id/otp_edit_box2"
+            android:layout_width="0dp"
+            android:textColor="@color/logo"
+            android:layout_height="60dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_curve_bg"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="30sp"
+            android:nextFocusForward="@id/otp_edit_box3"/>
+
+        <EditText
+            android:id="@+id/otp_edit_box3"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_curve_bg"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="@color/logo"
+            android:maxLength="1"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/otp_edit_box4"
+            android:layout_width="0dp"
+            android:textColor="@color/logo"
+            android:layout_height="60dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_curve_bg"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/otp_edit_box5"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_curve_bg"
+            android:gravity="center"
+            android:textColor="@color/logo"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/otp_edit_box6"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_curve_bg"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/logo"
+            android:textSize="30sp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="top"
+        android:layout_gravity="top"
+        android:layout_weight="0.05"
+        >
+
+        <Button
+            android:id="@+id/verify_otp_btn"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button"
+            style="@style/buttonsign"
+            android:text="verify"
+            android:gravity="center"
+            android:layout_height="50dp"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+
+
+</LinearLayout>
+

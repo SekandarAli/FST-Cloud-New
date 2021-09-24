@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Start_Pages.FSTForgetpage2"
+    android:orientation="vertical"
+    android:background="#2196F3">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.6"
+        android:orientation="vertical"
+
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/key" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Reset Your Password"
+            android:textSize="20dp"
+            style="@style/textview"
+            />
+        <TextView
+            android:layout_width="240dp"
+            style="@style/textview"
+            android:textSize="10dp"
+            android:textStyle="italic"
+            android:text="Enter Registered email for verification and Password change link. "
+            />
+
+    </LinearLayout>
+    <!--   Linear Layout 2 -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter Password"
+            android:gravity="center"
+            android:textColorHint="#4E4C4C"
+            android:background="@drawable/logo"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            />
+        <EditText
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Confirm Password"
+            android:gravity="center"
+            android:textColorHint="#4E4C4C"
+            android:background="@drawable/logo"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:gravity="end">
+
+
+        <Button
+            style="@style/buttonnext"
+            android:id="@+id/button"
+            android:text="Next"
+            android:background="@drawable/logo"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

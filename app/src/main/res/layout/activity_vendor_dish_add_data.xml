@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context=".SIGN_IN.FSTSignIn">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+
+
+        <ImageView
+            android:id="@+id/vendor_image"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/signinlogo"></ImageView>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:gravity="top"
+        android:layout_weight="0.5"
+        android:orientation="vertical"
+        >
+
+
+        <TextView
+            android:id="@+id/tv1"
+            style="@style/heading"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:text="Add data of your dish" />
+
+        <Button
+
+            style="@style/editTextsignin"
+            android:layout_marginTop="30dp"
+            android:hint="Choose Image"
+            android:background="@drawable/logo"
+            android:drawableRight="@drawable/ic_food"
+            android:drawablePadding="20sp"
+            android:id="@+id/vendor_choose_image"
+            android:layout_height="55dp"
+            android:textColor="@color/white"
+            ></Button>
+
+        <EditText
+
+            style="@style/editTextsignin"
+            android:hint="Enter Food Name"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/logo"
+            android:drawableRight="@drawable/ic_food"
+            android:drawablePadding="20sp"
+            android:id="@+id/vendor_food_name"
+            android:layout_height="55dp"
+            android:singleLine="true"
+            ></EditText>
+
+
+        <EditText
+
+            android:id="@+id/vendor_food_description"
+            style="@style/editTextsignin"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/logo"
+            android:drawableRight="@drawable/ic_description"
+            android:hint="Enter Food Description"
+            android:layout_height="50dp"
+            android:singleLine="true"
+            android:inputType="text"></EditText>
+
+
+        <EditText
+
+            android:id="@+id/vendor_food_price"
+            style="@style/editTextsignin"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/logo"
+            android:drawableRight="@drawable/ic_price"
+            android:hint="Enter Food Price"
+            android:layout_height="50dp"
+            android:singleLine="true"
+            android:maxLength="5"
+            android:inputType="number"></EditText>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="top"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            >
+
+            <Button
+                android:id="@+id/vendor_add_data"
+                style="@style/buttonsign"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button"
+                android:text="Add data"></Button>
+
+            <Button
+            style="@style/buttonsign"
+            android:text="Show data"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button"
+            android:id="@+id/vendor_show_data"
+            ></Button>
+
+            <Button
+                style="@style/buttonsign"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button"
+                android:id="@+id/vendor_dish_back"
+                android:text="Back"></Button>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+

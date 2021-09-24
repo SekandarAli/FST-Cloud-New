@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/logo"
+    android:layout_height="match_parent">
+
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <fragment
+                android:id="@+id/map_user"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MapsActivity"
+                tools:layout="@android:layout/simple_spinner_dropdown_item" />
+
+
+
+    </LinearLayout>
+
+
+
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11550dp"
+        android:ems="10"
+        android:hint="latitude"
+        android:inputType="textPersonName"
+        android:editable="false"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="51150dp"
+        android:layout_marginLeft="150dp"
+        android:ems="10"
+        android:hint="longitude"
+        android:inputType="textPersonName"
+        android:layout_gravity="right"
+        android:gravity="right"
+        android:editable="false"
+        android:autofillHints="" />
+
+</FrameLayout>

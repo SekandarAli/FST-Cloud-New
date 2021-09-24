@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:gravity="center"
+    tools:context=".SIGN_UP.FSTSignUp">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1.8"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="0.3"
+            >
+
+            <ImageView
+                android:id="@+id/vendor_signup_imageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/signinlogo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="top"
+            android:gravity="center"
+            android:layout_weight="0.55"
+
+            >
+            <Switch
+                android:id="@+id/switch2"
+                style="@style/switch_signup"
+                android:background="@drawable/button"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:text="Vendor"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:gravity="top"
+        android:layout_weight="1"
+        >
+
+
+        <TextView
+            android:id="@+id/tv1"
+            style="@style/heading"
+            android:layout_gravity="center"
+            android:text="Create Account for Vendor" />
+
+        <EditText
+
+            android:id="@+id/vendorUsername"
+            style="@style/editTextsignup"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/logo"
+            android:drawablePadding="10dp"
+            android:hint="Enter Username"
+            android:singleLine="true"
+            android:drawableRight="@drawable/ic_user" />
+
+<!--        <EditText-->
+
+<!--            android:id="@+id/vendor_resturant_name"-->
+<!--            style="@style/editTextsignup"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@drawable/logo"-->
+<!--            android:drawablePadding="10dp"-->
+<!--            android:hint="Enter Restaurant Name"-->
+<!--            android:singleLine="true"-->
+<!--            android:drawableRight="@drawable/ic_food" />-->
+
+        <EditText
+
+            style="@style/editTextsignup"
+            android:hint="Enter Email"
+            android:background="@drawable/logo"
+            android:drawableRight="@drawable/ic_email"
+            android:paddingRight="15dp"
+            android:layout_marginTop="10dp"
+            android:singleLine="true"
+            android:id="@+id/vendor_Email"
+            ></EditText>
+
+
+        <EditText
+
+            style="@style/editTextsignup"
+            android:layout_marginTop="10dp"
+            android:hint="Enter Phoneno"
+            android:background="@drawable/logo"
+            android:inputType="number"
+            android:drawableRight="@drawable/ic_phone"
+            android:id="@+id/vendor_Phoneno"
+            android:singleLine="true"
+            ></EditText>
+
+        <EditText
+
+            style="@style/editTextsignup"
+            android:layout_marginTop="10dp"
+            android:hint="Enter Password"
+            android:background="@drawable/logo"
+            android:inputType="textPassword"
+            android:drawableRight="@drawable/ic_password"
+            android:id="@+id/vendor_Password"
+            android:singleLine="true"
+            ></EditText>
+
+
+        <EditText
+
+            style="@style/editTextsignup"
+            android:layout_marginTop="10dp"
+            android:hint="Enter Password Again"
+            android:background="@drawable/logo"
+            android:inputType="textPassword"
+            android:drawableRight="@drawable/ic_password"
+            android:id="@+id/vendor_Repassword"
+            android:singleLine="true"
+            ></EditText>
+
+
+<!--  <EditText-->
+
+<!--            style="@style/editTextsignup"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:hint="Enter few words about your restaurant"-->
+<!--            android:background="@drawable/logo"-->
+<!--            android:inputType="textPassword"-->
+<!--            android:drawableRight="@drawable/ic_description"-->
+<!--            android:id="@+id/vendor_about_resturant"-->
+<!--            android:singleLine="true"-->
+<!--            ></EditText>-->
+
+
+        <Button
+
+            style="@style/vendor_Location"
+            android:text="Add Restaurant Data"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            android:id="@+id/vendor_choose_image"
+            android:textAllCaps="false"
+            ></Button>
+
+<!--        <Button-->
+<!--            style="@style/vendor_Location"-->
+<!--            android:text="Upload Image"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@drawable/button"-->
+<!--            android:id="@+id/vendor_upload_image"-->
+<!--            android:textAllCaps="false"-->
+<!--            ></Button>-->
+
+
+<!--        <Button-->
+<!--            style="@style/vendor_Location"-->
+<!--            android:text="Select Location"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@drawable/button"-->
+<!--            android:id="@+id/vendor_Location"-->
+<!--            ></Button>-->
+
+
+<!--        -->
+<!--        <TextView-->
+<!--            android:id="@+id/tv2"-->
+<!--            style="@style/heading"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:text="Click for phone Authentication" />-->
+
+<!--    </LinearLayout>-->
+
+        <Button
+            style="@style/buttonsign"
+            android:text="SignUp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button"
+            android:id="@+id/vendor_Signup"
+            ></Button>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:id="@+id/tv3"
+                android:textSize="13sp"
+                android:gravity="center"
+                android:text="Already Have An Account?"
+                android:layout_height="30sp"
+                android:layout_width="wrap_content"
+                />
+
+
+            <TextView
+                android:id="@+id/vendor_signin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/logo"
+                android:textStyle="bold"
+                android:text="SignIn"  />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="fill_parent"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_weight="1"-->
+<!--        >-->
+
+<!--        <ImageView-->
+<!--            style="@style/socialmediaicon"-->
+<!--            android:src="@drawable/facebook"-->
+<!--            ></ImageView>-->
+
+<!--        <ImageView-->
+<!--            style="@style/socialmediaicon"-->
+<!--            android:src="@drawable/google"-->
+<!--            ></ImageView>-->
+
+<!--        <ImageView-->
+<!--            style="@style/socialmediaicon"-->
+<!--            android:src="@drawable/twitter"-->
+<!--            ></ImageView>-->
+
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="fill_parent"-->
+<!--        android:layout_weight="1"-->
+<!--        android:gravity="center"-->
+<!--        >-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv3"-->
+<!--            android:textSize="13sp"-->
+<!--            android:gravity="center"-->
+<!--            android:text="Already Have An Account?"-->
+<!--            android:layout_height="30sp"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            />-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/tvsignin"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="13sp"-->
+<!--            android:textColor="@color/logo"-->
+<!--            android:textStyle="bold"-->
+<!--            android:text="SignIn"  />-->
+
+<!--    </LinearLayout>-->
+
+</LinearLayout>

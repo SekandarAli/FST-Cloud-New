@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+    android:id="@+id/group1">
+    <item
+        android:id="@+id/home"
+        android:icon="@mipmap/outline_home_black_18"
+        android:title="Home"
+        />
+    <item
+        android:id="@+id/about"
+        android:icon="@mipmap/outline_description_black_18"
+        android:title="About" />
+    <item
+        android:id="@+id/contact"
+        android:icon="@mipmap/outline_contact_support_black_18"
+        android:title="Contact" />
+</group>
+    <group
+        android:id="@+id/group2"
+        >
+
+                <item
+                    android:id="@+id/setting"
+                    android:icon="@mipmap/outline_manage_accounts_black_18"
+                    android:title="Setting"
+                    android:menuCategory="system"
+
+
+                    />
+
+                <item
+                    android:id="@+id/logout"
+                    android:icon="@mipmap/outline_logout_black_18"
+                    android:title="Logout"
+                    android:menuCategory="system"/>
+
+
+
+
+    </group>
+
+
+    <group
+        android:id="@+id/group3"
+        >
+
+                <item
+                    android:id="@+id/support"
+                    android:icon="@mipmap/outline_contact_support_black_18"
+                    android:title="Support/FAQs"
+                    android:menuCategory="system"/>
+
+                <item
+                    android:id="@+id/version"
+                    android:title="Version 1.0.0"
+                    android:icon="@drawable/lock"
+                    android:menuCategory="system"/>
+
+
+
+
+    </group>
+
+
+
+
+</menu>
+

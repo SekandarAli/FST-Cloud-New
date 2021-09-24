@@ -16,6 +16,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.fst_cloud_new.FOOD.FoodFragment
+import com.example.fst_cloud_new.MAPS.Map_User
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SEARCH.Searching_User
 import com.example.fst_cloud_new.SHOP.ShopFragment
@@ -65,8 +66,8 @@ class HOMEPAGE : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
 
 
         locationn.setOnClickListener{
-//            intent = Intent(this, Map_User::class.java)
-//            startActivity(intent)
+            intent = Intent(this, Map_User::class.java)
+            startActivity(intent)
         }
 
 

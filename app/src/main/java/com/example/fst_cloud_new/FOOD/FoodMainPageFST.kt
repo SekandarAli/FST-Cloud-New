@@ -12,6 +12,7 @@ import com.example.fst_cloud_new.Dish_Main_Page.Dish_Main_page_Adapter
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.Vendor_Dish.Vendor_Dish_Model
 import com.example.fst_cloud_new.HOMEPAGE.HOMEPAGE
+import com.example.fst_cloud_new.MAPS.Map_User
 import com.example.fst_cloud_new.Main_Page_Adapter.Main_horizontal_card_adapter
 import com.example.fst_cloud_new.Main_Page_Adapter.Main_horizontal_list_adapter
 import com.example.fst_cloud_new.Main_Page_Model.Main_horizontal_card_model
@@ -80,8 +81,8 @@ class FoodMainPageFST : AppCompatActivity() {
 
 
         location.setOnClickListener{
-//            intent = Intent(this, Map_User::class.java)
-//            startActivity(intent)
+            intent = Intent(this, Map_User::class.java)
+            startActivity(intent)
         }
 
         food_search.setOnClickListener{

@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fst_cloud_new.MAPS.Map_Vendor
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SIGN_UP.FST_Vendor_Signup
 import com.google.android.gms.tasks.Continuation
@@ -94,8 +95,8 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
 
         vendor_resturant_location.setOnClickListener{
 
-//            intent = Intent(this, Map_Vendor::class.java)
-//            startActivity(intent)
+            intent = Intent(this, Map_Vendor::class.java)
+            startActivity(intent)
         }
 
 

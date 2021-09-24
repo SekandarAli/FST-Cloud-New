@@ -25,7 +25,10 @@ class Vendor_Restaurant_Show_Data : AppCompatActivity() {
 
 
 
-        var vendor_resturant_recyclerview_back : Button = findViewById(R.id.vendor_resturant_recyclerview_back)
+
+        //var vendor_resturant_recyclerview_back : Button = findViewById(R.id.vendor_resturant_recyclerview_back)
+
+
         ResturantRecycleview = findViewById(R.id.vendor_resturant_recyclerview)
         ResturantRecycleview.layoutManager = LinearLayoutManager(this)
         ResturantRecycleview.setHasFixedSize(true)
@@ -34,11 +37,11 @@ class Vendor_Restaurant_Show_Data : AppCompatActivity() {
 
         ResturantArrayList = arrayListOf<Vendor_Resturant_Model>()
 
-        vendor_resturant_recyclerview_back.setOnClickListener {
-
-            intent = Intent(this, Vendor_Resturant_Add_Data::class.java)
-            startActivity(intent)
-        }
+//        vendor_resturant_recyclerview_back.setOnClickListener {
+//
+//            intent = Intent(this, Vendor_Resturant_Add_Data::class.java)
+//            startActivity(intent)
+//        }
 
 
         vendor_restaurant_search.setOnClickListener {

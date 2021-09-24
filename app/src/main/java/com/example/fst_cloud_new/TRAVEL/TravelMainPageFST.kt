@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.HOMEPAGE.HOMEPAGE
+import com.example.fst_cloud_new.MAPS.Map_User
 import com.example.fst_cloud_new.Main_Page_Adapter.Main_horizontal_card_adapter
 import com.example.fst_cloud_new.Main_Page_Adapter.Main_horizontal_list_adapter
 import com.example.fst_cloud_new.Main_Page_Adapter.Main_vertical_adapter
@@ -43,8 +44,8 @@ class TravelMainPageFST : AppCompatActivity() {
 
 
         location.setOnClickListener{
-//            intent = Intent(this, Map_User::class.java)
-//            startActivity(intent)
+            intent = Intent(this, Map_User::class.java)
+            startActivity(intent)
         }
 
         travel_search.setOnClickListener{

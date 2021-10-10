@@ -1,6 +1,6 @@
 package com.example.fst_cloud_new.FOOD
 
-class horizontal_recycle_main_food_model
+class horizontal_recycle_fragment_food_model
 {
 
     var name : String

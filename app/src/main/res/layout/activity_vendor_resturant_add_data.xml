@@ -57,6 +57,7 @@
             android:background="@drawable/logo"
             android:drawableRight="@drawable/ic_food"
             android:drawablePadding="20sp"
+            android:textColor="@color/white"
             android:id="@+id/vendor_resturant_choose_image"
             android:layout_height="55dp"
             ></Button>
@@ -125,11 +126,13 @@
                 style="@style/buttonsign"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/button"
-                android:text="Add data"></Button>
+                android:textAllCaps="false"
+                android:text="Add Data"></Button>
 
             <Button
                 style="@style/buttonsign"
-                android:text="Show data"
+                android:text="Show Data"
+                android:textAllCaps="false"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/button"
                 android:id="@+id/vendor_resturant_show_data"
@@ -140,7 +143,9 @@
                 style="@style/buttonsign"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/button"
-                android:text="Back"></Button>
+                android:text="Back"
+                android:textAllCaps="false"
+                ></Button>
 
 
         </LinearLayout>

@@ -29,11 +29,11 @@
             android:textSize="17sp"></TextView>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/horizontalrecycleView"
+            android:id="@+id/horizontalrecycleViewtravel"
             android:layout_width="fill_parent"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="8dp"
             android:layout_height="fill_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
         </androidx.recyclerview.widget.RecyclerView>
@@ -59,7 +59,7 @@
             ></TextView>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/verticalrecycleView"
+            android:id="@+id/verticalrecycleViewtravel"
             android:layout_width="fill_parent"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="8dp"

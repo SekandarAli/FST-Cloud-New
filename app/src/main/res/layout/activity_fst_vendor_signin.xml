@@ -120,10 +120,11 @@
 
         <Button
             style="@style/buttonsign"
-            android:text="SignIn"
+            android:text="Sign In"
             android:layout_marginTop="20dp"
             android:background="@drawable/button"
             android:id="@+id/vendor_login"
+            android:textAllCaps="false"
             ></Button>
 
 

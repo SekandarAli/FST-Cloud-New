@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fst_cloud_new.R
+import com.example.fst_cloud_new.TRAVEL.TravelMainPageFST
 
-class horizontal_recycle_main_food_adapter (var items : ArrayList<horizontal_recycle_main_food_model>, context : Context) : RecyclerView.Adapter<horizontal_recycle_main_food_adapter.ViewHolder>() {
+class horizontal_recycle_fragment_food_adapter (var items : ArrayList<horizontal_recycle_fragment_food_model>, context : Context) : RecyclerView.Adapter<horizontal_recycle_fragment_food_adapter.ViewHolder>() {
 
 
     val context = context
@@ -32,10 +34,10 @@ class horizontal_recycle_main_food_adapter (var items : ArrayList<horizontal_rec
         holder.itemName.text = items[position].name
         holder.itemImage.setImageResource(items[position].image)
 
-        holder.itemView.setOnClickListener(View.OnClickListener {
-            var intent = Intent(context, FoodMainPageFST::class.java)
-            context.startActivity(intent)
-        })
+//        holder.itemView.setOnClickListener(View.OnClickListener {
+//            var intent = Intent(context, FoodMainPageFST::class.java)
+//            context.startActivity(intent)
+//        })
 
     }
 
@@ -49,10 +51,10 @@ class horizontal_recycle_main_food_adapter (var items : ArrayList<horizontal_rec
             itemImage = itemView.findViewById(R.id.image)
             itemName = itemView.findViewById(R.id.name)
 
-//            itemView.setOnClickListener(View.OnClickListener {
-//                var intent = Intent(context,FoodMainPageFST::class.java)
-//                ContextCompat.startActivity(context, intent, null)
-//            })
+            itemView.setOnClickListener(View.OnClickListener {
+                var intent = Intent(context,FoodMainPageFST::class.java)
+                startActivity(context, intent, null)
+            })
 
         }
 

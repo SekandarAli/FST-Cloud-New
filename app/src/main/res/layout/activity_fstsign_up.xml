@@ -135,10 +135,11 @@
 
         <Button
             style="@style/buttonsign"
-            android:text="SignUp"
+            android:text="Sign Up"
             android:layout_marginTop="20dp"
             android:background="@drawable/button"
             android:id="@+id/signup"
+            android:textAllCaps="false"
             ></Button>
 
 

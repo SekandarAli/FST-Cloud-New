@@ -45,7 +45,7 @@ class Vendor_Dish_Adapter (var context : Context, var dish_list : ArrayList<Vend
             Picasso.get().load(currentItem.dish_image).into(holder.dish_image)
         }
 
-     Picasso.get().load(currentItem.dish_image).into(holder.dish_image)
+     //Picasso.get().load(currentItem.dish_image).into(holder.dish_image)
 
 
     }

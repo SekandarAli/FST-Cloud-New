@@ -1,15 +1,19 @@
 package com.example.fst_cloud_new.HOMEPAGE
 
-import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.MenuItem
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -17,6 +21,8 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.fst_cloud_new.FOOD.FoodFragment
 import com.example.fst_cloud_new.MAPS.Map_User
+import com.example.fst_cloud_new.PROFILE.Profile_Dummy
+import com.example.fst_cloud_new.PROFILE.Profile_Model
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SEARCH.Searching_User
 import com.example.fst_cloud_new.SHOP.ShopFragment
@@ -24,11 +30,22 @@ import com.example.fst_cloud_new.Start_Pages.FSTRegisterPage
 import com.example.fst_cloud_new.TRAVEL.TravelFragment
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
+import com.google.firebase.database.*
 import es.dmoral.toasty.Toasty
-import kotlin.system.exitProcess
+import java.io.IOException
 
 
 class HOMEPAGE : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener{
+
+    companion object  {
+
+        const val NAME = "NAME"
+    }
+
+    var PICK_IMAGE_REQUEST = 22
+    lateinit var filepath: Uri
+    lateinit var navigationView : NavigationView
+    lateinit var nav_header_image : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,17 +53,39 @@ class HOMEPAGE : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
 
         supportActionBar?.hide()
 
-        Toasty.normal(this,"Welcome to FST",Toast.LENGTH_LONG).show()
+
+        Toasty.normal(this, "Welcome to FST",
+            Toast.LENGTH_LONG, ContextCompat.getDrawable(this, R.drawable.logoo)).show();
 
 
+        navigationView = findViewById(R.id.nav_menu)
 
-        var navigationView = findViewById<NavigationView>(R.id.nav_menu)
+
+        var head = navigationView.getHeaderView(0)
+
+       nav_header_image  = head.findViewById(R.id.nav_header_img)
+
+        var nav_header_name : TextView = head.findViewById(R.id.nav_header_name)
+
+
+        nav_header_image.setOnClickListener {
+
+            chooseImage()
+        }
+
+//        val name=intent.getStringExtra("name")
+//        val image = intent.getIntExtra("image",1)
+
+        //nav_header_name.text = name
+        //descdescription.text = description
+        //detailimage.setImageResource(image)
 
         navigationView.setNavigationItemSelectedListener(this)
 
         var toolbar =  findViewById<Toolbar>(R.id.toolbar)
 
         var drawerlayout=findViewById<DrawerLayout>(R.id.drawerlayout)
+
         setSupportActionBar(toolbar)
 
 
@@ -141,8 +180,14 @@ class HOMEPAGE : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
         var id = item.itemId
         when(id)
         {
+            R.id.edit_profile -> {
+                intent = Intent(this,Profile_Dummy::class.java)
+                startActivity(intent)
+            }
+
             R.id.home -> {
-                Toasty.info(this, "Home Clicked", Toast.LENGTH_SHORT).show()
+                intent = Intent(this,HOMEPAGE::class.java)
+                startActivity(intent)
             }
 
             R.id.about -> {
@@ -205,6 +250,8 @@ class HOMEPAGE : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
 
         }
 
+
+
         return true
     }
 
@@ -244,6 +291,84 @@ class HOMEPAGE : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
 
     }
 
+    private fun getUserData() {
+
+
+        var dbref : DatabaseReference
+
+        var image : String? = ""
+        var name : String? = ""
+        dbref = FirebaseDatabase.getInstance().getReference()
+        var query : Query = dbref.child("Profile/")
+
+        query.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+
+
+
+                        val profile = snapshot.getValue(Profile_Model::class.java)
+                        var profile_name = profile?.vendor_username.toString()
+                    var profile_image = profile?.vendor_image.toString()
+
+                    Toast.makeText(this@HOMEPAGE, "name = " + profile_name,  Toast.LENGTH_SHORT).show()
+
+
+
+
+                }
+                else
+                {
+                    Toasty.error(this@HOMEPAGE, "No data found!", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toasty.info(this@HOMEPAGE, "Something went wrong", Toast.LENGTH_SHORT).show()
+
+
+            }
+        })
+
+
+    }
+
+
+    fun chooseImage() {
+
+        val intent = Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST)
+    }
+
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == PICK_IMAGE_REQUEST
+            && resultCode == RESULT_OK
+            && data != null
+            && data.getData() != null
+        ) {
+
+            // Get the Uri of data
+            filepath = data.getData()!!;
+            try {
+
+                // Setting image on image view using Bitmap
+                var bitmap: Bitmap =
+                    MediaStore.Images.Media.getBitmap(getContentResolver(), filepath);
+                nav_header_image.setImageBitmap(bitmap);
+            } catch (e: IOException) {
+                // Log the exception
+                e.printStackTrace();
+            }
+
+
+        }
+    }
 
 }
+
+
 

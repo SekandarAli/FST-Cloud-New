@@ -15,41 +15,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
         android:gravity="bottom"
-
         android:background="@drawable/cardview"
 
     >
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:id="@+id/img1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/nav_header_img"
+            android:layout_marginLeft="10dp"
             android:src="@drawable/ping">
 
         </de.hdodenhof.circleimageview.CircleImageView>
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/nav_header_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Sekandar Ali Khan"
+        android:hint="Sekandar Ali"
         android:layout_marginLeft="10dp"
+        android:layout_marginBottom="15dp"
         android:textColor="#FFFFFF"
-        android:layout_below="@id/img1"
-        android:textSize="20sp"
+        android:textColorHint="@color/black"
+        android:layout_below="@id/nav_header_img"
+        android:textSize="22sp"
 
         />
-    <TextView
-        android:layout_below="@id/textView"
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="isekandarali@gmail.com"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="5dp"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-     />
+<!--    <TextView-->
+<!--        android:layout_below="@id/nav_header_name"-->
+<!--        android:id="@+id/nav_header_email"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="isekandarali@gmail.com"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:layout_marginBottom="5dp"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:textSize="15sp"-->
+<!--     />-->
 
 
 </RelativeLayout>

@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.Vendor_Dish.Vendor_Dish_Adapter
 import com.example.fst_cloud_new.Vendor_Dish.Vendor_Dish_Model
+import com.example.fst_cloud_new.Vendor_Resturant.Vendor_Resturant_Adapter
+import com.example.fst_cloud_new.Vendor_Resturant.Vendor_Resturant_Model
 import com.google.firebase.database.*
 import es.dmoral.toasty.Toasty
 
@@ -18,7 +20,7 @@ class Searching_Vendor : AppCompatActivity() {
 
     private lateinit var dbref : DatabaseReference
     private lateinit var DishRecycleview : RecyclerView
-    private lateinit var DishArrayList : ArrayList<Vendor_Dish_Model>
+    private lateinit var DishArrayList : ArrayList<Vendor_Resturant_Model>
     private lateinit var search_text : String
 
 
@@ -30,7 +32,7 @@ class Searching_Vendor : AppCompatActivity() {
         DishRecycleview.layoutManager = LinearLayoutManager(this)
         DishRecycleview.setHasFixedSize(true)
 
-        DishArrayList = arrayListOf<Vendor_Dish_Model>()
+        DishArrayList = arrayListOf<Vendor_Resturant_Model>()
 
         var tv_search_text = findViewById<AutoCompleteTextView>(R.id.ed_search_text)
 
@@ -39,7 +41,7 @@ class Searching_Vendor : AppCompatActivity() {
             "De Minister Cafe","Pizza hut \uD83D\uDED6","Mc Donald","Cafe")
 
         val adapter: ArrayAdapter<*> =
-            ArrayAdapter<Any?>(this, android.R.layout.simple_expandable_list_item_1, suggestions)
+            ArrayAdapter<Any?>(this, android.R.layout.simple_list_item_1, suggestions)
 
         tv_search_text.setAdapter(adapter)
         tv_search_text.setThreshold(1)
@@ -77,11 +79,11 @@ class Searching_Vendor : AppCompatActivity() {
                 if(snapshot.exists()){
                     for(userSnapShot in snapshot.children)
                     {
-                        val dish = userSnapShot.getValue(Vendor_Dish_Model::class.java)
+                        val dish = userSnapShot.getValue(Vendor_Resturant_Model::class.java)
 
                         DishArrayList.add(dish!!)
                     }
-                    DishRecycleview.adapter = Vendor_Dish_Adapter(this@Searching_Vendor,DishArrayList)
+                    DishRecycleview.adapter = Vendor_Resturant_Adapter(this@Searching_Vendor,DishArrayList)
 
                 }
                 else

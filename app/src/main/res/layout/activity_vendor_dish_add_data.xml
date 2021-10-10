@@ -118,11 +118,14 @@
                 style="@style/buttonsign"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button"
-                android:text="Add data"></Button>
+                android:text="Add Data"
+                android:textAllCaps="false"
+                ></Button>
 
             <Button
             style="@style/buttonsign"
-            android:text="Show data"
+            android:text="Show Data"
+                android:textAllCaps="false"
             android:layout_marginTop="20dp"
             android:background="@drawable/button"
             android:id="@+id/vendor_show_data"
@@ -133,7 +136,9 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button"
                 android:id="@+id/vendor_dish_back"
-                android:text="Back"></Button>
+                android:text="Back"
+                android:textAllCaps="false"
+                ></Button>
 
 
         </LinearLayout>

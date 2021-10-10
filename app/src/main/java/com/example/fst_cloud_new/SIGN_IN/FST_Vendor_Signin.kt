@@ -61,14 +61,16 @@ class FST_Vendor_Signin : AppCompatActivity() {
 
         vendor_login.setOnClickListener {
 
-
-            if (vendor_signinemail.text.toString() == "admin" && vendor_signinpassword.text.toString() == "123") {
-                intent = Intent(this, AdminPanel :: class.java)
-                startActivity(intent)
-
-            } else {
-                intent = Intent(this, Vendor_Main_Page::class.java)
-                startActivity(intent)
+//
+//            if (vendor_signinemail.text.toString() == "admin" && vendor_signinpassword.text.toString() == "123") {
+//                intent = Intent(this, AdminPanel :: class.java)
+//                startActivity(intent)
+//
+//            } else {
+//
+//
+//                intent = Intent(this, Vendor_Main_Page::class.java)
+//                startActivity(intent)
 
 
                 var pd = ProgressDialog(this)
@@ -131,7 +133,7 @@ class FST_Vendor_Signin : AppCompatActivity() {
                 }
 
 
-            }
+
         }
 
 

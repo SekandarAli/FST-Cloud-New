@@ -30,7 +30,7 @@
             android:textSize="17sp"></TextView>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/horizontalrecycleView"
+            android:id="@+id/horizontalrecycleViewfood"
             android:layout_width="fill_parent"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="8dp"
@@ -60,7 +60,7 @@
             ></TextView>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/restaurant_vertical_recycleView"
+            android:id="@+id/verticalrecycleViewfood"
             android:layout_width="fill_parent"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="8dp"

@@ -1,4 +1,4 @@
-package com.example.fst_cloud_new.FOOD
+package com.example.fst_cloud_new.SHOP
 
 import android.content.Context
 import android.content.Intent
@@ -10,10 +10,9 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fst_cloud_new.R
-import com.example.fst_cloud_new.TRAVEL.TravelMainPageFST
 
-class vertical_recycle_main_food_adapter(var items : ArrayList<vertical_recycle_main_food_model>, context
-                : Context) : RecyclerView.Adapter<vertical_recycle_main_food_adapter.ViewHolder>() {
+class vertical_recycle_fragment_shop_adapter(var items : ArrayList<vertical_recycle_fragment_shop_model>, context
+                : Context) : RecyclerView.Adapter<vertical_recycle_fragment_shop_adapter.ViewHolder>() {
 
 
     val context = context
@@ -33,10 +32,10 @@ class vertical_recycle_main_food_adapter(var items : ArrayList<vertical_recycle_
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.itemName.text = items[position].name
-        holder.itemDescription.text = items[position].description
-        holder.itemRating.text = items[position].rating
-        holder.itemImage.setImageResource(items[position].image)
+        holder.itemName.text = items[position].resturant_name
+        holder.itemDescription.text = items[position].resturant_description
+        holder.itemRating.text = items[position].resturant_location
+        holder.itemImage.setImageResource(items[position].resturant_image)
 
     }
 
@@ -60,7 +59,7 @@ class vertical_recycle_main_food_adapter(var items : ArrayList<vertical_recycle_
             itemRating = itemView.findViewById(R.id.rating)
 
         itemView.setOnClickListener(View.OnClickListener {
-            var intent = Intent(context, TravelMainPageFST::class.java)
+            var intent = Intent(context, ShopMainPageFST::class.java)
             startActivity(context,intent,null)
         })
 

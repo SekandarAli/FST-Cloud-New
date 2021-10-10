@@ -9,8 +9,9 @@ import android.widget.TextView
 import com.example.fst_cloud_new.R
 
 class FoodDetailsFST : AppCompatActivity() {
+
     lateinit var ratingBar: RatingBar
-    val con = this
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_details_fst)

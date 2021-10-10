@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fst_cloud_new.FOOD.FoodMainPageFST
+import com.example.fst_cloud_new.FOOD.horizontal_recycle_fragment_food_adapter
+import com.example.fst_cloud_new.FOOD.horizontal_recycle_fragment_food_model
 import com.example.fst_cloud_new.R
 
-class horizontal_recycle_main_travel_adapter (var items :
-                                            ArrayList<horizontal_recycle_main_travel_model>, context :
-                                            Context) : RecyclerView.Adapter<horizontal_recycle_main_travel_adapter.ViewHolder>() {
+class horizontal_recycle_main_travel_adapter (var items : ArrayList<horizontal_recycle_fragment_food_model>, context : Context) : RecyclerView.Adapter<horizontal_recycle_main_travel_adapter.ViewHolder>() {
 
 
     val context = context
@@ -34,11 +36,13 @@ class horizontal_recycle_main_travel_adapter (var items :
         holder.itemName.text = items[position].name
         holder.itemImage.setImageResource(items[position].image)
 
-        holder.itemView.setOnClickListener(View.OnClickListener {
-            var intent = Intent(context, TravelMainPageFST::class.java)
-            context.startActivity(intent)
-        })
+//        holder.itemView.setOnClickListener(View.OnClickListener {
+//            var intent = Intent(context, FoodMainPageFST::class.java)
+//            context.startActivity(intent)
+//        })
+
     }
+
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -49,24 +53,15 @@ class horizontal_recycle_main_travel_adapter (var items :
             itemImage = itemView.findViewById(R.id.image)
             itemName = itemView.findViewById(R.id.name)
 
-//            itemView.setOnClickListener(View.OnClickListener {
-//                var intent = Intent(context,FoodMainPageFST::class.java)
-//                ContextCompat.startActivity(context, intent, null)
-//            })
+            itemView.setOnClickListener(View.OnClickListener {
+                var intent = Intent(context, TravelMainPageFST::class.java)
+                startActivity(context, intent, null)
+            })
 
         }
 
 
 
     }
-
-
 }
-
-
-
-
-
-
-
 

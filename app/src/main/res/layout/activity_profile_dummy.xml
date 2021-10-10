@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context=".SIGN_IN.FSTSignIn">
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:src="@drawable/signinlogo"></ImageView>
+
+
+        <TextView
+            android:id="@+id/tv1"
+            style="@style/heading"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:layout_marginTop="30dp"
+            android:text="Add Profile data" />
+
+        <Button
+
+            style="@style/editTextsignin"
+            android:layout_marginTop="30dp"
+            android:hint="Choose Image"
+            android:background="@drawable/logo"
+            android:drawableRight="@drawable/ic_food"
+            android:drawablePadding="20sp"
+            android:id="@+id/profile_image_button"
+            android:layout_height="55dp"
+            ></Button>
+
+        <EditText
+
+            style="@style/editTextsignin"
+            android:hint="Enter Name"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/logo"
+            android:drawableRight="@drawable/ic_user"
+            android:drawablePadding="20sp"
+            android:id="@+id/profile_name"
+            android:layout_height="55dp"
+            android:singleLine="true"
+            ></EditText>
+
+    <!--            android:drawableRight="@drawable/common_google_signin_btn_icon_dark_normal"-->
+
+        <EditText
+
+            android:id="@+id/profile_email"
+            style="@style/editTextsignin"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/logo"
+            android:drawableRight="@drawable/ic_email"
+            android:hint="Enter Email"
+            android:layout_height="50dp"
+            android:singleLine="true"
+            android:inputType="text"></EditText>
+
+
+
+            <Button
+                android:id="@+id/profile_add_data"
+                style="@style/buttonsign"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button"
+                android:text="Add data"></Button>
+
+
+
+
+
+
+</LinearLayout>

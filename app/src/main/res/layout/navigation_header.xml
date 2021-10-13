@@ -32,7 +32,7 @@
         android:id="@+id/nav_header_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Sekandar Ali"
+        android:hint="Alis Robert Khan"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="15dp"
         android:textColor="#FFFFFF"

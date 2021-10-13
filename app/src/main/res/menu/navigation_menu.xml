@@ -4,19 +4,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <group
-        android:id="@+id/group0"
-        >
+<!--    <group-->
+<!--        android:id="@+id/group0"-->
+<!--        >-->
 
-        <item
-            android:id="@+id/edit_profile"
-            android:title="Edit Profile"
-            android:icon="@drawable/ic_edit"
+<!--        <item-->
+<!--            android:id="@+id/edit_profile"-->
+<!--            android:title="Edit Profile"-->
+<!--            android:icon="@drawable/ic_edit"-->
 
-            />
+<!--            />-->
 
 
-    </group>
+<!--    </group>-->
 
     <group
     android:id="@+id/group1">
@@ -66,14 +66,14 @@
 
                 <item
                     android:id="@+id/support"
-                    android:icon="@mipmap/outline_contact_support_black_18"
+                    android:icon="@drawable/ic_support"
                     android:title="Support/FAQs"
                     android:menuCategory="system"/>
 
                 <item
                     android:id="@+id/version"
                     android:title="Version 1.0.0"
-                    android:icon="@drawable/lock"
+                    android:icon="@drawable/ic_version"
                     android:menuCategory="system"/>
 
 

@@ -71,6 +71,7 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
 
         val add_data: Button = findViewById(R.id.vendor_resturant_add_data)
         val show_data: Button = findViewById(R.id.vendor_resturant_show_data)
+        val vendor_Location_data: Button = findViewById(R.id.vendor_Location_data)
         vendor_resturant_chooseImage = findViewById(R.id.vendor_resturant_choose_image)
         vendor_resturant_name = findViewById(R.id.vendor_resturant_name)
         vendor_resturant_description = findViewById(R.id.vendor_resturant_description)
@@ -93,7 +94,7 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
 
 
 
-        vendor_resturant_location.setOnClickListener{
+        vendor_Location_data.setOnClickListener{
 
             intent = Intent(this, Map_Vendor::class.java)
             startActivity(intent)

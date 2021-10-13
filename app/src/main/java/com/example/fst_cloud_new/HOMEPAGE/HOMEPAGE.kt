@@ -180,10 +180,10 @@ class HOMEPAGE : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
         var id = item.itemId
         when(id)
         {
-            R.id.edit_profile -> {
-                intent = Intent(this,Profile_Dummy::class.java)
-                startActivity(intent)
-            }
+//            R.id.edit_profile -> {
+//                intent = Intent(this,Profile_Dummy::class.java)
+//                startActivity(intent)
+//            }
 
             R.id.home -> {
                 intent = Intent(this,HOMEPAGE::class.java)

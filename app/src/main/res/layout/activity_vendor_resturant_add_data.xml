@@ -117,7 +117,7 @@
                 android:textAllCaps="false"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/button"
-                android:id="@+id/vendor_Location"
+                android:id="@+id/vendor_Location_data"
                 ></Button>
 
 

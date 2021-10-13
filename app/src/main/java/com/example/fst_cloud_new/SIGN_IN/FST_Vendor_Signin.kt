@@ -157,7 +157,7 @@ class FST_Vendor_Signin : AppCompatActivity() {
 
             if (currentUser.isEmailVerified) {
 
-                val intent = Intent(this, HOMEPAGE::class.java)
+                val intent = Intent(this, Vendor_Main_Page::class.java)
                 intent.putExtra("emailAddress", emailAdd);
                 startActivity(intent)
                 finish()

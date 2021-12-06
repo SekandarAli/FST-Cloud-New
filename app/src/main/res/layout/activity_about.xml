@@ -98,7 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="12dp"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_marginTop="12dp"
                 app:layout_constraintTop_toBottomOf="@+id/desc"
                 app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +121,8 @@
                     app:layout_constraintStart_toEndOf="@id/phoneIcon"
                     app:layout_constraintBottom_toTopOf="@+id/phoneDesc"
                     android:layout_marginLeft="32dp"
-                    tools:ignore="NotSibling,UnknownIdInLayout" />
+                    tools:ignore="NotSibling,UnknownIdInLayout"
+                    android:gravity="start" />
 
 
 

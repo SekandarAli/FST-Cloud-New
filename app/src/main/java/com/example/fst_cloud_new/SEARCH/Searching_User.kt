@@ -45,7 +45,9 @@ class Searching_User : AppCompatActivity() {
             "Chicken rolls",
             "Chicken tikka",
             "Shawarma",
-            "Tikka"
+            "Tikka",
+            "tikka"
+
         )
 
         val adapter: ArrayAdapter<*> =

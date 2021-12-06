@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.view.View
 import android.widget.*
+import com.example.fst_cloud_new.HOMEPAGE.HOMEPAGE
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SIGN_IN.FSTSignIn
 import com.example.fst_cloud_new.Start_Pages.OTP
@@ -20,6 +21,12 @@ class FSTSignUp : AppCompatActivity() {
 
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var signup : Button
+    private lateinit var signupemail : EditText
+    private lateinit var signupusername : EditText
+    private lateinit var signupphoneno : EditText
+    private lateinit var signuppassword : EditText
+    private lateinit var signuprepassword : EditText
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,16 +38,26 @@ class FSTSignUp : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        val signup : Button = findViewById(R.id.signup)
+        signup  = findViewById(R.id.signup)
         val tvsignin : TextView = findViewById(R.id.user_signin)
         val authh : TextView = findViewById(R.id.tv2)
-        val signupemail : EditText = findViewById(R.id.signupemail)
-        val signupusername : EditText = findViewById(R.id.signupusername)
-        val signupphoneno : EditText = findViewById(R.id.signupphoneno)
-        val signuppassword : EditText = findViewById(R.id.signuppassword)
-        val signuprepassword : EditText = findViewById(R.id.signuprepassword)
+        signupemail  = findViewById(R.id.signupemail)
+        signupusername  = findViewById(R.id.signupusername)
+        signupphoneno  = findViewById(R.id.signupphoneno)
+        signuppassword  = findViewById(R.id.signuppassword)
+        signuprepassword  = findViewById(R.id.signuprepassword)
         val s : Switch = findViewById(R.id.switch1)
 
+
+
+
+        val currentUser = auth.currentUser
+        if(currentUser != null) {
+            startActivity(Intent(this, HOMEPAGE::class.java))
+            finish()
+        }
+
+        signup()
 
 
 
@@ -53,6 +70,7 @@ class FSTSignUp : AppCompatActivity() {
             }
 
         }
+
 
 
 
@@ -73,6 +91,23 @@ class FSTSignUp : AppCompatActivity() {
 
 
 
+
+
+
+
+
+            tvsignin.setOnClickListener(View.OnClickListener {
+
+                intent = Intent(this, FSTSignIn::class.java)
+                startActivity(intent)
+            })
+
+
+
+    }
+
+    private fun signup()
+    {
 
         signup.setOnClickListener {
 
@@ -169,7 +204,11 @@ class FSTSignUp : AppCompatActivity() {
                                                 pd.dismiss()
 
                                             }.addOnFailureListener {
-                                                Toasty.error(this, "FAILED unable to add data to database", Toast.LENGTH_SHORT)
+                                                Toasty.error(
+                                                    this,
+                                                    "FAILED unable to add data to database",
+                                                    Toast.LENGTH_SHORT
+                                                )
                                                     .show()
 
                                             }
@@ -194,17 +233,6 @@ class FSTSignUp : AppCompatActivity() {
                     }
 
             }
-
-
-
-
-            tvsignin.setOnClickListener(View.OnClickListener {
-
-                intent = Intent(this, FSTSignIn::class.java)
-                startActivity(intent)
-            })
-
-
         }
     }
 }

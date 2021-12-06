@@ -4,19 +4,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-<!--    <group-->
-<!--        android:id="@+id/group0"-->
-<!--        >-->
+    <group
+        android:id="@+id/group0"
+        >
 
-<!--        <item-->
-<!--            android:id="@+id/edit_profile"-->
-<!--            android:title="Edit Profile"-->
-<!--            android:icon="@drawable/ic_edit"-->
+        <item
+            android:id="@+id/edit_profile"
+            android:title="Edit Picture"
+            android:icon="@drawable/ic_edit"
 
-<!--            />-->
+            />
 
 
-<!--    </group>-->
+    </group>
 
     <group
     android:id="@+id/group1">

@@ -1,4 +1,4 @@
-package com.example.fst_cloud_new.PROFILE
+package com.example.fst_cloud_new.Profile_Data
 
 class Profile_Model {
 

@@ -141,18 +141,27 @@
         android:orientation="horizontal"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_weight="1.35"
+        android:layout_weight="1.3"
         >
 
-        <ImageView
-            style="@style/socialmediaicon"
-            android:src="@drawable/facebook"
-            ></ImageView>
+<!--        <ImageView-->
+<!--            style="@style/socialmediaicon"-->
+<!--            android:src="@drawable/facebook"-->
+<!--            ></ImageView>-->
 
-     <ImageView
-            style="@style/socialmediaicon"
-            android:src="@drawable/google"
-            ></ImageView>
+<!--     <ImageView-->
+<!--            style="@style/socialmediaicon"-->
+<!--            android:src="@drawable/google"-->
+<!--            ></ImageView>-->
+
+
+
+        <Button
+            android:id="@+id/continue_user"
+            style="@style/buttonregister"
+            android:textAllCaps="false"
+            android:background="@drawable/button"
+            android:text="Sign In using GOOGLE"></Button>
 
 
     </LinearLayout>

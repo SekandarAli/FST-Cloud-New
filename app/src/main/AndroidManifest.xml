@@ -12,7 +12,8 @@
         android:roundIcon="@drawable/logoo"
         android:supportsRtl="true"
         android:theme="@style/Theme.FSTCloudNew">
-
+        <activity android:name=".PROFILES.About"></activity>
+        <activity android:name=".PROFILES.Contact" />
         <activity
             android:name=".MAPS.Map_User"
             android:label="@string/title_activity_map_location" />
@@ -31,13 +32,11 @@
         <activity android:name=".MAPS.Map_Vendor" />
         <activity android:name=".Vendor_Resturant.Vendor_Restaurant_Show_Data" />
         <activity android:name=".Start_Pages.Logo">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".Vendor_Dish.Vendor_Dish_Show_Data" />
         <activity android:name=".SEARCH.Searching_Vendor" />
@@ -48,9 +47,7 @@
         <activity android:name=".SIGN_UP.FST_Vendor_Signup" />
         <activity android:name=".SIGN_UP.FSTSignUp" />
         <activity android:name=".ADMIN.AdminPanel" />
-        <activity android:name=".HOMEPAGE.HOMEPAGE" >
-
-        </activity>
+        <activity android:name=".HOMEPAGE.HOMEPAGE" />
         <activity android:name=".FOOD.FoodDetailsFST" />
         <activity android:name=".Start_Pages.OTP" />
         <activity android:name=".Start_Pages.FSTForgetpassword" />
@@ -61,7 +58,7 @@
         <activity android:name=".SHOP.ShopMainPageFST" />
         <activity android:name=".Vendor_Resturant.Vendor_Resturant_Add_Data" />
         <activity android:name=".Vendor_Dish.Vendor_Dish_Add_Data" />
-        <activity android:name=".PROFILE.Profile_Dummy"></activity>
+        <activity android:name=".Profile_Data.Profile_Dummy" />
     </application>
 
 </manifest>

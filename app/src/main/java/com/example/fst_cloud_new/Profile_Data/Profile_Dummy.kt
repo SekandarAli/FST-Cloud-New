@@ -1,7 +1,6 @@
-package com.example.fst_cloud_new.PROFILE
+package com.example.fst_cloud_new.Profile_Data
 
 import android.app.ProgressDialog
-import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -9,11 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.*
-import com.example.fst_cloud_new.FOOD.FoodDetailsFST
 import com.example.fst_cloud_new.HOMEPAGE.HOMEPAGE
-import com.example.fst_cloud_new.MAPS.Map_Vendor
 import com.example.fst_cloud_new.R
-import com.example.fst_cloud_new.SHOP.ShopMainPageFST
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth

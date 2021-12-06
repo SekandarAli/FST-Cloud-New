@@ -21,8 +21,9 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.fst_cloud_new.FOOD.FoodFragment
 import com.example.fst_cloud_new.MAPS.Map_User
-import com.example.fst_cloud_new.PROFILE.Profile_Dummy
-import com.example.fst_cloud_new.PROFILE.Profile_Model
+import com.example.fst_cloud_new.PROFILES.About
+import com.example.fst_cloud_new.PROFILES.Contact
+import com.example.fst_cloud_new.Profile_Data.Profile_Model
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SEARCH.Searching_User
 import com.example.fst_cloud_new.SHOP.ShopFragment
@@ -30,6 +31,7 @@ import com.example.fst_cloud_new.Start_Pages.FSTRegisterPage
 import com.example.fst_cloud_new.TRAVEL.TravelFragment
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import es.dmoral.toasty.Toasty
 import java.io.IOException
@@ -46,6 +48,7 @@ class HOMEPAGE : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
     lateinit var filepath: Uri
     lateinit var navigationView : NavigationView
     lateinit var nav_header_image : ImageView
+    lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,7 +60,7 @@ class HOMEPAGE : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
         Toasty.normal(this, "Welcome to FST",
             Toast.LENGTH_LONG, ContextCompat.getDrawable(this, R.drawable.logoo)).show();
 
-
+        auth = FirebaseAuth.getInstance()
         navigationView = findViewById(R.id.nav_menu)
 
 
@@ -180,10 +183,15 @@ class HOMEPAGE : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
         var id = item.itemId
         when(id)
         {
-//            R.id.edit_profile -> {
-//                intent = Intent(this,Profile_Dummy::class.java)
+            R.id.edit_profile -> {
+//                intent = Intent(this, Profile_Dummy::class.java)
 //                startActivity(intent)
-//            }
+
+                val intent = Intent()
+                intent.type = "image/*"
+                intent.action = Intent.ACTION_GET_CONTENT
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST)
+            }
 
             R.id.home -> {
                 intent = Intent(this,HOMEPAGE::class.java)
@@ -191,18 +199,21 @@ class HOMEPAGE : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
             }
 
             R.id.about -> {
-                Toasty.info(this, "About Clicked", Toast.LENGTH_SHORT).show()
+                intent = Intent(this, About::class.java)
+                startActivity(intent)
             }
 
             R.id.contact -> {
-                Toasty.info(this, "contact Clicked", Toast.LENGTH_SHORT).show()
+                intent = Intent(this, Contact::class.java)
+                startActivity(intent)
             }
 
             R.id.setting -> {
                 Toasty.info(this, "Setting Clicked", Toast.LENGTH_SHORT).show()
             }
             R.id.support -> {
-                Toasty.info(this, "Support Clicked", Toast.LENGTH_SHORT).show()
+                intent = Intent(this, Contact::class.java)
+                startActivity(intent)
             }
 
             R.id.version -> {
@@ -220,6 +231,7 @@ class HOMEPAGE : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
 
                  builder.setPositiveButton("Logout"){dialogInterface, which ->
 
+                     auth.signOut()
                      var intent = Intent(this, FSTRegisterPage::class.java)
                      startActivity(intent)
 

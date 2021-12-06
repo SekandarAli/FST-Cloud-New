@@ -109,7 +109,7 @@ class OTP : AppCompatActivity() {
 
             val Phone = USEROTP.text.toString().trim()
 
-            authentivation("+92$Phone")
+            authentication("+92$Phone")
 
 
         }
@@ -123,7 +123,7 @@ class OTP : AppCompatActivity() {
 
 
 
-            Toast.makeText(this, "code = "+ otpp, Toast.LENGTH_SHORT).show()
+            Toasty.info(this, "Your Entered Code = "+ otpp, Toast.LENGTH_SHORT).show()
             verifyVerification(otpp)
 
 
@@ -164,7 +164,7 @@ class OTP : AppCompatActivity() {
     }
 
 
-    fun authentivation(PhoneNo : String)
+    fun authentication(PhoneNo : String)
     {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
 

@@ -23,6 +23,8 @@ import com.example.fst_cloud_new.FOOD.FoodFragment
 import com.example.fst_cloud_new.MAPS.Map_User
 import com.example.fst_cloud_new.PROFILES.About
 import com.example.fst_cloud_new.PROFILES.Contact
+import com.example.fst_cloud_new.PROFILES.PrivacyPolicy
+import com.example.fst_cloud_new.PROFILES.Setting
 import com.example.fst_cloud_new.Profile_Data.Profile_Model
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SEARCH.Searching_User
@@ -209,10 +211,11 @@ class HOMEPAGE : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
             }
 
             R.id.setting -> {
-                Toasty.info(this, "Setting Clicked", Toast.LENGTH_SHORT).show()
+                intent = Intent(this, Setting::class.java)
+                startActivity(intent)
             }
             R.id.support -> {
-                intent = Intent(this, Contact::class.java)
+                intent = Intent(this, PrivacyPolicy::class.java)
                 startActivity(intent)
             }
 

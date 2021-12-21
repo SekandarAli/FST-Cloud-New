@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.fst_cloud_new.MAPS.Map_Vendor
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SIGN_UP.FST_Vendor_Signup
+import com.example.fst_cloud_new.VENDOR_Shop_AND_Restaurant.Vendor_Dish_Main_Page
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
@@ -40,7 +41,7 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
     lateinit var vendor_resturant_description: EditText
     lateinit var vendor_resturant_location: EditText
     lateinit var vendor_resturant_chooseImage: Button
-    lateinit var vendor_resturant_back: Button
+    lateinit var vendor_add_dish_data: Button
 
     //Strings and constant
 
@@ -59,11 +60,11 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
         setContentView(R.layout.activity_vendor_resturant_add_data)
 
 
-        vendor_resturant_back = findViewById(R.id.add_data_back)
+        vendor_add_dish_data = findViewById(R.id.vendor_add_dish_data)
 
-        vendor_resturant_back.setOnClickListener {
+        vendor_add_dish_data.setOnClickListener {
 
-            intent = Intent(this, FST_Vendor_Signup::class.java)
+            intent = Intent(this,Vendor_Dish_Main_Page::class.java)
             startActivity(intent)
 
         }

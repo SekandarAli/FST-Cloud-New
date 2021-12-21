@@ -6,8 +6,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import com.example.fst_cloud_new.ADMIN.AdminPanel
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.HOMEPAGE.HOMEPAGE
+import com.example.fst_cloud_new.SIGN_IN.FSTSignIn
+import com.example.fst_cloud_new.SIGN_IN.FST_Vendor_Signin
 import com.example.fst_cloud_new.SIGN_UP.FSTSignUp
 import com.example.fst_cloud_new.SIGN_UP.FST_Vendor_Signup
 
@@ -36,16 +39,24 @@ class FSTRegisterPage : AppCompatActivity() {
 //            }.start()
 //        }
 
+        logo2.setOnLongClickListener{
+
+            intent = Intent(this, AdminPanel::class.java)
+
+            startActivity(intent)
+            return@setOnLongClickListener true
+        }
+
         continue_user.setOnClickListener(View.OnClickListener {
 
-            intent = Intent(this, FSTSignUp::class.java)
+            intent = Intent(this, FSTSignIn::class.java)
             startActivity(intent)
         })
 
 
         continue_vendor.setOnClickListener(View.OnClickListener {
 
-            intent = Intent(this, FST_Vendor_Signup::class.java)
+            intent = Intent(this, FST_Vendor_Signin::class.java)
             startActivity(intent)
         })
 

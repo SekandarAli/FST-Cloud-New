@@ -1,4 +1,4 @@
-package com.example.fst_cloud_new.VENDOR
+package com.example.fst_cloud_new.VENDOR_Shop_AND_Restaurant
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +9,7 @@ import android.widget.Toast
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.Vendor_Dish.Vendor_Dish_Add_Data
 
-class Vendor_Main_Page : AppCompatActivity() {
+class Vendor_Dish_Main_Page : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vendor_main_page)

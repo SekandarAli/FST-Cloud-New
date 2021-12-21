@@ -11,16 +11,36 @@ import com.example.fst_cloud_new.HOMEPAGE.HOMEPAGE
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SIGN_UP.FSTSignUp
 import com.example.fst_cloud_new.Start_Pages.FSTForgetpassword
+import com.example.fst_cloud_new.databinding.ActivityFstsignInBinding
+import com.example.fst_cloud_new.databinding.ActivityHomepageBinding
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import es.dmoral.toasty.Toasty
+import java.lang.Exception
+
 
 class FSTSignIn : AppCompatActivity() {
 
-    lateinit var auth : FirebaseAuth
+    lateinit var firebaseAuthuth : FirebaseAuth
+    lateinit var binding : ActivityFstsignInBinding
 
+    private lateinit var googlesignTnclient : GoogleSignInClient
+
+
+
+    private companion object {
+        private val RC_SIGN_IN = 108
+        private const val TAG = "G00GLE_SIGNIN_TAG"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,14 +48,48 @@ class FSTSignIn : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        auth = Firebase.auth
+        firebaseAuthuth = Firebase.auth
 
         val login : Button = findViewById(R.id.login)
+        val googleSignInButton : Button = findViewById(R.id.google_signInBtn)
         val tvsignup : TextView = findViewById(R.id.user_signup)
         val forgetpassword : TextView = findViewById(R.id.forgetpassword)
         val signinemail : EditText = findViewById(R.id.signinemail)
         val signinpassword : EditText = findViewById(R.id.signinpassword)
         val switch_signin_user : Switch = findViewById(R.id.switch_signIn_user)
+
+
+
+
+
+
+
+        val googlesignInOptions =  GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+
+            googlesignTnclient = GoogleSignIn.getClient(this, googlesignInOptions)
+
+
+        firebaseAuthuth = FirebaseAuth.getInstance()
+        checkUser()
+
+
+
+        googleSignInButton.setOnClickListener(View.OnClickListener {
+
+
+            val intent = googlesignTnclient.signInIntent
+            startActivityForResult(intent, RC_SIGN_IN)
+
+        })
+
+
+
+
+
+
 
         switch_signin_user.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
@@ -100,14 +154,14 @@ class FSTSignIn : AppCompatActivity() {
 
                 pd.show()
 
-                auth.signInWithEmailAndPassword(
+                firebaseAuthuth.signInWithEmailAndPassword(
                     signinemail.text.toString(),
                     signinpassword.text.toString()
                 )
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
 
-                            val user = auth.currentUser
+                            val user = firebaseAuthuth.currentUser
                             updateUI(user,signinemail.text.toString())
 
                         }
@@ -140,6 +194,80 @@ class FSTSignIn : AppCompatActivity() {
 
 
     }
+
+    private fun checkUser() {
+
+        val firebaseUser = firebaseAuthuth.currentUser
+        if(firebaseUser != null)
+        {
+            startActivity(Intent(this,HOMEPAGE::class.java))
+            finish()
+        }
+
+
+    }
+
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            // The Task returned from this call is always completed, no need to attach
+            // a listener.
+            val accountTask = GoogleSignIn.getSignedInAccountFromIntent(data)
+
+            try {
+                val account = accountTask.getResult(ApiException::class.java)
+                firebaseAuthWithGoogleAccount(account)
+            }
+
+            catch (e: Exception)
+            {
+
+            }
+        }
+    }
+
+    private fun firebaseAuthWithGoogleAccount(account: GoogleSignInAccount?) {
+
+
+
+        val credential = GoogleAuthProvider.getCredential(account!!.idToken,null)
+        firebaseAuthuth.signInWithCredential(credential)
+            .addOnSuccessListener{ authResult->
+
+                val firebaseUser = firebaseAuthuth.currentUser
+                val uid = firebaseUser!!.uid
+                val email = firebaseUser!!.email
+
+                if(authResult.additionalUserInfo!!.isNewUser)
+                {
+                    Toast.makeText(this, "ACC CREAtED ", Toast.LENGTH_SHORT).show()
+                }
+
+                else
+                {
+                    Toast.makeText(this, "login", Toast.LENGTH_SHORT).show()
+                }
+
+
+                startActivity(Intent(this,HOMEPAGE::class.java))
+                finish()
+            }
+
+            .addOnFailureListener { e->
+
+                Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
+
+            }
+    }
+
+
+
+
+
+
 
     private fun updateUI(currentUser: FirebaseUser?, emailAdd: String) {
         if (currentUser != null) {

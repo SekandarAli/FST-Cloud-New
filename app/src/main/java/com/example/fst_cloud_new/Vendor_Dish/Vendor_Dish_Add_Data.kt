@@ -11,7 +11,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fst_cloud_new.R
-import com.example.fst_cloud_new.VENDOR.Vendor_Main_Page
+import com.example.fst_cloud_new.VENDOR_Shop_AND_Restaurant.Vendor_Dish_Main_Page
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
@@ -81,7 +81,7 @@ class Vendor_Dish_Add_Data : AppCompatActivity() {
         vendor_dish_back.setOnClickListener {
 
 
-            var intent = Intent(this, Vendor_Main_Page::class.java)
+            var intent = Intent(this, Vendor_Dish_Main_Page::class.java)
             startActivity(intent)
 
         }

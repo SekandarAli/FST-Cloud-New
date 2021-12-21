@@ -12,7 +12,18 @@
         android:roundIcon="@drawable/logoo"
         android:supportsRtl="true"
         android:theme="@style/Theme.FSTCloudNew">
-        <activity android:name=".PROFILES.About"></activity>
+        <activity android:name=".VENDOR_Shop_AND_Restaurant.Vendor_Shop_Category_Main_Page"></activity>
+        <activity android:name=".SIGN_UP.Restaurant_OR_Shop" />
+        <activity android:name=".PROFILES.PrivacyPolicy" />
+        <activity android:name=".PROFILES.Setting" />
+        <activity android:name=".Vendor_Travel.Vendor_Travel_Show_Data" />
+        <activity android:name=".Vendor_Travel.Vendor_Travel_Add_Data" />
+        <activity android:name=".Vendor_Shop_Category.Vendor_Shop_Category_Show_Data" />
+        <activity android:name=".Vendor_Shop_Category.Vendor_Shop_Category_Add_Data" />
+        <activity android:name=".Vendor_Shop.Vendor_Shop_Show_Data" />
+        <activity android:name=".Vendor_Shop.Vendor_Shop_Add_Data" />
+        <activity android:name=".SIGN_IN.roughProfile" />
+        <activity android:name=".PROFILES.About" />
         <activity android:name=".PROFILES.Contact" />
         <activity
             android:name=".MAPS.Map_User"
@@ -54,7 +65,7 @@
         <activity android:name=".Start_Pages.FSTForgetpage2" />
         <activity android:name=".TRAVEL.TravelMainPageFST" />
         <activity android:name=".Start_Pages.FSTRegisterPage" />
-        <activity android:name=".VENDOR.Vendor_Main_Page" />
+        <activity android:name=".VENDOR_Shop_AND_Restaurant.Vendor_Dish_Main_Page" />
         <activity android:name=".SHOP.ShopMainPageFST" />
         <activity android:name=".Vendor_Resturant.Vendor_Resturant_Add_Data" />
         <activity android:name=".Vendor_Dish.Vendor_Dish_Add_Data" />

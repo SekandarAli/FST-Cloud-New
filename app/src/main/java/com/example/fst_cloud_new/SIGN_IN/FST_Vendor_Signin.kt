@@ -8,11 +8,10 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fst_cloud_new.R
-import com.example.fst_cloud_new.ADMIN.AdminPanel
-import com.example.fst_cloud_new.HOMEPAGE.HOMEPAGE
 import com.example.fst_cloud_new.SIGN_UP.FST_Vendor_Signup
+import com.example.fst_cloud_new.SIGN_UP.Restaurant_OR_Shop
 import com.example.fst_cloud_new.Start_Pages.FSTForgetpassword
-import com.example.fst_cloud_new.VENDOR.Vendor_Main_Page
+import com.example.fst_cloud_new.VENDOR_Shop_AND_Restaurant.Vendor_Dish_Main_Page
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -157,7 +156,7 @@ class FST_Vendor_Signin : AppCompatActivity() {
 
             if (currentUser.isEmailVerified) {
 
-                val intent = Intent(this, Vendor_Main_Page::class.java)
+                val intent = Intent(this, Restaurant_OR_Shop::class.java)
                 intent.putExtra("emailAddress", emailAdd);
                 startActivity(intent)
                 finish()

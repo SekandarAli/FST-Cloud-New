@@ -158,15 +158,35 @@
 <!--            ></EditText>-->
 
 
-        <Button
+<!--        <Button-->
 
-            style="@style/vendor_Location"
-            android:text="Add Restaurant Data"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button"
-            android:id="@+id/vendor_choose_image"
-            android:textAllCaps="false"
-            ></Button>
+<!--            style="@style/vendor_Location"-->
+<!--            android:text="Add Restaurant Data"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@drawable/button"-->
+<!--            android:id="@+id/vendor_restaurant_add_data"-->
+<!--            android:textAllCaps="false"-->
+<!--            ></Button>-->
+
+<!--        <Button-->
+
+<!--            style="@style/vendor_Location"-->
+<!--            android:text="Add Shop Data"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@drawable/button"-->
+<!--            android:id="@+id/vendor_shop_add_data"-->
+<!--            android:textAllCaps="false"-->
+<!--            ></Button>-->
+
+<!--        -->
+<!--        -->
+
+
+
+
+
+
+
 
 <!--        <Button-->
 <!--            style="@style/vendor_Location"-->

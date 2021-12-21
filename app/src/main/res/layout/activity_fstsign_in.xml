@@ -157,12 +157,18 @@
 
 
         <Button
-            android:id="@+id/continue_user"
+            android:id="@+id/google_signInBtn"
             style="@style/buttonregister"
             android:textAllCaps="false"
             android:background="@drawable/button"
             android:text="Sign In using GOOGLE"></Button>
 
+
+<!--        <Button-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:id="@+id/google_signInBtn"-->
+<!--            ></Button>-->
 
     </LinearLayout>
 

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SIGN_IN.FST_Vendor_Signin
 import com.example.fst_cloud_new.Vendor_Resturant.Vendor_Resturant_Add_Data
+import com.example.fst_cloud_new.Vendor_Shop.Vendor_Shop_Add_Data
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -40,7 +41,6 @@ class FST_Vendor_Signup : AppCompatActivity() {
         auth = Firebase.auth
 
         val vendor_signup: Button = findViewById(R.id.vendor_Signup)
-        val vendor_restaurant_add_data: Button = findViewById(R.id.vendor_choose_image)
         vendor_Email = findViewById(R.id.vendor_Email)
         vendorUsername = findViewById(R.id.vendorUsername)
         vendor_Phoneno = findViewById(R.id.vendor_Phoneno)
@@ -66,13 +66,21 @@ class FST_Vendor_Signup : AppCompatActivity() {
 //        })
 
 
-        vendor_restaurant_add_data.setOnClickListener(View.OnClickListener {
-
-            intent = Intent(this, Vendor_Resturant_Add_Data::class.java)
-            startActivity(intent)
-
-
-        })
+//        vendor_restaurant_add_data.setOnClickListener(View.OnClickListener {
+//
+//            intent = Intent(this, Vendor_Resturant_Add_Data::class.java)
+//            startActivity(intent)
+//
+//
+//        })
+//
+//        vendor_shop_add_data.setOnClickListener(View.OnClickListener {
+//
+//            intent = Intent(this, Vendor_Shop_Add_Data::class.java)
+//            startActivity(intent)
+//
+//
+//        })
 
 
         val s2: Switch = findViewById(R.id.switch2)

@@ -17,6 +17,7 @@ import com.example.fst_cloud_new.RESTAURANT.Restaurant_Adapter
 import com.example.fst_cloud_new.RESTAURANT.Restaurant_Model
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SHOP.vertical_recycle_fragment_shop_adapter
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.firebase.database.*
 import es.dmoral.toasty.Toasty
 
@@ -29,6 +30,7 @@ class FoodFragment (context: Context): Fragment() {
     private var vadapter: RecyclerView.Adapter<vertical_recycle_fragment_shop_adapter.ViewHolder>? = null
 
     private lateinit var restaurantArrayList : ArrayList<Restaurant_Model>
+    lateinit var  shimmer : ShimmerFrameLayout
 
     private lateinit var vrecycleView: RecyclerView
 
@@ -47,7 +49,8 @@ class FoodFragment (context: Context): Fragment() {
         val items = ArrayList<horizontal_recycle_fragment_food_model>()
 
         vrecycleView = v.findViewById(R.id.verticalrecycleViewfood)
-
+        shimmer = v.findViewById(R.id.shimmer_layout)
+        shimmer.startShimmer()
 
         items.add(
             horizontal_recycle_fragment_food_model(
@@ -166,7 +169,8 @@ class FoodFragment (context: Context): Fragment() {
 
 
 //        val vrecycleView: RecyclerView = v.findViewById(R.id.restaurant_vertical_recycleView)
-        vrecycleView.layoutManager = LinearLayoutManager(food_context, LinearLayoutManager.VERTICAL, false)
+        vrecycleView.layoutManager = LinearLayoutManager(food_context,
+            LinearLayoutManager.VERTICAL, false)
 
 //        vadapter = vertical_recycle_main_food_adapter(vitems, food_context)
 //        vrecycleView.adapter = vadapter
@@ -200,7 +204,7 @@ class FoodFragment (context: Context): Fragment() {
                         restaurantArrayList.add(restaurant!!)
                     }
                     vrecycleView.adapter = Restaurant_Adapter(restaurantArrayList,food_context)
-
+shimmer.visibility = View.GONE
                 }
                 else
                 {

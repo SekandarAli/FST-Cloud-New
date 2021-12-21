@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +13,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.FOOD.horizontal_recycle_fragment_food_adapter
 import com.example.fst_cloud_new.FOOD.horizontal_recycle_fragment_food_model
+import com.example.fst_cloud_new.RESTAURANT.Restaurant_Adapter
+import com.example.fst_cloud_new.RESTAURANT.Restaurant_Model
+import com.google.firebase.database.*
+import es.dmoral.toasty.Toasty
 
 class ShopFragment (context: Context): Fragment() {
 
@@ -21,6 +26,9 @@ class ShopFragment (context: Context): Fragment() {
     private var vlayoutManager: RecyclerView.LayoutManager? = null
     private var vadapter: RecyclerView.Adapter<vertical_recycle_fragment_shop_adapter.ViewHolder>? = null
 
+    private lateinit var shopArrayList : ArrayList<Shop_Model>
+
+    private lateinit var vrecycleView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,6 +42,8 @@ class ShopFragment (context: Context): Fragment() {
 
 
         val items = ArrayList<horizontal_recycle_fragment_shop_model>()
+
+        vrecycleView = v.findViewById(R.id.verticalrecycleViewshop)
 
 
         items.add(
@@ -92,78 +102,117 @@ class ShopFragment (context: Context): Fragment() {
 
 
 
-        val vitems = ArrayList<vertical_recycle_fragment_shop_model>()
+        val vitems = ArrayList<Shop_Model>()
 
-        vitems.add(
-            vertical_recycle_fragment_shop_model(
-                "Khadi", "located in bazar", "3 min | 4.2 stars",
-                R.drawable.s7
-            )
-        )
-
-        vitems.add(
-            vertical_recycle_fragment_shop_model(
-                "Stone Harbor", "North Food special plate", "3 min | 4.2 stars",
-                R.drawable.s8
-            )
-        )
-
-        vitems.add(
-            vertical_recycle_fragment_shop_model(
-                "Outfitters", "North Food special plate", "3 min | 4.2 stars",
-                R.drawable.s9
-            )
-        )
-
-        vitems.add(
-            vertical_recycle_fragment_shop_model(
-                "Engine jeans", "North Food special plate", "3 min | 4.2 stars",
-                R.drawable.s10
-            )
-        )
-
-        vitems.add(
-            vertical_recycle_fragment_shop_model(
-                "Nishat Lilan", "North Food special plate", "3 min | 4.2 stars",
-                R.drawable.s1
-            )
-        )
-
-        vitems.add(
-            vertical_recycle_fragment_shop_model(
-                "Khadi", "North Food special plate", "3 min | 4.2 stars",
-                R.drawable.s2
-            )
-        )
-
-        vitems.add(
-            vertical_recycle_fragment_shop_model(
-                "Guldberg", "North Food special plate", "3 min | 4.2 stars",
-                R.drawable.s3
-            )
-        )
-
-        vitems.add(
-            vertical_recycle_fragment_shop_model(
-                "Kids Store", "North Food special plate", "3 min | 4.2 stars",
-                R.drawable.s4
-            )
-        )
-
-
-        val vrecycleView: RecyclerView = v.findViewById(R.id.verticalrecycleViewshop)
+//        vitems.add(
+//            vertical_recycle_fragment_shop_model(
+//                "Khadi", "located in bazar", "3 min | 4.2 stars",
+//                R.drawable.s7
+//            )
+//        )
+//
+//        vitems.add(
+//            vertical_recycle_fragment_shop_model(
+//                "Stone Harbor", "North Food special plate", "3 min | 4.2 stars",
+//                R.drawable.s8
+//            )
+//        )
+//
+//        vitems.add(
+//            vertical_recycle_fragment_shop_model(
+//                "Outfitters", "North Food special plate", "3 min | 4.2 stars",
+//                R.drawable.s9
+//            )
+//        )
+//
+//        vitems.add(
+//            vertical_recycle_fragment_shop_model(
+//                "Engine jeans", "North Food special plate", "3 min | 4.2 stars",
+//                R.drawable.s10
+//            )
+//        )
+//
+//        vitems.add(
+//            vertical_recycle_fragment_shop_model(
+//                "Nishat Lilan", "North Food special plate", "3 min | 4.2 stars",
+//                R.drawable.s1
+//            )
+//        )
+//
+//        vitems.add(
+//            vertical_recycle_fragment_shop_model(
+//                "Khadi", "North Food special plate", "3 min | 4.2 stars",
+//                R.drawable.s2
+//            )
+//        )
+//
+//        vitems.add(
+//            vertical_recycle_fragment_shop_model(
+//                "Guldberg", "North Food special plate", "3 min | 4.2 stars",
+//                R.drawable.s3
+//            )
+//        )
+//
+//        vitems.add(
+//            vertical_recycle_fragment_shop_model(
+//                "Kids Store", "North Food special plate", "3 min | 4.2 stars",
+//                R.drawable.s4
+//            )
+//        )
+       // val vrecycleView: RecyclerView = v.findViewById(R.id.verticalrecycleViewshop)
 
 
-        vrecycleView.layoutManager = LinearLayoutManager(food_context, LinearLayoutManager.VERTICAL, false)
+        vrecycleView.layoutManager = LinearLayoutManager(food_context,
+            LinearLayoutManager.VERTICAL, false)
 
-        vadapter = vertical_recycle_fragment_shop_adapter(vitems, food_context)
-        vrecycleView.adapter = vadapter
+//        vadapter = vertical_recycle_fragment_shop_adapter(vitems, food_context)
+//        vrecycleView.adapter = vadapter
 
         val DividerItemDecoration = DividerItemDecoration(food_context, DividerItemDecoration.VERTICAL)
         vrecycleView.addItemDecoration(DividerItemDecoration)
 
 
+        getUserData()
+
         return v
+    }
+
+    private fun getUserData() {
+        shopArrayList = arrayListOf<Shop_Model>()
+
+        var dbref : DatabaseReference
+
+        var dish_name : String? = ""
+        dbref = FirebaseDatabase.getInstance().getReference()
+        var query : Query = dbref.child("Shop/")
+
+        query.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    for(userSnapShot in snapshot.children)
+                    {
+
+                        val shop = userSnapShot.getValue(Shop_Model::class.java)
+                        dish_name = userSnapShot.child("shop_name").value.toString()
+                        shopArrayList.add(shop!!)
+                    }
+                    vrecycleView.adapter = Shop_Adapter(shopArrayList,food_context)
+
+                }
+                else
+                {
+                    Toasty.error(food_context, "No data found!", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toasty.info(food_context, "Something went wrong", Toast.LENGTH_SHORT).show()
+
+
+            }
+        })
+
+
     }
 
 }

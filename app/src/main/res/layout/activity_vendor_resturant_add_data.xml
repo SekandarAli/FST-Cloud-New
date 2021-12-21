@@ -138,14 +138,26 @@
                 android:id="@+id/vendor_resturant_show_data"
                 ></Button>
 
+
             <Button
-                android:id="@+id/add_data_back"
-                style="@style/buttonsign"
+                style="@style/vendor_Location"
+                android:text="Add Dishes Data"
+                android:textAllCaps="false"
+                android:textSize="15sp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/button"
-                android:text="Back"
-                android:textAllCaps="false"
+                android:id="@+id/vendor_add_dish_data"
                 ></Button>
+
+
+            <!--            <Button-->
+<!--                android:id="@+id/add_data_back"-->
+<!--                style="@style/buttonsign"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:background="@drawable/button"-->
+<!--                android:text="Back"-->
+<!--                android:textAllCaps="false"-->
+<!--                ></Button>-->
 
 
         </LinearLayout>

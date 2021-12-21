@@ -13,18 +13,18 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="0.9"
+        android:layout_weight="1.2"
         android:gravity="center"
         android:orientation="vertical">
 
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/start2_logo"
             android:layout_width="220dp"
             android:layout_height="220dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/logoo"
-            android:id="@+id/start2_logo"
             android:src="@drawable/logo"></de.hdodenhof.circleimageview.CircleImageView>
 
 
@@ -33,13 +33,45 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="1.1"
+        android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical">
 
 
         <Button
-            android:id="@+id/admin_show_resaurant"
+            android:id="@+id/admin_add_travel"
+            style="@style/buttonregister"
+            android:layout_marginTop="10dp"
+            android:textAllCaps="false"
+            android:background="@drawable/button"
+            android:text="Add Travel Place"></Button>
+
+        <Button
+            android:id="@+id/admin_show_travel"
+            style="@style/buttonregister"
+            android:layout_marginTop="10dp"
+            android:textAllCaps="false"
+            android:background="@drawable/button"
+            android:text="Show Travel Place"></Button>
+
+        <Button
+            android:id="@+id/admin_show_shop"
+            style="@style/buttonregister"
+            android:layout_marginTop="10dp"
+            android:textAllCaps="false"
+            android:background="@drawable/button"
+            android:text="Show Shops"></Button>
+
+   <Button
+            android:id="@+id/admin_show_shop_items"
+            style="@style/buttonregister"
+            android:layout_marginTop="10dp"
+            android:textAllCaps="false"
+            android:background="@drawable/button"
+            android:text="Show Shop Items"></Button>
+
+        <Button
+            android:id="@+id/admin_show_restaurant"
             style="@style/buttonregister"
             android:layout_marginTop="10dp"
             android:textAllCaps="false"

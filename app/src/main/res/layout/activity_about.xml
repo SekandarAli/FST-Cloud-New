@@ -113,6 +113,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/hello"
+                    android:padding="20dp"
                     android:textAlignment="textStart"
                     android:layout_marginStart="32dp"
                     android:textColor="#000"
@@ -126,8 +127,9 @@
 
 
 
-
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

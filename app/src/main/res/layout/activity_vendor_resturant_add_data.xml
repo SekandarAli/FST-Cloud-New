@@ -60,6 +60,7 @@
             android:textColor="@color/white"
             android:id="@+id/vendor_resturant_choose_image"
             android:layout_height="55dp"
+            android:textSize="20dp"
             ></Button>
 
         <EditText
@@ -96,7 +97,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/logo"
             android:drawableRight="@drawable/ic_add_location"
-            android:hint="Enter Resturant Location"
+            android:hint="Enter Resturant Location Name"
             android:layout_height="50dp"
             android:singleLine="true"
             android:inputType="text"></EditText>
@@ -111,32 +112,31 @@
             android:orientation="vertical"
             >
 
+
             <Button
-                style="@style/vendor_Location"
-                android:text="Select Location"
-                android:textAllCaps="false"
+                android:id="@+id/vendor_Location_data"
+                style="@style/buttonsign"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/button"
-                android:id="@+id/vendor_Location_data"
-                ></Button>
-
+                android:text="Select Location"
+                android:textAllCaps="false"></Button>
 
             <Button
                 android:id="@+id/vendor_resturant_add_data"
-                style="@style/buttonsign"
+                style="@style/vendor_Location"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/button"
                 android:textAllCaps="false"
-                android:text="Add Data"></Button>
+                android:text="Add Restaurant"></Button>
 
-            <Button
-                style="@style/buttonsign"
-                android:text="Show Data"
-                android:textAllCaps="false"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/button"
-                android:id="@+id/vendor_resturant_show_data"
-                ></Button>
+<!--            <Button-->
+<!--                style="@style/buttonsign"-->
+<!--                android:text="Show Data"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:background="@drawable/button"-->
+<!--                android:id="@+id/vendor_resturant_show_data"-->
+<!--                ></Button>-->
 
 
             <Button
@@ -144,7 +144,7 @@
                 android:text="Add Dishes Data"
                 android:textAllCaps="false"
                 android:textSize="15sp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/button"
                 android:id="@+id/vendor_add_dish_data"
                 ></Button>

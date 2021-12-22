@@ -35,18 +35,19 @@ class FST_Vendor_Signin : AppCompatActivity() {
         val vendor_signinemail : EditText = findViewById(R.id.vendor_signinemail)
         val vendor_signinpassword : EditText = findViewById(R.id.vendor_signinpassword)
         val vendor_signup : TextView = findViewById(R.id.vendor_signup)
-        val switch_signin_vendor : Switch = findViewById(R.id.switch_signIn_vendor)
-
-        switch_signin_vendor.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                intent = Intent(this, FSTSignIn::class.java)
-                startActivity(intent)
-                switch_signin_vendor.text = "Vendor"
 
 
-            }
-
-        }
+//        val switch_signin_vendor : Switch = findViewById(R.id.switch_signIn_vendor)
+//        switch_signin_vendor.setOnCheckedChangeListener { buttonView, isChecked ->
+//            if (isChecked) {
+//                intent = Intent(this, FSTSignIn::class.java)
+//                startActivity(intent)
+//                switch_signin_vendor.text = "Vendor"
+//
+//
+//            }
+//
+//        }
 
 
 

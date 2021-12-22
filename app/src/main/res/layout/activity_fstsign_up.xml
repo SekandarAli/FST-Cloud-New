@@ -28,32 +28,32 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/signinlogo" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_gravity="top"
-            android:layout_weight="0.55"
-            android:gravity="center"
+<!--        <LinearLayout-->
+<!--            android:layout_width="fill_parent"-->
+<!--            android:layout_height="fill_parent"-->
+<!--            android:layout_gravity="top"-->
+<!--            android:layout_weight="0.55"-->
+<!--            android:gravity="center"-->
 
-            >
+<!--            >-->
 
-            <Switch
-                android:id="@+id/switch1"
-                style="@style/switch_signup"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/button"
-                android:gravity="center"
-                android:text="User"
-                android:textStyle="bold" />
-        </LinearLayout>
+<!--            <Switch-->
+<!--                android:id="@+id/switch1"-->
+<!--                style="@style/switch_signup"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:background="@drawable/button"-->
+<!--                android:gravity="center"-->
+<!--                android:text="User"-->
+<!--                android:textStyle="bold" />-->
+<!--        </LinearLayout>-->
 
 
     </LinearLayout>
@@ -186,7 +186,7 @@
 
         <TextView
             android:id="@+id/tv3"
-            android:textSize="13sp"
+            android:textSize="18sp"
             android:gravity="center"
             android:text="Already Have An Account?"
             android:layout_height="30sp"
@@ -198,7 +198,7 @@
             android:id="@+id/user_signin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
+            android:textSize="18sp"
             android:textColor="@color/logo"
             android:textStyle="bold"
             android:text="SignIn"  />

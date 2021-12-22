@@ -11,10 +11,13 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fst_cloud_new.HOMEPAGE.HOMEPAGE
 import com.example.fst_cloud_new.MAPS.Map_Vendor
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SIGN_UP.FST_Vendor_Signup
 import com.example.fst_cloud_new.VENDOR_Shop_AND_Restaurant.Vendor_Dish_Main_Page
+import com.example.fst_cloud_new.Vendor_Dish.Vendor_Dish_Add_Data
+import com.example.fst_cloud_new.Vendor_Dish.Vendor_Dish_Show_Data
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
@@ -30,9 +33,9 @@ import java.util.*
 class Vendor_Resturant_Add_Data : AppCompatActivity() {
 
 
+    lateinit var firebaseAuthuth : FirebaseAuth
+
     lateinit var next: Button
-
-
     var root_Node: FirebaseDatabase? = null
     var reference: DatabaseReference? = null
     lateinit var vendor_resturant_imageView: ImageView
@@ -42,6 +45,7 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
     lateinit var vendor_resturant_location: EditText
     lateinit var vendor_resturant_chooseImage: Button
     lateinit var vendor_add_dish_data: Button
+    lateinit var vendor_Location_data: Button
 
     //Strings and constant
 
@@ -53,6 +57,7 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
     lateinit var db: FirebaseStorage
     lateinit var Storageref: StorageReference
     lateinit var filepath: Uri
+    lateinit var add_data: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,15 +69,23 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
 
         vendor_add_dish_data.setOnClickListener {
 
-            intent = Intent(this,Vendor_Dish_Main_Page::class.java)
+            intent = Intent(this,Vendor_Dish_Add_Data::class.java)
             startActivity(intent)
 
         }
 
 
-        val add_data: Button = findViewById(R.id.vendor_resturant_add_data)
-        val show_data: Button = findViewById(R.id.vendor_resturant_show_data)
-        val vendor_Location_data: Button = findViewById(R.id.vendor_Location_data)
+
+
+
+//        firebaseAuthuth = FirebaseAuth.getInstance()
+//        checkUser()
+//
+
+
+        add_data = findViewById(R.id.vendor_resturant_add_data)
+        //val show_data: Button = findViewById(R.id.vendor_resturant_show_data)
+        vendor_Location_data = findViewById(R.id.vendor_Location_data)
         vendor_resturant_chooseImage = findViewById(R.id.vendor_resturant_choose_image)
         vendor_resturant_name = findViewById(R.id.vendor_resturant_name)
         vendor_resturant_description = findViewById(R.id.vendor_resturant_description)
@@ -86,12 +99,12 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
-        show_data.setOnClickListener {
-
-            intent = Intent(this, Vendor_Restaurant_Show_Data::class.java)
-            startActivity(intent)
-
-        }
+//        show_data.setOnClickListener {
+//
+//            intent = Intent(this, Vendor_Restaurant_Show_Data::class.java)
+//            startActivity(intent)
+//
+//        }
 
 
 
@@ -124,6 +137,23 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
 
         }
     }
+
+
+
+//
+//    private fun checkUser() {
+//
+//        val firebaseUser = firebaseAuthuth.currentUser
+//        if(firebaseUser != null)
+//        {
+//            startActivity(Intent(this, Vendor_Dish_Show_Data::class.java))
+//            finish()
+//        }
+//
+//
+//    }
+
+
 
 
     fun Add_Data() {
@@ -161,12 +191,32 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
                             .show()
 
 
+
                         vendor_resturant_name.setText("")
                         vendor_resturant_description.setText("")
                         vendor_resturant_location.setText("")
 
                         vendor_resturant_name.isFocused
                         vendor_resturant_name.isFocusable
+
+                        vendor_resturant_location.isEnabled = false
+                        vendor_resturant_location.isClickable = false
+                        vendor_resturant_name.isEnabled = false
+                        vendor_resturant_name.isClickable = false
+                        vendor_resturant_description.isClickable = false
+                        vendor_resturant_description.isEnabled = false
+                        add_data.isClickable = false
+                        add_data.isEnabled = false
+                        vendor_resturant_chooseImage.isEnabled = false
+                        vendor_resturant_chooseImage.isClickable = false
+                        vendor_Location_data.isClickable = false
+                        vendor_Location_data.isEnabled = false
+
+
+                        Toasty.info(this, "Please wait for the confirmation of your restaurant data, a notification will be send to you after confirmation",
+                            Toast.LENGTH_LONG).show()
+
+
 
                     }.addOnFailureListener {
                         Toasty.error(

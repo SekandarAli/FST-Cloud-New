@@ -26,7 +26,46 @@
     <string name="close">close</string>
     <string name="title_activity_map_location">Map</string>
     <string name="title_activity_maps">Map</string>
-    <string name="hello">Every industry is undergoing digitization these days, and the restaurant industry is no exception. While it seems like nothing is more mundane than going out to eat or ordering takeout, restaurant apps literally have a lot to bring to the table. Enhanced customer engagement and better experiences help restaurant owners expand their client base and boost revenues.
+    <string name="hello">FST Cloud Privacy Policy
+December 15, 2021
 
-Currently, the restaurant app market is booming. As per QSR research, by 2023, the digital food ordering and delivery segment alone is set to reach $365 billion.</string>
+ Privacy Policy
+
+Sekandar Ali, Assad Khan and Farhan Shahbaz built the FST Cloud app as a Free app. This SERVICE is provided by Sekandar Ali at no cost and is intended for use as is.
+
+This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
+
+If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.
+
+The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions.
+
+        Link to the privacy policy of third-party service providers used by the app.
+    </string>
 </resources>
+
+
+<!--<string name="hello">FST Cloud Privacy Policy-->
+<!--December 15, 2021-->
+
+<!-- Privacy Policy-->
+
+<!--Sekandar Ali, Assad Khan and Farhan Shahbaz built the FST Cloud app as a Free app. This SERVICE is provided by Sekandar Ali at no cost and is intended for use as is.-->
+
+<!--This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.-->
+
+<!--If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.-->
+
+<!--The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which are accessible at FST Cloud unless otherwise defined in this Privacy Policy.-->
+
+<!--        Information Collection and Use-->
+
+<!--For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information, including but not limited to name,email,phone number,storage permission,location permission,map. The information that I request will be retained on your device and is not collected by me in any way.-->
+
+<!--The app does use third-party services that may collect information used to identify you.-->
+
+<!--Link to the privacy policy of third-party service providers used by the app-->
+
+<!--Google Play Services-->
+<!--Google Analytics for Firebase-->
+<!--Firebase Crashlytics-->
+<!--    </string>-->

@@ -46,7 +46,7 @@ class FSTSignUp : AppCompatActivity() {
         signupphoneno  = findViewById(R.id.signupphoneno)
         signuppassword  = findViewById(R.id.signuppassword)
         signuprepassword  = findViewById(R.id.signuprepassword)
-        val s : Switch = findViewById(R.id.switch1)
+   //     val s : Switch = findViewById(R.id.switch1)
 
 
 
@@ -60,16 +60,16 @@ class FSTSignUp : AppCompatActivity() {
         signup()
 
 
-
-        s.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                intent = Intent(this, FST_Vendor_Signup::class.java)
-                startActivity(intent)
-                s.text = "User"
-
-            }
-
-        }
+//
+//        s.setOnCheckedChangeListener { buttonView, isChecked ->
+//            if (isChecked) {
+//                intent = Intent(this, FST_Vendor_Signup::class.java)
+//                startActivity(intent)
+//                s.text = "User"
+//
+//            }
+//
+//        }
 
 
 

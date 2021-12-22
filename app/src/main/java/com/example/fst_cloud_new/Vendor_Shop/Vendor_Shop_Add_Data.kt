@@ -17,6 +17,7 @@ import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SIGN_UP.FST_Vendor_Signup
 import com.example.fst_cloud_new.VENDOR_Shop_AND_Restaurant.Vendor_Dish_Main_Page
 import com.example.fst_cloud_new.VENDOR_Shop_AND_Restaurant.Vendor_Shop_Category_Main_Page
+import com.example.fst_cloud_new.Vendor_Shop_Category.Vendor_Shop_Category_Add_Data
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
@@ -55,6 +56,8 @@ class Vendor_Shop_Add_Data : AppCompatActivity() {
     lateinit var db: FirebaseStorage
     lateinit var Storageref: StorageReference
     lateinit var filepath: Uri
+    lateinit var add_data: Button
+    lateinit var vendor_Location_data: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,15 +69,15 @@ class Vendor_Shop_Add_Data : AppCompatActivity() {
 
         vendor_add_shop_category_data.setOnClickListener {
 
-            intent = Intent(this, Vendor_Shop_Category_Main_Page::class.java)
+            intent = Intent(this, Vendor_Shop_Category_Add_Data::class.java)
             startActivity(intent)
 
         }
 
 
-        val add_data: Button = findViewById(R.id.vendor_shop_add_data)
-        val show_data: Button = findViewById(R.id.vendor_shop_show_data)
-        val vendor_Location_data: Button = findViewById(R.id.vendor_Location_data)
+        add_data = findViewById(R.id.vendor_shop_add_data)
+       // val show_data: Button = findViewById(R.id.vendor_shop_show_data)
+        vendor_Location_data = findViewById(R.id.vendor_Location_data)
         vendor_shop_chooseImage = findViewById(R.id.vendor_shop_choose_image)
         vendor_shop_name = findViewById(R.id.vendor_shop_name)
         vendor_shop_description = findViewById(R.id.vendor_shop_description)
@@ -88,12 +91,12 @@ class Vendor_Shop_Add_Data : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
-        show_data.setOnClickListener {
-
-            intent = Intent(this, Vendor_Shop_Show_Data::class.java)
-            startActivity(intent)
-
-        }
+//        show_data.setOnClickListener {
+//
+//            intent = Intent(this, Vendor_Shop_Show_Data::class.java)
+//            startActivity(intent)
+//
+//        }
 
 
 
@@ -169,6 +172,23 @@ class Vendor_Shop_Add_Data : AppCompatActivity() {
 
                         vendor_shop_name.isFocused
                         vendor_shop_name.isFocusable
+
+
+
+
+                        vendor_shop_location.isEnabled = false
+                        vendor_shop_location.isClickable = false
+                        vendor_shop_name.isEnabled = false
+                        vendor_shop_name.isClickable = false
+                        vendor_shop_description.isClickable = false
+                        vendor_shop_description.isEnabled = false
+                        add_data.isClickable = false
+                        add_data.isEnabled = false
+                        vendor_shop_chooseImage.isEnabled = false
+                        vendor_shop_chooseImage.isClickable = false
+                        vendor_Location_data.isClickable = false
+                        vendor_Location_data.isEnabled = false
+
 
                     }.addOnFailureListener {
                         Toasty.error(

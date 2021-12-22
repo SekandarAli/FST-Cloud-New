@@ -122,37 +122,37 @@
                     android:id="@+id/detailname"
                     android:textColor="@color/logo" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Share to"
-                    android:gravity="bottom"
-                    android:textSize="15sp" />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Share to"-->
+<!--                    android:gravity="bottom"-->
+<!--                    android:textSize="15sp" />-->
             </LinearLayout>
 
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1.5"
-                android:gravity="center">
+<!--            <LinearLayout-->
+<!--                android:layout_width="fill_parent"-->
+<!--                android:layout_height="fill_parent"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="1.5"-->
+<!--                android:gravity="center">-->
 
 
-                <ImageView
-                    style="@style/socialmediaicon"
-                    android:src="@drawable/facebook"></ImageView>
+<!--                <ImageView-->
+<!--                    style="@style/socialmediaicon"-->
+<!--                    android:src="@drawable/facebook"></ImageView>-->
 
-                <ImageView
-                    style="@style/socialmediaicon"
-                    android:src="@drawable/google"></ImageView>
+<!--                <ImageView-->
+<!--                    style="@style/socialmediaicon"-->
+<!--                    android:src="@drawable/google"></ImageView>-->
 
-                <ImageView
-                    style="@style/socialmediaicon"
-                    android:src="@drawable/twitter"></ImageView>
+<!--                <ImageView-->
+<!--                    style="@style/socialmediaicon"-->
+<!--                    android:src="@drawable/twitter"></ImageView>-->
 
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -168,6 +168,7 @@
                     android:layout_height="wrap_content"
                     android:text="Recipe Details"
                     android:textSize="18sp"
+                    android:layout_marginTop="20dp"
                     android:textColor="@color/logo"
                     android:textStyle="bold" />
 
@@ -212,20 +213,21 @@
                     android:outlineSpotShadowColor="@color/logo"
                     android:outlineAmbientShadowColor="@color/logo"
                     android:id="@+id/ratingBar"
-                    android:rating="3.4"
+                    android:rating="4.6"
 
                     />
 
 
                 <EditText
+                    android:id="@+id/ed_review"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:focusableInTouchMode="true"
-                    android:hint="user review"
-                    android:textSize="18sp"
+                    android:hint="Enter Comment..."
+                    android:singleLine="true"
                     android:textColor="@color/logo"
-                    android:id="@+id/ed_review"
-                    android:layout_gravity="center" />
+                    android:textSize="18sp" />
 
                 <Button
                     android:layout_width="wrap_content"

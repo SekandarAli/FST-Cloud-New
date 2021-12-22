@@ -51,12 +51,12 @@ class FSTSignIn : AppCompatActivity() {
         firebaseAuthuth = Firebase.auth
 
         val login : Button = findViewById(R.id.login)
-        val googleSignInButton : Button = findViewById(R.id.google_signInBtn)
+       // val googleSignInButton : Button = findViewById(R.id.google_signInBtn)
         val tvsignup : TextView = findViewById(R.id.user_signup)
         val forgetpassword : TextView = findViewById(R.id.forgetpassword)
         val signinemail : EditText = findViewById(R.id.signinemail)
         val signinpassword : EditText = findViewById(R.id.signinpassword)
-        val switch_signin_user : Switch = findViewById(R.id.switch_signIn_user)
+       // val switch_signin_user : Switch = findViewById(R.id.switch_signIn_user)
 
 
 
@@ -77,30 +77,30 @@ class FSTSignIn : AppCompatActivity() {
 
 
 
-        googleSignInButton.setOnClickListener(View.OnClickListener {
-
-
-            val intent = googlesignTnclient.signInIntent
-            startActivityForResult(intent, RC_SIGN_IN)
-
-        })
-
-
-
+//        googleSignInButton.setOnClickListener(View.OnClickListener {
+//
+//
+//            val intent = googlesignTnclient.signInIntent
+//            startActivityForResult(intent, RC_SIGN_IN)
+//
+//        })
 
 
 
 
-        switch_signin_user.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                intent = Intent(this, FST_Vendor_Signin::class.java)
-                startActivity(intent)
-                switch_signin_user.text = "User"
 
 
-            }
-
-        }
+//
+//        switch_signin_user.setOnCheckedChangeListener { buttonView, isChecked ->
+//            if (isChecked) {
+//                intent = Intent(this, FST_Vendor_Signin::class.java)
+//                startActivity(intent)
+//                switch_signin_user.text = "User"
+//
+//
+//            }
+//
+//        }
 
 
 

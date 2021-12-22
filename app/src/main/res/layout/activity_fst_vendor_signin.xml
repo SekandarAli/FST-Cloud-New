@@ -31,8 +31,8 @@
 
 
             <ImageView
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:src="@drawable/signinlogo"
@@ -40,26 +40,26 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:layout_weight="0.55"
-            >
-            <Switch
-                android:id="@+id/switch_signIn_vendor"
-                style="@style/switch_signin"
-                android:background="@drawable/button"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:textStyle="bold"
-                android:text="Vendor"/>
+<!--        <LinearLayout-->
+<!--            android:layout_width="fill_parent"-->
+<!--            android:layout_height="fill_parent"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_weight="0.55"-->
+<!--            >-->
+<!--            <Switch-->
+<!--                android:id="@+id/switch_signIn_vendor"-->
+<!--                style="@style/switch_signin"-->
+<!--                android:background="@drawable/button"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:text="Vendor"/>-->
 
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
 
 
@@ -142,7 +142,7 @@
 
         <TextView
             android:id="@+id/tv3"
-            android:textSize="13sp"
+            android:textSize="18sp"
             android:gravity="center"
             android:text="Already Have An Account?"
             android:layout_height="30sp"
@@ -154,10 +154,10 @@
             android:id="@+id/vendor_signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
+            android:text="SignUp"
             android:textColor="@color/logo"
-            android:textStyle="bold"
-            android:text="SignUp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

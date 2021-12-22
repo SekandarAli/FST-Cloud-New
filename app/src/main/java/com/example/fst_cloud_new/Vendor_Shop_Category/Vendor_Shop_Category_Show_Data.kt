@@ -17,7 +17,7 @@ class Vendor_Shop_Category_Show_Data  : AppCompatActivity() {
     private lateinit var dbref : DatabaseReference
     private lateinit var DishRecycleview : RecyclerView
     private lateinit var DishArrayList : ArrayList<Vendor_Shop_Category_Model>
-    private lateinit var vendor_dish_search : ImageView
+    private lateinit var vendor_shop_search : ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,21 +26,17 @@ class Vendor_Shop_Category_Show_Data  : AppCompatActivity() {
 
 
 
-        var vendor_dish_recyclerview_back : Button = findViewById(R.id.vendor_dish_recyclerview_back)
         DishRecycleview = findViewById(R.id.vendor_shop_item_recyclerview)
         DishRecycleview.layoutManager = LinearLayoutManager(this)
         DishRecycleview.setHasFixedSize(true)
 
-        vendor_dish_search = findViewById(R.id.vendor_dish_search)
+        vendor_shop_search = findViewById(R.id.vendor_shop_search)
 
         DishArrayList = arrayListOf<Vendor_Shop_Category_Model>()
 
-        vendor_dish_recyclerview_back.setOnClickListener {
 
 
-        }
-
-        vendor_dish_search.setOnClickListener {
+        vendor_shop_search.setOnClickListener {
 
             intent = Intent(this, Searching_User::class.java)
             startActivity(intent)

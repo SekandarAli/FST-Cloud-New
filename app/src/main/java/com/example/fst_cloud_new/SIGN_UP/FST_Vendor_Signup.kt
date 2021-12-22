@@ -83,21 +83,21 @@ class FST_Vendor_Signup : AppCompatActivity() {
 //        })
 
 
-        val s2: Switch = findViewById(R.id.switch2)
-
-        s2.isChecked
-
-        s2.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-
-                s2.text = "Vendor"
-                intent = Intent(this, FSTSignUp::class.java)
-                startActivity(intent)
-
-
-            }
-
-        }
+//        val s2: Switch = findViewById(R.id.switch2)
+//
+//        s2.isChecked
+//
+//        s2.setOnCheckedChangeListener { buttonView, isChecked ->
+//            if (isChecked) {
+//
+//                s2.text = "Vendor"
+//                intent = Intent(this, FSTSignUp::class.java)
+//                startActivity(intent)
+//
+//
+//            }
+//
+//        }
 
 
         vendor_Password.setOnClickListener {

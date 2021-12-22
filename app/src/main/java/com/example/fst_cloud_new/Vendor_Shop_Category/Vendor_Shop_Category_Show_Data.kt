@@ -3,6 +3,7 @@ package com.example.fst_cloud_new.Vendor_Shop_Category
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
@@ -10,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SEARCH.Searching_User
+import com.example.fst_cloud_new.Vendor_Dish.Vendor_Dish_Add_Data
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.*
 
 class Vendor_Shop_Category_Show_Data  : AppCompatActivity() {
@@ -23,6 +26,16 @@ class Vendor_Shop_Category_Show_Data  : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vendor_shop_category_show_data)
+
+
+        val fab: View = findViewById(R.id.fab)
+        fab.setOnClickListener { view ->
+
+            var intent = Intent(this, Vendor_Dish_Add_Data::class.java)
+            startActivity(intent)
+        }
+
+
 
 
 

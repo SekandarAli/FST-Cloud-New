@@ -3,6 +3,7 @@ package com.example.fst_cloud_new.Vendor_Dish
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SEARCH.Searching_User
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.*
 
 class Vendor_Dish_Show_Data : AppCompatActivity() {
@@ -26,7 +28,15 @@ class Vendor_Dish_Show_Data : AppCompatActivity() {
 
 
 
-        var vendor_dish_recyclerview_back : Button = findViewById(R.id.vendor_dish_recyclerview_back)
+        val fab: View = findViewById(R.id.fab)
+        fab.setOnClickListener { view ->
+
+            var intent = Intent(this,Vendor_Dish_Add_Data::class.java)
+            startActivity(intent)
+        }
+
+
+      //  var vendor_dish_recyclerview_back : Button = findViewById(R.id.vendor_dish_recyclerview_back)
         DishRecycleview = findViewById(R.id.vendor_dish_recyclerview)
         DishRecycleview.layoutManager = LinearLayoutManager(this)
         DishRecycleview.setHasFixedSize(true)
@@ -35,11 +45,11 @@ class Vendor_Dish_Show_Data : AppCompatActivity() {
 
         DishArrayList = arrayListOf<Vendor_Dish_Model>()
 
-        vendor_dish_recyclerview_back.setOnClickListener {
-
-            intent = Intent(this, Vendor_Dish_Add_Data::class.java)
-            startActivity(intent)
-        }
+//        vendor_dish_recyclerview_back.setOnClickListener {
+//
+//            intent = Intent(this, Vendor_Dish_Add_Data::class.java)
+//            startActivity(intent)
+//        }
 
         vendor_dish_search.setOnClickListener {
 

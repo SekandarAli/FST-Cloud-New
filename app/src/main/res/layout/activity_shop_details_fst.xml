@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SHOP.ShopDetailsFST">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="false">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_weight="1.5">
+
+
+                <androidx.appcompat.widget.Toolbar
+
+                    android:id="@+id/toolbar"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/logo"
+                    android:minHeight="?attr/actionBarSize"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="4">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_back"
+                                android:id="@+id/back"
+                                android:backgroundTint="@color/logo"
+
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.5"
+                            >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Location here"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                ></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="4">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/ic_location"
+                                android:backgroundTint="@color/logo"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_location" />
+
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.appcompat.widget.Toolbar>
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.9"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/detailimage"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/f10" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chinese salad with sauce"
+                    android:textSize="20sp"
+                    android:id="@+id/detailname"
+                    android:textColor="@color/logo" />
+
+                <!--                <TextView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="Share to"-->
+                <!--                    android:gravity="bottom"-->
+                <!--                    android:textSize="15sp" />-->
+            </LinearLayout>
+
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="fill_parent"-->
+            <!--                android:layout_height="fill_parent"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                android:layout_weight="1.5"-->
+            <!--                android:gravity="center">-->
+
+
+            <!--                <ImageView-->
+            <!--                    style="@style/socialmediaicon"-->
+            <!--                    android:src="@drawable/facebook"></ImageView>-->
+
+            <!--                <ImageView-->
+            <!--                    style="@style/socialmediaicon"-->
+            <!--                    android:src="@drawable/google"></ImageView>-->
+
+            <!--                <ImageView-->
+            <!--                    style="@style/socialmediaicon"-->
+            <!--                    android:src="@drawable/twitter"></ImageView>-->
+
+
+            <!--            </LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1.2">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recipe Details"
+                    android:textSize="18sp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/logo"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detailDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This a great salad to have for a simple lunch or to serve with a nice dinner. Fresh ingredients make this salad very elegant and the wedge presentation makes it a great starter for a special occasion dinner. It is best to chill the dressing for 24 hours prior to serving."
+                    android:textSize="18sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="5dp" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Compare"
+                    android:id="@+id/btn_compare"
+                    android:layout_gravity="end"/>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1.4">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rate Food"
+                    android:textSize="18sp"
+                    android:textColor="@color/logo"
+                    android:textStyle="bold" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:outlineSpotShadowColor="@color/logo"
+                    android:outlineAmbientShadowColor="@color/logo"
+                    android:id="@+id/ratingBar"
+                    android:rating="4.6"
+
+                    />
+
+
+                <EditText
+                    android:id="@+id/ed_review"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:focusableInTouchMode="true"
+                    android:hint="Enter Comment..."
+                    android:singleLine="true"
+                    android:textColor="@color/logo"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"
+                    android:id="@+id/btn_submit"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All Reviews"
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recycle_retings"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,6 +1,8 @@
 package com.example.fst_cloud_new.SIGN_UP
 
+import android.annotation.SuppressLint
 import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -106,6 +108,7 @@ class FSTSignUp : AppCompatActivity() {
 
     }
 
+    @SuppressLint("WrongConstant", "CommitPrefEdits")
     private fun signup()
     {
 
@@ -201,6 +204,13 @@ class FSTSignUp : AppCompatActivity() {
                                                     Toast.LENGTH_SHORT
                                                 ).show()
 
+//Shared preferences get user name and retaurant/////////////////////////////////////////////////////////////////////
+                                               var  sharedPreferences = getSharedPreferences("get_username_on_signUp", Context.MODE_PRIVATE)
+                                                var myEdit = sharedPreferences.edit()
+                                                myEdit.putString("user_name",signupusername.text.toString())
+                                                myEdit.commit()
+
+                                                ///////////////////////////////////////////////////////////////////////
                                                 pd.dismiss()
 
                                             }.addOnFailureListener {

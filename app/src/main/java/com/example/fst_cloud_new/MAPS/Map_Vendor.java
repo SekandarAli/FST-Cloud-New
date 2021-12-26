@@ -61,24 +61,6 @@ public class Map_Vendor extends FragmentActivity implements OnMapReadyCallback {
 
 
 
-//       mMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
-//           @Override
-//           public void onMarkerDragStart(Marker marker) {
-//
-//           }
-//
-//           @Override
-//           public void onMarkerDrag(Marker marker) {
-//
-//           }
-//
-//           @Override
-//           public void onMarkerDragEnd(Marker marker) {
-//
-//           }
-//       });
-
-
 
 
 
@@ -103,6 +85,7 @@ public class Map_Vendor extends FragmentActivity implements OnMapReadyCallback {
 
                         databaseReference.child("latitude").push().setValue(editTextLatitude.getText().toString());
                         databaseReference.child("longitude").push().setValue(editTextLongitude.getText().toString());
+                        databaseReference.child("Title").push().setValue(location_name.getText().toString());
 
                     }
                 });

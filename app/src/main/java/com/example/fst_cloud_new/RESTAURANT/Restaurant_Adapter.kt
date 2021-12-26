@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fst_cloud_new.FOOD.FoodMainPageFST
@@ -42,6 +43,15 @@ class Restaurant_Adapter(var items : ArrayList<Restaurant_Model>, context
         holder.itemRating.setText(currentItem.resturant_location)
         Picasso.get().load(currentItem.resturant_image).into(holder.itemImage)
 
+        //onclick
+
+        holder.itemView.setOnClickListener(View.OnClickListener {
+            var intent = Intent(context, FoodMainPageFST::class.java)
+           // Toast.makeText(context, "" + currentItem.resturant_name, Toast.LENGTH_SHORT).show()
+            intent.putExtra("restaurant_name",currentItem.resturant_name)
+            startActivity(context,intent,null)
+        })
+
     }
 
 
@@ -52,10 +62,7 @@ class Restaurant_Adapter(var items : ArrayList<Restaurant_Model>, context
         var itemDescription: TextView
         var itemRating: TextView
 
-//        itemView.setOnClickListener(View.OnClickListener {
-//            intent = Intent(context,FoodMainPageFST::class.java)
-//            startActivity(intent)
-//        })
+
 
         init {
             itemImage = itemView.findViewById(R.id.image)
@@ -63,10 +70,7 @@ class Restaurant_Adapter(var items : ArrayList<Restaurant_Model>, context
             itemDescription = itemView.findViewById(R.id.description)
             itemRating = itemView.findViewById(R.id.rating)
 
-            itemView.setOnClickListener(View.OnClickListener {
-                var intent = Intent(context, FoodMainPageFST::class.java)
-                startActivity(context,intent,null)
-            })
+
 
         }
 

@@ -3,6 +3,7 @@ package com.example.fst_cloud_new.FOOD
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -39,6 +40,7 @@ class FoodMainPageFST : AppCompatActivity() {
     private lateinit var dbref : DatabaseReference
     private lateinit var DishRecycleview : RecyclerView
     private lateinit var DishArrayList : ArrayList<Vendor_Dish_Model>
+    private lateinit var recommend_DishArrayList : ArrayList<Vendor_Dish_Model>
     private lateinit var vendor_dish_search : ImageView
 
 
@@ -54,6 +56,8 @@ class FoodMainPageFST : AppCompatActivity() {
     lateinit var recycleViewcard: RecyclerView
     lateinit var vrecycleView: RecyclerView
 
+    var restaurant_namee : String = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,6 +66,10 @@ class FoodMainPageFST : AppCompatActivity() {
 
         supportActionBar?.hide()
 
+ var restaurant_name : String = intent.getStringExtra("restaurant_name").toString()
+        restaurant_namee = restaurant_name.trim()
+
+      // Toast.makeText(this, "restaurant = " + restaurant_name, Toast.LENGTH_SHORT).show()
 
 
         DishArrayList = arrayListOf<Vendor_Dish_Model>()
@@ -232,6 +240,7 @@ class FoodMainPageFST : AppCompatActivity() {
         getUserData()
 
 
+
     }
 
 
@@ -240,9 +249,45 @@ class FoodMainPageFST : AppCompatActivity() {
 
     fun getUserData(){
 
+
+        Toast.makeText(this, "restaurant_name =" +restaurant_namee, Toast.LENGTH_SHORT).show()
+        dbref = FirebaseDatabase.getInstance().getReference()
+        var query : Query = dbref.child("Dish").orderByChild("restaurant_name").equalTo(restaurant_namee)
+
+        query.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    for(userSnapShot in snapshot.children)
+                    {
+                        val dish = userSnapShot.getValue(Vendor_Dish_Model::class.java)
+                      //  dish_name = userSnapShot.child("dish_name").value.toString()
+                        DishArrayList.add(dish!!)
+                    }
+                    vrecycleView.adapter = Dish_Main_page_Adapter(this@FoodMainPageFST,DishArrayList)
+
+                }
+                else
+                {
+                    Toasty.error(this@FoodMainPageFST, "No data found!", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toasty.info(this@FoodMainPageFST, "Something went wrong", Toast.LENGTH_SHORT).show()
+
+
+            }
+        })
+
+
+    }
+
+    fun getRecommendUserData(){
+
+        recommend_DishArrayList = arrayListOf()
         var dish_name : String? = ""
         dbref = FirebaseDatabase.getInstance().getReference()
-        var query : Query = dbref.child("Dish/")
+        var query : Query = dbref.child("DishRating").child("biryani").child("Assad")
 
         query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -251,9 +296,10 @@ class FoodMainPageFST : AppCompatActivity() {
                     {
                         val dish = userSnapShot.getValue(Vendor_Dish_Model::class.java)
                         dish_name = userSnapShot.child("dish_name").value.toString()
-                        DishArrayList.add(dish!!)
+                        recommend_DishArrayList.add(dish!!)
                     }
-                    vrecycleView.adapter = Dish_Main_page_Adapter(this@FoodMainPageFST,DishArrayList)
+                    Log.d("assad",recommend_DishArrayList.toString())
+                   // vrecycleView.adapter = Dish_Main_page_Adapter(this@FoodMainPageFST,DishArrayList)
 
                 }
                 else

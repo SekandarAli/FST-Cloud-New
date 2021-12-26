@@ -19,6 +19,7 @@ class food_detail_ratingRecycle_adapter(var context : Context, var review_List :
        var currentItem = review_List[position]
         holder.rating.text  = currentItem.dish_rating
         holder.review.text  = currentItem.dish_review
+        holder.user_name.text = currentItem.userName
 
     }
 

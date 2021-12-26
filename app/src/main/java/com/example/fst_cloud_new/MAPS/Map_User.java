@@ -88,6 +88,7 @@ public class Map_User extends FragmentActivity implements OnMapReadyCallback {
 
                             mMap.addMarker(new MarkerOptions().position(latLng).title(latitude + " , " + longitude));
                             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                            mMap.getMaxZoomLevel();
 
 
                         } catch (Exception e) {

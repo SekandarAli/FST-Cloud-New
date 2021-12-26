@@ -1,6 +1,8 @@
 package com.example.fst_cloud_new.Vendor_Shop_Category
 
 import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fst_cloud_new.R
+import com.example.fst_cloud_new.SHOP.ShopDetailsFST
 import com.squareup.picasso.Picasso
 
 
@@ -46,7 +49,18 @@ ArrayList<Vendor_Shop_Category_Model>)
             Picasso.get().load(currentItem.shop_main_image).into(holder.shop_main_image)
         }
 
-        //Picasso.get().load(currentItem.shop_main_image).into(holder.shop_main_image)
+        holder.itemView.setOnClickListener({
+
+            val intent = Intent(context, ShopDetailsFST::class.java)
+            val bundle = Bundle()
+            bundle.putString("dish_name",currentItem.shop_main_name)
+            bundle.putString("dish_description",currentItem.shop_main_description)
+            bundle.putString("dish_image",currentItem.shop_main_image)
+            intent.putExtras(bundle)
+
+            context.startActivity(intent)
+
+        })
 
 
     }

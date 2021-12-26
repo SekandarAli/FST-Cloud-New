@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fst_cloud_new">
-
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the "MyLocation" functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,7 +17,27 @@
         android:roundIcon="@drawable/logoo"
         android:supportsRtl="true"
         android:theme="@style/Theme.FSTCloudNew">
-        <activity android:name=".VENDOR_Shop_AND_Restaurant.Vendor_Shop_Category_Main_Page"></activity>
+
+        <activity android:name=".MAPS.Map_data_holder_activity"></activity>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MAPS.Map_for_user"
+            android:label="@string/title_activity_map_for_user" />
+        <activity android:name=".SHOP.ShopDetailsFST" />
+        <activity android:name=".Compare.Comparision_Acivity" />
+        <activity android:name=".Compare.ShoeCompareAble" />
+        <activity android:name=".VENDOR_Shop_AND_Restaurant.Vendor_Shop_Category_Main_Page" />
         <activity android:name=".SIGN_UP.Restaurant_OR_Shop" />
         <activity android:name=".PROFILES.PrivacyPolicy" />
         <activity android:name=".PROFILES.Setting" />
@@ -28,18 +53,6 @@
         <activity
             android:name=".MAPS.Map_User"
             android:label="@string/title_activity_map_location" />
-        <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-        -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
-
         <activity android:name=".MAPS.Map_Vendor" />
         <activity android:name=".Vendor_Resturant.Vendor_Restaurant_Show_Data" />
         <activity android:name=".Start_Pages.Logo">

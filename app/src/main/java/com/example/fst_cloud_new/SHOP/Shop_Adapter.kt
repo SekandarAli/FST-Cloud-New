@@ -2,6 +2,7 @@ package com.example.fst_cloud_new.SHOP
 
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fst_cloud_new.FOOD.FoodDetailsFST
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.RESTAURANT.Restaurant_Model
 import com.squareup.picasso.Picasso
@@ -41,6 +43,8 @@ class Shop_Adapter (var items : ArrayList<Shop_Model>, context
         holder.itemRating.setText(currentItem.shop_location)
         Picasso.get().load(currentItem.shop_image).into(holder.itemImage)
 
+
+
     }
 
 
@@ -51,10 +55,7 @@ class Shop_Adapter (var items : ArrayList<Shop_Model>, context
         var itemDescription: TextView
         var itemRating: TextView
 
-//        itemView.setOnClickListener(View.OnClickListener {
-//            intent = Intent(context,FoodMainPageFST::class.java)
-//            startActivity(intent)
-//        })
+
 
         init {
             itemImage = itemView.findViewById(R.id.image)

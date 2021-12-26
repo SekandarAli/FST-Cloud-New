@@ -1,11 +1,15 @@
 package com.example.fst_cloud_new.FOOD
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fst_cloud_new.Compare.ShoeCompareAble
 import com.example.fst_cloud_new.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -23,7 +27,11 @@ class FoodDetailsFST : AppCompatActivity() {
     lateinit var rating_recycle : RecyclerView
     lateinit var adapter: food_detail_ratingRecycle_adapter
 
+    //shared preference variable username
+    var userName : String = ""
 
+
+    @SuppressLint("WrongConstant")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_details_fst)
@@ -44,9 +52,15 @@ class FoodDetailsFST : AppCompatActivity() {
         rating_recycle.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
 
 
+        val compare = findViewById<Button>(R.id.btn_compare).setOnClickListener {
+            compare()
+        }
 
+//get shared preferences
 
-
+        var sharedPreferences = getSharedPreferences("get_username_on_signUp", Context.MODE_APPEND)
+         userName = sharedPreferences.getString("user_name","anonymous").toString()
+        Toast.makeText(this, "name = " + userName, Toast.LENGTH_SHORT).show()
 
 
 
@@ -84,7 +98,7 @@ class FoodDetailsFST : AppCompatActivity() {
 
         var dish_rating = ratingBar.rating.toString()
         var dish_review = review.text.toString()
-        var userName = "Assad"
+
 
         var model = food_detail_model(dish_rating,dish_review,userName)
 
@@ -132,6 +146,20 @@ class FoodDetailsFST : AppCompatActivity() {
 
         adapter = food_detail_ratingRecycle_adapter(this@FoodDetailsFST,rating_review_list)
         rating_recycle.adapter = adapter
+        rating_recycle.addItemDecoration(
+            DividerItemDecoration(
+                this,
+                LinearLayoutManager.HORIZONTAL
+            )
+        )
+
+    }
+
+    fun compare()
+    {
+        val intent  = Intent(this, ShoeCompareAble::class.java)
+        startActivity(intent)
+
     }
 }
 

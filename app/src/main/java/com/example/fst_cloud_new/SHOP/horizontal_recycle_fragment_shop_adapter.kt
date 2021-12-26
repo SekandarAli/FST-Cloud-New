@@ -37,10 +37,7 @@ class horizontal_recycle_fragment_shop_adapter (var items : ArrayList<horizontal
         holder.itemName.text = items[position].name
         holder.itemImage.setImageResource(items[position].image)
 
-//        holder.itemView.setOnClickListener(View.OnClickListener {
-//            var intent = Intent(context, FoodMainPageFST::class.java)
-//            context.startActivity(intent)
-//        })
+
 
     }
 
@@ -56,7 +53,7 @@ class horizontal_recycle_fragment_shop_adapter (var items : ArrayList<horizontal
 
             itemView.setOnClickListener(View.OnClickListener {
                 var intent = Intent(context, ShopMainPageFST::class.java)
-                startActivity(context, intent, null)
+                //startActivity(context, intent, null)
             })
 
         }

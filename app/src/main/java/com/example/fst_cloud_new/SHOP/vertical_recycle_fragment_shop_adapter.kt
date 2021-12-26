@@ -2,6 +2,7 @@ package com.example.fst_cloud_new.SHOP
 
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,12 +33,18 @@ class vertical_recycle_fragment_shop_adapter(var items : ArrayList<vertical_recy
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+        var currentItem = items[position]
         holder.itemName.text = items[position].resturant_name
         holder.itemDescription.text = items[position].resturant_description
         holder.itemRating.text = items[position].resturant_location
         holder.itemImage.setImageResource(items[position].resturant_image)
 
+
+
+
     }
+
 
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

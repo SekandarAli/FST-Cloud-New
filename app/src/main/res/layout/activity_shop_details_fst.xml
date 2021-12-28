@@ -4,14 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SHOP.ShopDetailsFST">
+    tools:context=".SHOP.ShopDetailsFST"
+    android:background="@color/background">
 
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fillViewport="false">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,38 +53,38 @@
                                 />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="1.5"
-                            >
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="fill_parent"-->
+<!--                            android:layout_height="fill_parent"-->
+<!--                            android:layout_weight="1.5"-->
+<!--                            >-->
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="Location here"
-                                android:textSize="20sp"
-                                android:textStyle="bold"
-                                android:gravity="center"
-                                ></TextView>
-                        </LinearLayout>
+<!--                            <TextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:text="Location here"-->
+<!--                                android:textSize="20sp"-->
+<!--                                android:textStyle="bold"-->
+<!--                                android:gravity="center"-->
+<!--                                ></TextView>-->
+<!--                        </LinearLayout>-->
 
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="4">
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="fill_parent"-->
+<!--                            android:layout_height="fill_parent"-->
+<!--                            android:layout_weight="4">-->
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:drawableRight="@drawable/ic_location"
-                                android:backgroundTint="@color/logo"
-                                android:layout_gravity="center"
-                                android:src="@drawable/ic_location" />
+<!--                            <ImageView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:drawableRight="@drawable/ic_location"-->
+<!--                                android:backgroundTint="@color/logo"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:src="@drawable/ic_location" />-->
 
 
 
-                        </LinearLayout>
+<!--                        </LinearLayout>-->
                     </LinearLayout>
                 </androidx.appcompat.widget.Toolbar>
 
@@ -118,37 +116,11 @@
                     android:id="@+id/detailname"
                     android:textColor="@color/logo" />
 
-                <!--                <TextView-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:text="Share to"-->
-                <!--                    android:gravity="bottom"-->
-                <!--                    android:textSize="15sp" />-->
+
             </LinearLayout>
 
 
-            <!--            <LinearLayout-->
-            <!--                android:layout_width="fill_parent"-->
-            <!--                android:layout_height="fill_parent"-->
-            <!--                android:layout_gravity="center"-->
-            <!--                android:layout_weight="1.5"-->
-            <!--                android:gravity="center">-->
 
-
-            <!--                <ImageView-->
-            <!--                    style="@style/socialmediaicon"-->
-            <!--                    android:src="@drawable/facebook"></ImageView>-->
-
-            <!--                <ImageView-->
-            <!--                    style="@style/socialmediaicon"-->
-            <!--                    android:src="@drawable/google"></ImageView>-->
-
-            <!--                <ImageView-->
-            <!--                    style="@style/socialmediaicon"-->
-            <!--                    android:src="@drawable/twitter"></ImageView>-->
-
-
-            <!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -183,7 +155,7 @@
                     android:layout_height="wrap_content"
                     android:text="Compare"
                     android:id="@+id/btn_compare"
-                    android:layout_gravity="end"/>
+                    android:layout_gravity="center"/>
 
 
 
@@ -237,21 +209,29 @@
                     android:text="Submit"
                     android:id="@+id/btn_submit"
                     />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="All Reviews"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
 
+            </LinearLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All Reviews"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true">
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/recycle_retings"/>
+            </ScrollView>
 
-            </LinearLayout>
+
+
         </LinearLayout>
-    </ScrollView>
+
 
 </LinearLayout>

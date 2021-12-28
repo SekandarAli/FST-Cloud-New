@@ -49,43 +49,45 @@
                         />
                 </LinearLayout>
 
+<!--                <LinearLayout-->
+<!--                    android:layout_width="fill_parent"-->
+<!--                    android:layout_height="fill_parent"-->
+<!--                    android:layout_weight="1.5"-->
+<!--                    >-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:text="Location here"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:gravity="center"-->
+<!--                        ></TextView>-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="fill_parent"-->
+<!--                    android:layout_height="fill_parent"-->
+<!--                    android:layout_weight="4">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:drawableRight="@drawable/ic_location"-->
+<!--                        android:backgroundTint="@color/logo"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:src="@drawable/ic_location"-->
+<!--                        android:id="@+id/location"/>-->
+
+
+
+<!--                </LinearLayout>-->
+
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1.5"
-                    >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Location here"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        ></TextView>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="4">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableRight="@drawable/ic_location"
-                        android:backgroundTint="@color/logo"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_location"
-                        android:id="@+id/location"/>
-
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_marginRight="20dp"
+                    android:gravity="end"
                     android:layout_weight="4">
                     <ImageView
                         android:layout_width="wrap_content"

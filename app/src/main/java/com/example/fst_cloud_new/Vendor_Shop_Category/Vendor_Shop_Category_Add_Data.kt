@@ -1,5 +1,7 @@
 package com.example.fst_cloud_new.Vendor_Shop_Category
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -48,6 +50,9 @@ class Vendor_Shop_Category_Add_Data : AppCompatActivity() {
     lateinit var db: FirebaseStorage
     lateinit var Storageref: StorageReference
     lateinit var filepath: Uri
+
+    //shared preferences
+    var shopName : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -104,6 +109,7 @@ class Vendor_Shop_Category_Add_Data : AppCompatActivity() {
     }
 
 
+    @SuppressLint("WrongConstant")
     fun Add_Data() {
 
         //Real Time data base Initialization code
@@ -154,10 +160,15 @@ class Vendor_Shop_Category_Add_Data : AppCompatActivity() {
 
                         var shop_main_image = downloadUri.toString()
 
+//shared preferences get Shop name
+                        var restaurantNamesharedP = getSharedPreferences("shop_name", Context.MODE_APPEND)
+
+                        shopName = restaurantNamesharedP.getString("shop_name","anonymous").toString()
+                        /////////////////////////////////////////////////////////////////////////////////
 
                         var model =
                             Vendor_Shop_Category_Model(shop_main_name ,shop_main_image,
-                                shop_main_description, shop_main_price)
+                                shop_main_description, shop_main_price,shopName)
                         reference!!.child(shop_main_name).setValue(model).addOnCompleteListener {
                             Toasty.success(this, "Data Uploaded Successfully", Toast.LENGTH_SHORT)
                                 .show()

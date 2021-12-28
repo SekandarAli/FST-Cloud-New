@@ -7,6 +7,7 @@ import android.text.method.HideReturnsTransformationMethod
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fst_cloud_new.HOMEPAGE.HOMEPAGE
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SIGN_IN.FST_Vendor_Signin
 import com.example.fst_cloud_new.Vendor_Resturant.Vendor_Resturant_Add_Data
@@ -49,6 +50,8 @@ class FST_Vendor_Signup : AppCompatActivity() {
         vendor_signup_imageView = findViewById(R.id.vendor_signup_imageView)
 
         val vendor_signin: TextView = findViewById(R.id.vendor_signin)
+
+
 
 
 
@@ -203,6 +206,8 @@ class FST_Vendor_Signup : AppCompatActivity() {
                                                     "Successfully added in DB",
                                                     Toast.LENGTH_SHORT
                                                 ).show()
+
+
 
                                                 pd.dismiss()
 

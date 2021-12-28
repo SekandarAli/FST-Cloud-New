@@ -87,7 +87,7 @@ class Searching_User : AppCompatActivity() {
 
 
         dbref = FirebaseDatabase.getInstance().getReference()
-        var query: Query = dbref.child("Dish").orderByChild("dish_price").equalTo("680")
+        var query: Query = dbref.child("Dish").orderByChild("dish_name").equalTo(search_text.trim())
 
         query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {

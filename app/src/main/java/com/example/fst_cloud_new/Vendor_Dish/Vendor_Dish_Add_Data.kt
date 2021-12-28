@@ -1,5 +1,7 @@
 package com.example.fst_cloud_new.Vendor_Dish
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -48,6 +50,9 @@ class Vendor_Dish_Add_Data : AppCompatActivity() {
     lateinit var db: FirebaseStorage
     lateinit var Storageref: StorageReference
     lateinit var filepath: Uri
+
+    //shared preferences var
+    var restaurantName : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -104,6 +109,7 @@ class Vendor_Dish_Add_Data : AppCompatActivity() {
     }
 
 
+    @SuppressLint("WrongConstant")
     fun Add_Data() {
 
         //Real Time data base Initialization code
@@ -153,10 +159,14 @@ class Vendor_Dish_Add_Data : AppCompatActivity() {
                         val downloadUri = task.result
 
                         var dish_image = downloadUri.toString()
+//shared preferences get restaurant name
+                        var restaurantNamesharedP = getSharedPreferences("vendor_restaurantName", Context.MODE_APPEND)
+
+                        restaurantName = restaurantNamesharedP.getString("restaurant_name","anonymous").toString()
 
 
                         var model =
-                            Vendor_Dish_Model(dish_name, dish_image, dish_description, dish_price)
+                            Vendor_Dish_Model(dish_name, dish_image, dish_description, dish_price,restaurantName)
                         reference!!.child(dish_name).setValue(model).addOnCompleteListener {
                             Toasty.success(this, "Data Uploaded Successfully", Toast.LENGTH_SHORT)
                                 .show()

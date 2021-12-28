@@ -19,6 +19,8 @@ class FoodDetailsFST : AppCompatActivity() {
 
     lateinit var ratingBar: RatingBar
     lateinit var detailname : TextView
+    lateinit var detaildescription : TextView
+    lateinit var detailimage : ImageView
     var root_Node: FirebaseDatabase? = null
     var reference: DatabaseReference? = null
     lateinit var mAuth: FirebaseAuth
@@ -29,7 +31,12 @@ class FoodDetailsFST : AppCompatActivity() {
 
     //shared preference variable username
     var userName : String = ""
+    var restaurantName : String = ""
+    var shopName : String = ""
 
+
+
+    var image : String = ""
 
     @SuppressLint("WrongConstant")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,9 +47,10 @@ class FoodDetailsFST : AppCompatActivity() {
         rating_review_list = ArrayList()
         mAuth = FirebaseAuth.getInstance()
         val back : ImageView = findViewById(R.id.back)
-        val detailimage : ImageView = findViewById(R.id.detailimage)
+        detailimage = findViewById(R.id.detailimage)
+
         detailname = findViewById(R.id.detailname)
-        val detaildescription : TextView = findViewById(R.id.detailDescription)
+        detaildescription  = findViewById(R.id.detailDescription)
         ratingBar = findViewById(R.id.ratingBar)
         review = findViewById(R.id.ed_review)
         var btn_submit = findViewById<Button>(R.id.btn_submit)
@@ -58,9 +66,16 @@ class FoodDetailsFST : AppCompatActivity() {
 
 //get shared preferences
 
-        var sharedPreferences = getSharedPreferences("get_username_on_signUp", Context.MODE_APPEND)
-         userName = sharedPreferences.getString("user_name","anonymous").toString()
-        Toast.makeText(this, "name = " + userName, Toast.LENGTH_SHORT).show()
+        var userNamesharedP = getSharedPreferences("get_username_on_signUp", Context.MODE_APPEND)
+         userName = userNamesharedP.getString("user_name","anonymous").toString()
+
+
+
+        var shopNamesharedP = getSharedPreferences("shop_name", Context.MODE_APPEND)
+         shopName = shopNamesharedP.getString("shop_name","anonymous").toString()
+
+
+        Toast.makeText(this, "name = " + userName +" " + restaurantName +" "+ shopName, Toast.LENGTH_SHORT).show()
 
 
 
@@ -70,7 +85,7 @@ class FoodDetailsFST : AppCompatActivity() {
         val bundle = intent.extras
         val name= bundle?.getString("dish_name")
         val description= bundle?.getString("dish_description")
-        val image = bundle?.getString("dish_image")
+         image = bundle?.getString("dish_image").toString()
 
         detailname.text = name.toString()
         detaildescription.text = description.toString()
@@ -127,8 +142,18 @@ class FoodDetailsFST : AppCompatActivity() {
                     }
 
 
+                    adapter = food_detail_ratingRecycle_adapter(this@FoodDetailsFST,rating_review_list)
+                    rating_recycle.adapter = adapter
+                    rating_recycle.addItemDecoration(
+                        DividerItemDecoration(
+                            this@FoodDetailsFST,
+                            LinearLayoutManager.HORIZONTAL
+                        )
+                    )
 
-                    Toast.makeText(this@FoodDetailsFST, "rating = " + rating_review_list[0].dish_rating, Toast.LENGTH_SHORT).show()
+
+
+                  //  Toast.makeText(this@FoodDetailsFST, "rating = " + rating_review_list[0].dish_rating, Toast.LENGTH_SHORT).show()
                 }
 
                 else
@@ -144,20 +169,17 @@ class FoodDetailsFST : AppCompatActivity() {
             }
         })
 
-        adapter = food_detail_ratingRecycle_adapter(this@FoodDetailsFST,rating_review_list)
-        rating_recycle.adapter = adapter
-        rating_recycle.addItemDecoration(
-            DividerItemDecoration(
-                this,
-                LinearLayoutManager.HORIZONTAL
-            )
-        )
 
     }
 
     fun compare()
     {
         val intent  = Intent(this, ShoeCompareAble::class.java)
+
+        intent.putExtra("name",detailname.text.toString())
+        intent.putExtra("description",detaildescription.text.toString())
+        intent.putExtra("image",image)
+
         startActivity(intent)
 
     }

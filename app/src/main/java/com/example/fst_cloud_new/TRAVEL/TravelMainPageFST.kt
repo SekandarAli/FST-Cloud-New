@@ -34,7 +34,7 @@ class TravelMainPageFST : AppCompatActivity() {
         supportActionBar?.hide()
 
         val back : ImageView = findViewById(R.id.back)
-        val location : ImageView = findViewById(R.id.location)
+      //  val location : ImageView = findViewById(R.id.location)
         val travel_search : ImageView = findViewById(R.id.travel_search)
 
         back.setOnClickListener{
@@ -42,11 +42,11 @@ class TravelMainPageFST : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-        location.setOnClickListener{
-            intent = Intent(this, Map_User::class.java)
-            startActivity(intent)
-        }
+//
+//        location.setOnClickListener{
+//            intent = Intent(this, Map_User::class.java)
+//            startActivity(intent)
+//        }
 
         travel_search.setOnClickListener{
             intent = Intent(this, Searching_User::class.java)

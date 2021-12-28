@@ -11,7 +11,7 @@ import com.squareup.picasso.Picasso
 class Comparision_Acivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_comparision_acivity)
+        setContentView(R.layout.activity_comparison)
 
 //Dish 1 Views
         var tv_dish1_name = findViewById<TextView>(R.id.dish1_name)

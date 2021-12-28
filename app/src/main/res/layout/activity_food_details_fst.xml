@@ -59,38 +59,38 @@
                                 />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="1.5"
-                            >
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="fill_parent"-->
+<!--                            android:layout_height="fill_parent"-->
+<!--                            android:layout_weight="1.5"-->
+<!--                            >-->
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="Location here"
-                                android:textSize="20sp"
-                                android:textStyle="bold"
-                                android:gravity="center"
-                                ></TextView>
-                        </LinearLayout>
+<!--                            <TextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:text="Location here"-->
+<!--                                android:textSize="20sp"-->
+<!--                                android:textStyle="bold"-->
+<!--                                android:gravity="center"-->
+<!--                                ></TextView>-->
+<!--                        </LinearLayout>-->
 
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="4">
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="fill_parent"-->
+<!--                            android:layout_height="fill_parent"-->
+<!--                            android:layout_weight="4">-->
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:drawableRight="@drawable/ic_location"
-                                android:backgroundTint="@color/logo"
-                                android:layout_gravity="center"
-                                android:src="@drawable/ic_location" />
+<!--                            <ImageView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:drawableRight="@drawable/ic_location"-->
+<!--                                android:backgroundTint="@color/logo"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:src="@drawable/ic_location" />-->
 
 
 
-                        </LinearLayout>
+<!--                        </LinearLayout>-->
                     </LinearLayout>
                 </androidx.appcompat.widget.Toolbar>
 
@@ -187,7 +187,7 @@
                     android:layout_height="wrap_content"
                     android:text="Compare"
                     android:id="@+id/btn_compare"
-                    android:layout_gravity="end"/>
+                    android:layout_gravity="center"/>
 
 
 

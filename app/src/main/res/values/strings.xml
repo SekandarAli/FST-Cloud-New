@@ -42,6 +42,7 @@ The terms used in this Privacy Policy have the same meanings as in our Terms and
         Link to the privacy policy of third-party service providers used by the app.
     </string>
     <string name="title_activity_map_for_user">Map</string>
+    <string name="title_activity_map2">Map</string>
 </resources>
 
 

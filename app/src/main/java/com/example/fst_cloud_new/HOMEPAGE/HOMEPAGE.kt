@@ -20,16 +20,13 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.fst_cloud_new.FOOD.FoodFragment
-import com.example.fst_cloud_new.MAPS.Map_User
 import com.example.fst_cloud_new.MAPS.Map_data_holder_activity
-import com.example.fst_cloud_new.MAPS.Map_for_user
 import com.example.fst_cloud_new.PROFILES.About
 import com.example.fst_cloud_new.PROFILES.Contact
 import com.example.fst_cloud_new.PROFILES.PrivacyPolicy
 import com.example.fst_cloud_new.PROFILES.Setting
 import com.example.fst_cloud_new.Profile_Data.Profile_Model
 import com.example.fst_cloud_new.R
-import com.example.fst_cloud_new.SEARCH.Searching_User
 import com.example.fst_cloud_new.SHOP.ShopFragment
 import com.example.fst_cloud_new.Start_Pages.FSTRegisterPage
 import com.example.fst_cloud_new.TRAVEL.TravelFragment
@@ -108,7 +105,7 @@ class HOMEPAGE : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
 
 
         val locationn : ImageView = findViewById(R.id.locationn)
-        val search : ImageView = findViewById(R.id.main_search)
+      //  val search : ImageView = findViewById(R.id.main_search)
 
 
         locationn.setOnClickListener{
@@ -117,10 +114,10 @@ class HOMEPAGE : AppCompatActivity() , NavigationView.OnNavigationItemSelectedLi
         }
 
 
-        search.setOnClickListener{
-            intent = Intent(this, Searching_User::class.java)
-            startActivity(intent)
-        }
+//        search.setOnClickListener{
+//            intent = Intent(this, Searching_User::class.java)
+//            startActivity(intent)
+//        }
 
 
 

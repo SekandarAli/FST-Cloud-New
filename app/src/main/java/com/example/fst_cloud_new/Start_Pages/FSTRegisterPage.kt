@@ -56,6 +56,8 @@ class FSTRegisterPage : AppCompatActivity() {
 
         continue_vendor.setOnClickListener(View.OnClickListener {
 
+
+
             intent = Intent(this, FST_Vendor_Signin::class.java)
             startActivity(intent)
         })

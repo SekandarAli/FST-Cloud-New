@@ -13,6 +13,8 @@ import com.example.fst_cloud_new.Vendor_Dish.Vendor_Dish_Adapter
 import com.example.fst_cloud_new.Vendor_Dish.Vendor_Dish_Model
 import com.example.fst_cloud_new.Vendor_Resturant.Vendor_Resturant_Adapter
 import com.example.fst_cloud_new.Vendor_Resturant.Vendor_Resturant_Model
+import com.example.fst_cloud_new.Vendor_Shop_Category.Vendor_Shop_Category_Adapter
+import com.example.fst_cloud_new.Vendor_Shop_Category.Vendor_Shop_Category_Model
 import com.google.firebase.database.*
 import es.dmoral.toasty.Toasty
 
@@ -20,7 +22,7 @@ class Searching_Vendor : AppCompatActivity() {
 
     private lateinit var dbref : DatabaseReference
     private lateinit var DishRecycleview : RecyclerView
-    private lateinit var DishArrayList : ArrayList<Vendor_Resturant_Model>
+    private lateinit var DishArrayList : ArrayList<Vendor_Shop_Category_Model>
     private lateinit var search_text : String
 
 
@@ -32,13 +34,13 @@ class Searching_Vendor : AppCompatActivity() {
         DishRecycleview.layoutManager = LinearLayoutManager(this)
         DishRecycleview.setHasFixedSize(true)
 
-        DishArrayList = arrayListOf<Vendor_Resturant_Model>()
+        DishArrayList = arrayListOf<Vendor_Shop_Category_Model>()
 
         var tv_search_text = findViewById<AutoCompleteTextView>(R.id.ed_search_text)
 
 
         val suggestions = arrayOf("KFC","Saif Bakers","Coffee house and grill",
-            "De Minister Cafe","Pizza hut \uD83D\uDED6","Mc Donald","Cafe")
+            "De Minister Cafe")
 
         val adapter: ArrayAdapter<*> =
             ArrayAdapter<Any?>(this, android.R.layout.simple_list_item_1, suggestions)
@@ -72,18 +74,18 @@ class Searching_Vendor : AppCompatActivity() {
 
 
         dbref = FirebaseDatabase.getInstance().getReference()
-        var query : Query = dbref.child("Restaurant").orderByChild("resturant_name").equalTo(search_text)
+        var query : Query = dbref.child("Shopmain").orderByChild("shop_main_name").equalTo(search_text)
 
         query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
                     for(userSnapShot in snapshot.children)
                     {
-                        val dish = userSnapShot.getValue(Vendor_Resturant_Model::class.java)
+                        val dish = userSnapShot.getValue(Vendor_Shop_Category_Model::class.java)
 
                         DishArrayList.add(dish!!)
                     }
-                    DishRecycleview.adapter = Vendor_Resturant_Adapter(this@Searching_Vendor,DishArrayList)
+                    DishRecycleview.adapter = Vendor_Shop_Category_Adapter(this@Searching_Vendor,DishArrayList)
 
                 }
                 else

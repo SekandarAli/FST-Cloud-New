@@ -79,7 +79,7 @@ class FoodMainPageFST : AppCompatActivity() {
 
 
         val back : ImageView = findViewById(R.id.back)
-        val location : ImageView = findViewById(R.id.location)
+        //val location : ImageView = findViewById(R.id.location)
         val food_search : ImageView = findViewById(R.id.food_search)
 
         back.setOnClickListener{
@@ -87,11 +87,11 @@ class FoodMainPageFST : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-        location.setOnClickListener{
-            intent = Intent(this, Map_User::class.java)
-            startActivity(intent)
-        }
+//
+//        location.setOnClickListener{
+//            intent = Intent(this, Map_User::class.java)
+//            startActivity(intent)
+//        }
 
         food_search.setOnClickListener{
             intent = Intent(this, Searching_User::class.java)

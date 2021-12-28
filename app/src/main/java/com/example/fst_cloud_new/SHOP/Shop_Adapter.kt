@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fst_cloud_new.FOOD.FoodDetailsFST
+import com.example.fst_cloud_new.FOOD.FoodMainPageFST
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.RESTAURANT.Restaurant_Model
 import com.squareup.picasso.Picasso
@@ -43,7 +44,14 @@ class Shop_Adapter (var items : ArrayList<Shop_Model>, context
         holder.itemRating.setText(currentItem.shop_location)
         Picasso.get().load(currentItem.shop_image).into(holder.itemImage)
 
+//onclick
 
+        holder.itemView.setOnClickListener(View.OnClickListener {
+            var intent = Intent(context, ShopMainPageFST::class.java)
+            // Toast.makeText(context, "" + currentItem.resturant_name, Toast.LENGTH_SHORT).show()
+            intent.putExtra("shop_name",currentItem.shop_name)
+            startActivity(context,intent,null)
+        })
 
     }
 
@@ -63,10 +71,7 @@ class Shop_Adapter (var items : ArrayList<Shop_Model>, context
             itemDescription = itemView.findViewById(R.id.description)
             itemRating = itemView.findViewById(R.id.rating)
 
-            itemView.setOnClickListener(View.OnClickListener {
-                var intent = Intent(context, ShopMainPageFST::class.java)
-                startActivity(context,intent,null)
-            })
+
 
         }
 

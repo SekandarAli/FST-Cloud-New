@@ -1,7 +1,9 @@
 package com.example.fst_cloud_new.Vendor_Shop
 
 
+import android.annotation.SuppressLint
 import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -13,16 +15,18 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fst_cloud_new.MAPS.Map_Vendor
+import com.example.fst_cloud_new.MAPS.Map_Vendor_shop
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SIGN_UP.FST_Vendor_Signup
 import com.example.fst_cloud_new.VENDOR_Shop_AND_Restaurant.Vendor_Dish_Main_Page
 import com.example.fst_cloud_new.VENDOR_Shop_AND_Restaurant.Vendor_Shop_Category_Main_Page
+import com.example.fst_cloud_new.Vendor_Dish.Vendor_Dish_Add_Data
 import com.example.fst_cloud_new.Vendor_Shop_Category.Vendor_Shop_Category_Add_Data
+import com.example.fst_cloud_new.Verification.verification_model
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
@@ -65,6 +69,8 @@ class Vendor_Shop_Add_Data : AppCompatActivity() {
         setContentView(R.layout.activity_vendor_shop_add_data)
 
 
+        isUserVerified()
+
         vendor_add_shop_category_data = findViewById(R.id.vendor_add_shop_category_data)
 
         vendor_add_shop_category_data.setOnClickListener {
@@ -102,7 +108,7 @@ class Vendor_Shop_Add_Data : AppCompatActivity() {
 
         vendor_Location_data.setOnClickListener{
 
-            intent = Intent(this, Map_Vendor::class.java)
+            intent = Intent(this, Map_Vendor_shop::class.java)
             startActivity(intent)
         }
 
@@ -166,6 +172,15 @@ class Vendor_Shop_Add_Data : AppCompatActivity() {
                             .show()
 
 
+                        //Shared preferences get user name and retaurant/////////////////////////////////////////////////////////////////////
+                        var  sharedPreferences = getSharedPreferences("shop_name", Context.MODE_PRIVATE)
+                        var myEdit = sharedPreferences.edit()
+                        myEdit.putString("shop_name",shop_name)
+                        myEdit.putString("isRegistered","true")
+                        myEdit.commit()
+
+                        ///////////////////////////////////////////////////////////////////////
+
                         vendor_shop_name.setText("")
                         vendor_shop_description.setText("")
                         vendor_shop_location.setText("")
@@ -189,6 +204,8 @@ class Vendor_Shop_Add_Data : AppCompatActivity() {
                         vendor_Location_data.isClickable = false
                         vendor_Location_data.isEnabled = false
 
+
+                        sendVerification("false",shop_name)
 
                     }.addOnFailureListener {
                         Toasty.error(
@@ -243,6 +260,77 @@ class Vendor_Shop_Add_Data : AppCompatActivity() {
 
 
         }
+    }
+
+    fun sendVerification(isVerified:String,name:String){
+
+
+
+        reference = root_Node!!.getReference("Verification")
+
+        var model = verification_model(name,isVerified)
+
+        reference!!.child(name).setValue(model)
+
+
+
+    }
+
+    @SuppressLint("WrongConstant")
+    fun isUserVerified(){
+
+
+
+
+
+
+        var isVerified = ""
+
+        var restaurantNamesharedP = getSharedPreferences("shop_name", Context.MODE_APPEND)
+
+        var isRegistered = restaurantNamesharedP.getString("isRegistered","false").toString()
+        var shop_name = restaurantNamesharedP.getString("shop_name","anonymous").toString()
+
+        reference = FirebaseDatabase.getInstance().getReference()
+
+        var query = reference!!.child("Verification").child(shop_name)
+
+        query.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()){
+
+                    isVerified = snapshot.child("verified").getValue().toString()
+                    Toasty.success(this@Vendor_Shop_Add_Data, "value = " + isVerified, Toast.LENGTH_SHORT).show()
+
+
+                }
+
+                if(isVerified.equals("true")){
+
+                    Toasty.success(this@Vendor_Shop_Add_Data, "You are Verified now you can Add Data " , Toast.LENGTH_LONG).show()
+
+
+                    var intent = Intent(this@Vendor_Shop_Add_Data, Vendor_Shop_Category_Add_Data::class.java)
+                    startActivity(intent)
+                }
+
+                else{
+                    Toast.makeText(this@Vendor_Shop_Add_Data, "verified = " + isVerified + "not verified yet" , Toast.LENGTH_SHORT).show()
+
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@Vendor_Shop_Add_Data, "something went wrong", Toast.LENGTH_SHORT).show()
+            }
+
+        })
+
+
+
+
+
+
     }
 }
 

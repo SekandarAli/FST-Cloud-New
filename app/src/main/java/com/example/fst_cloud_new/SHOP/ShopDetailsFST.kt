@@ -103,6 +103,8 @@ class ShopDetailsFST : AppCompatActivity() {
                         }
 
                     }
+                    adapter = shop_detail_ratingRecycle_adapter(this@ShopDetailsFST,rating_review_list)
+                    rating_recycle.adapter = adapter
 
 
 
@@ -122,7 +124,6 @@ class ShopDetailsFST : AppCompatActivity() {
             }
         })
 
-        adapter = shop_detail_ratingRecycle_adapter(this,rating_review_list)
-        rating_recycle.adapter = adapter
+
     }
 }

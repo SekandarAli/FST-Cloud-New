@@ -7,6 +7,7 @@ class Shop_Model {
     var shop_description = ""
     var shop_image = ""
     var shop_location = ""
+    var restaurant_name : String = ""
 
 
 
@@ -16,6 +17,7 @@ class Shop_Model {
         this.shop_description = description
         this.shop_location = rating
         this.shop_image = image
+        //this.restaurant_name = restaurant
     }
     constructor(){
 

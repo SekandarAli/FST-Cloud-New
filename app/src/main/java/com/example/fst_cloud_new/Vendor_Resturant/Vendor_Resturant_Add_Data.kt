@@ -1,6 +1,8 @@
 package com.example.fst_cloud_new.Vendor_Resturant
 
+import android.annotation.SuppressLint
 import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -18,11 +20,11 @@ import com.example.fst_cloud_new.SIGN_UP.FST_Vendor_Signup
 import com.example.fst_cloud_new.VENDOR_Shop_AND_Restaurant.Vendor_Dish_Main_Page
 import com.example.fst_cloud_new.Vendor_Dish.Vendor_Dish_Add_Data
 import com.example.fst_cloud_new.Vendor_Dish.Vendor_Dish_Show_Data
+import com.example.fst_cloud_new.Verification.verification_model
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
@@ -63,6 +65,8 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vendor_resturant_add_data)
+
+        isUserVerified()
 
 
         vendor_add_dish_data = findViewById(R.id.vendor_add_dish_data)
@@ -190,6 +194,15 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
                         Toasty.success(this, "Data Uploaded Successfully", Toast.LENGTH_SHORT)
                             .show()
 
+                        //Shared preferences get user name and retaurant/////////////////////////////////////////////////////////////////////
+                        var  sharedPreferences = getSharedPreferences("vendor_restaurantName", Context.MODE_PRIVATE)
+                        var myEdit = sharedPreferences.edit()
+                        myEdit.putString("restaurant_name",resturant_name.toString())
+                        myEdit.putString("isRegistered","true")
+                        myEdit.commit()
+
+
+                        ///////////////////////////////////////////////////////////////////////
 
 
                         vendor_resturant_name.setText("")
@@ -212,9 +225,13 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
                         vendor_Location_data.isClickable = false
                         vendor_Location_data.isEnabled = false
 
+                        sendVerification("false",resturant_name)
 
                         Toasty.info(this, "Please wait for the confirmation of your restaurant data, a notification will be send to you after confirmation",
                             Toast.LENGTH_LONG).show()
+
+
+
 
 
 
@@ -271,6 +288,78 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
 
 
         }
+    }
+
+    fun sendVerification(isVerified:String,name:String){
+
+
+
+        reference = root_Node!!.getReference("Verification")
+
+        var model = verification_model(name,isVerified)
+
+        reference!!.child(name).setValue(model)
+
+
+
+    }
+
+    @SuppressLint("WrongConstant")
+    fun isUserVerified(){
+
+        var isVerified = ""
+        //shared preferences
+
+        //shared preferences get restaurant name
+        var restaurantNamesharedP = getSharedPreferences("vendor_restaurantName", Context.MODE_APPEND)
+
+        var isRegistered = restaurantNamesharedP.getString("isRegistered","false").toString()
+        var restaurant_name = restaurantNamesharedP.getString("restaurant_name","anonymous").toString()
+
+        reference = FirebaseDatabase.getInstance().getReference()
+
+        var query = reference!!.child("Verification").child(restaurant_name)
+
+        query.addValueEventListener(object :ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()){
+
+                    isVerified = snapshot.child("verified").getValue().toString()
+
+                   if(isVerified.equals("true")){
+
+                       Toasty.success(this@Vendor_Resturant_Add_Data, "You are Verified now you can Add Data " , Toast.LENGTH_LONG).show()
+
+
+                       var intent = Intent(this@Vendor_Resturant_Add_Data,Vendor_Dish_Add_Data::class.java)
+                       startActivity(intent)
+                   }else{
+                       Toast.makeText(this@Vendor_Resturant_Add_Data, "verified = " + isVerified + "not verified yet" , Toast.LENGTH_SHORT).show()
+
+                   }
+                               }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@Vendor_Resturant_Add_Data, "something went wrong", Toast.LENGTH_SHORT).show()
+            }
+
+        })
+
+
+
+
+
+
+//
+//        if(isRegistered.equals("true")){
+//            Toast.makeText(this, "isRegistered = " + isRegistered, Toast.LENGTH_SHORT).show()
+//
+//
+//
+//        }else{
+//            Toast.makeText(this, "isRegistered = " + isRegistered, Toast.LENGTH_SHORT).show()
+//        }
     }
 }
 

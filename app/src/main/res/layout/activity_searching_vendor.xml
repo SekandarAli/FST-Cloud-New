@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="23sp"
-            android:hint="Enter your resturant name"
+            android:hint="Enter shop item name"
             android:layout_marginTop="20dp"
             android:textColor="@color/logo"
             android:gravity="center"

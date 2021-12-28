@@ -19,6 +19,7 @@ import com.example.fst_cloud_new.Main_Page_Model.Main_horizontal_card_model
 import com.example.fst_cloud_new.Main_Page_Model.Main_horizontal_list_model
 import com.example.fst_cloud_new.Main_Page_Model.Main_vertical_model
 import com.example.fst_cloud_new.SEARCH.Searching_User
+import com.example.fst_cloud_new.SEARCH.Searching_Vendor
 import com.example.fst_cloud_new.Vendor_Dish.Vendor_Dish_Model
 import com.example.fst_cloud_new.Vendor_Shop_Category.Vendor_Shop_Category_Adapter
 import com.example.fst_cloud_new.Vendor_Shop_Category.Vendor_Shop_Category_Model
@@ -37,14 +38,22 @@ class ShopMainPageFST : AppCompatActivity() {
     private lateinit var dbref : DatabaseReference
     private lateinit var DishArrayList : ArrayList<Vendor_Shop_Category_Model>
 
+    var shop_namee : String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop_main_page_fst)
 
+
+        var shop_name : String = intent.getStringExtra("shop_name").toString()
+        shop_namee = shop_name.trim()
+
+        Toast.makeText(this, "name = " + shop_namee , Toast.LENGTH_SHORT).show()
+
         supportActionBar?.hide()
 DishArrayList = ArrayList()
         val back : ImageView = findViewById(R.id.back)
-        val location : ImageView = findViewById(R.id.location)
+      //  val location : ImageView = findViewById(R.id.location)
         val shop_search : ImageView = findViewById(R.id.shop_search)
 
         vrecycleView = findViewById(R.id.shopverticalfood)
@@ -54,14 +63,14 @@ DishArrayList = ArrayList()
             startActivity(intent)
         }
 
-
-        location.setOnClickListener{
-            intent = Intent(this, Map_User::class.java)
-            startActivity(intent)
-        }
+//
+//        location.setOnClickListener{
+//            intent = Intent(this, Map_User::class.java)
+//            startActivity(intent)
+//        }
 
         shop_search.setOnClickListener{
-            intent = Intent(this, Searching_User::class.java)
+            intent = Intent(this, Searching_Vendor::class.java)
             startActivity(intent)
         }
 
@@ -253,7 +262,7 @@ DishArrayList = ArrayList()
 
         var dish_name : String? = ""
         dbref = FirebaseDatabase.getInstance().getReference()
-        var query : Query = dbref.child("Shopmain/")
+        var query : Query = dbref.child("Shopmain/").orderByChild("shop_name").equalTo(shop_namee)
 
         query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {

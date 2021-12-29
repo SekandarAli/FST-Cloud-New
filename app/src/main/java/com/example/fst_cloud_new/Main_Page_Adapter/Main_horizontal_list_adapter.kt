@@ -36,18 +36,18 @@ class Main_horizontal_list_adapter (var items : ArrayList<Main_horizontal_list_m
         holder.itemImage.setImageResource(items[position].image)
 
        // Toast.makeText(context, "sss"+items[position].name, Toast.LENGTH_SHORT).show()
-
-        holder.view.setOnClickListener(View.OnClickListener {
-
-            var intent = Intent(ccontext, FoodDetailsFST::class.java)
-            intent.putExtra("name",items[position].name)
-            intent.putExtra("image",items[position].image)
-            //intent.putExtra("description",descriptionn)
-
-
-           ccontext.startActivity(intent)
-
-        })
+//
+//        holder.view.setOnClickListener(View.OnClickListener {
+//
+//            var intent = Intent(ccontext, FoodDetailsFST::class.java)
+//            intent.putExtra("name",items[position].name)
+//            intent.putExtra("image",items[position].image)
+//            //intent.putExtra("description",descriptionn)
+//
+//
+//           ccontext.startActivity(intent)
+//
+//        })
     }
 
 

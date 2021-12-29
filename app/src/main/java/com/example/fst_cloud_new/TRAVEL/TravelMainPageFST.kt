@@ -23,7 +23,7 @@ class TravelMainPageFST : AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<Main_horizontal_list_adapter.ViewHolder>? = null
     private var vlayoutManager: RecyclerView.LayoutManager? = null
-    private var vadapter: RecyclerView.Adapter<Main_vertical_adapter.ViewHolder>? = null
+    private var vadapter: RecyclerView.Adapter<new_travel_adapter_.ViewHolder>? = null
     private var hadapter: RecyclerView.Adapter<Main_horizontal_card_adapter.ViewHolder>? = null
 
 
@@ -176,42 +176,42 @@ class TravelMainPageFST : AppCompatActivity() {
 
         vitems.add(
             Main_vertical_model(
-                "Nathiagali", "North Food special plate", "3 min | 4.2 stars",
+                "Nathiagali", "A special place to visit for snow", "3 hours | 4.5 stars",
                 R.drawable.t6
             )
         )
 
         vitems.add(
             Main_vertical_model(
-                "Waterfall", "North Food special plate", "3 min | 4.2 stars",
+                "Waterfall", "A place to visit for water people", "38 min | 4.2 stars",
                 R.drawable.t8
             )
         )
 
         vitems.add(
             Main_vertical_model(
-                "Hills", "North Food special plate", "3 min | 4.2 stars",
+                "Hills", "A hilly area ", "21 min | 3.2 stars",
                 R.drawable.t4
             )
         )
 
         vitems.add(
             Main_vertical_model(
-                "Place", "North Food special plate", "3 min | 4.2 stars",
+                "Ayubia", "A special place to visit for snow", "4 hours | 4.9 stars",
                 R.drawable.t2
             )
         )
 
         vitems.add(
             Main_vertical_model(
-                "Karla", "North Food special plate", "3 min | 4.2 stars",
+                "Karla", "Water place like umbrella waterfall", "57 mins | 3.9 stars",
                 R.drawable.t7
             )
         )
 
         vitems.add(
             Main_vertical_model(
-                "Murree", "North Food special plate", "3 min | 4.2 stars",
+                "Murree", "A special place to visit for snow", "1 hours | 4.2 stars",
                 R.drawable.t9
             )
         )
@@ -221,7 +221,7 @@ class TravelMainPageFST : AppCompatActivity() {
         val vrecycleView: RecyclerView = findViewById(R.id.verticalfood)
         vrecycleView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        vadapter = Main_vertical_adapter(vitems, this)
+        vadapter = new_travel_adapter_(vitems, this)
         vrecycleView.adapter = vadapter
 
         val DividerItemDecoration = DividerItemDecoration(this,DividerItemDecoration.VERTICAL)

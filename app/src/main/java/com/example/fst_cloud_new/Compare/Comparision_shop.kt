@@ -8,10 +8,11 @@ import android.widget.Toast
 import com.example.fst_cloud_new.R
 import com.squareup.picasso.Picasso
 
-class Comparision_Acivity : AppCompatActivity() {
+class Comparision_shop : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_comparison)
+        setContentView(R.layout.activity_comparision_shop)
+
 
 //Dish 1 Views
 //        var tv_dish1_name = findViewById<TextView>(R.id.dish1_name)
@@ -36,8 +37,6 @@ class Comparision_Acivity : AppCompatActivity() {
         tv_dish2_description.text = intent.getStringExtra("description")
         tv_dish2_price.text = intent.getStringExtra("price")
         var image = intent.getStringExtra("image")
-
-
         if(image == null)
         {
 
@@ -45,10 +44,12 @@ class Comparision_Acivity : AppCompatActivity() {
         }
         else
         {
-           Picasso.get().load(image).into(img_dish2_image)
+            Picasso.get().load(image).into(img_dish2_image)
         }
 
 
 
     }
-}
+
+
+    }

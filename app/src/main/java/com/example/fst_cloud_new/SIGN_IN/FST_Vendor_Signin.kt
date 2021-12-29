@@ -49,11 +49,14 @@ class FST_Vendor_Signin : AppCompatActivity() {
 //
 //        }
 
-        val currentUser = auth.currentUser
-        if(currentUser != null) {
-            startActivity(Intent(this, Restaurant_OR_Shop::class.java))
-            finish()
-        }
+
+
+
+//        val currentUser = auth.currentUser
+//        if(currentUser != null) {
+//          //  startActivity(Intent(this, Restaurant_OR_Shop::class.java))
+//          //  finish()
+//        }
 
 
 

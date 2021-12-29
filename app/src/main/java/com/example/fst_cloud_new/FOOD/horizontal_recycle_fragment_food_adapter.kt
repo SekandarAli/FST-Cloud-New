@@ -51,10 +51,10 @@ class horizontal_recycle_fragment_food_adapter (var items : ArrayList<horizontal
             itemImage = itemView.findViewById(R.id.image)
             itemName = itemView.findViewById(R.id.name)
 
-            itemView.setOnClickListener(View.OnClickListener {
-                var intent = Intent(context,FoodMainPageFST::class.java)
-                startActivity(context, intent, null)
-            })
+//            itemView.setOnClickListener(View.OnClickListener {
+//                var intent = Intent(context,FoodMainPageFST::class.java)
+//                startActivity(context, intent, null)
+//            })
 
         }
 

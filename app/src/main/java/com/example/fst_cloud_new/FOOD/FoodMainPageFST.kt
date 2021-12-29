@@ -250,7 +250,7 @@ class FoodMainPageFST : AppCompatActivity() {
     fun getUserData(){
 
 
-        Toast.makeText(this, "restaurant_name =" +restaurant_namee, Toast.LENGTH_SHORT).show()
+      //  Toast.makeText(this, "restaurant_name =" +restaurant_namee, Toast.LENGTH_SHORT).show()
         dbref = FirebaseDatabase.getInstance().getReference()
         var query : Query = dbref.child("Dish").orderByChild("restaurant_name").equalTo(restaurant_namee)
 
@@ -318,6 +318,12 @@ class FoodMainPageFST : AppCompatActivity() {
 
     }
 
+    override fun onBackPressed() {
+
+        var intent = Intent(this,HOMEPAGE::class.java)
+        startActivity(intent)
+
+    }
 }
 
 

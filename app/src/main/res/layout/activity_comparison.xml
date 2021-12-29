@@ -2,16 +2,161 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".Compare.Comparision_shop"
     android:orientation="vertical"
-    android:background="@color/background"
-    android:layout_weight="1"
-    android:layout_gravity="center"
-    android:gravity="center">
+    android:background="@color/background">
+
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="fill_parent"-->
+    <!--        android:layout_height="fill_parent"-->
+    <!--        android:layout_weight="1"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:gravity="center"-->
+    <!--        >-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="fill_parent"-->
+    <!--            android:layout_height="fill_parent"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:gravity="center"-->
+    <!--            android:orientation="vertical"-->
+    <!--            android:layout_weight="1"-->
+    <!--            >-->
+
+
+    <!--            <ImageView-->
+    <!--                android:id="@+id/dish1_image"-->
+    <!--                android:layout_width="220dp"-->
+    <!--                android:layout_height="220dp"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:scaleType="fitXY"-->
+    <!--                android:src="@drawable/s10"-->
+
+    <!--                ></ImageView>-->
+
+    <!--        </LinearLayout>-->
+
+
+
+
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="fill_parent"-->
+    <!--            android:layout_height="fill_parent"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:layout_weight="2.5"-->
+    <!--            android:gravity="center"-->
+    <!--            android:layout_marginLeft="100dp"-->
+    <!--            android:layout_marginRight="100dp"-->
+    <!--            android:orientation="horizontal">-->
+
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:gravity="center"-->
+    <!--                android:text="Name   "-->
+    <!--                android:textSize="18sp" />-->
+
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/dish1_name"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:textSize="18sp"-->
+    <!--                android:textColor="@color/logo"-->
+    <!--                android:textStyle="bold"-->
+    <!--                android:text="Jacket" />-->
+
+    <!--        </LinearLayout>-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="fill_parent"-->
+    <!--            android:layout_height="fill_parent"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:layout_weight="2.5"-->
+    <!--            android:gravity="center"-->
+    <!--            android:orientation="horizontal">-->
+
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/tvd3"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:gravity="center"-->
+    <!--                android:text="Price   "-->
+    <!--                android:textSize="18sp" />-->
+
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/dish1_price"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:textSize="18sp"-->
+    <!--                android:textColor="@color/logo"-->
+    <!--                android:textStyle="bold"-->
+    <!--                android:text="1600rs" />-->
+
+    <!--        </LinearLayout>-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="fill_parent"-->
+    <!--            android:layout_height="fill_parent"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:layout_weight="2.5"-->
+    <!--            android:gravity="center"-->
+    <!--            android:orientation="horizontal">-->
+
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:gravity="center"-->
+    <!--                android:text="Desciption   "-->
+    <!--                android:textSize="18sp" />-->
+
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/dish1_description"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="Jeans for Men"-->
+    <!--                android:textColor="@color/logo"-->
+    <!--                android:textSize="18sp"-->
+    <!--                android:textStyle="bold" />-->
+
+    <!--        </LinearLayout>-->
+
+    <!--    </LinearLayout>-->
 
     <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:layout_weight="5"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+
+
+        <TextView
+            android:id="@+id/dish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="38sp"
+            android:textColor="@color/logo"
+            android:textStyle="bold"
+            android:text="Compared Item" />
+
+    </LinearLayout>
+
+    <LinearLayout
+
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
@@ -26,14 +171,14 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical"
-            android:layout_weight="1"
+            android:layout_weight="0.3"
             >
 
 
             <ImageView
-                android:id="@+id/dish1_image"
-                android:layout_width="220dp"
-                android:layout_height="220dp"
+                android:id="@+id/dish2_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:scaleType="fitXY"
                 android:src="@drawable/signinlogo"
@@ -44,71 +189,12 @@
 
 
 
-        
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_gravity="center"
-        android:layout_weight="2.5"
-        android:gravity="center"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Name   "
-            android:textSize="18sp" />
-
-
-        <TextView
-            android:id="@+id/dish1_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="@color/logo"
-            android:textStyle="bold"
-            android:text="Chicken Burger" />
-
-    </LinearLayout>
-    
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_gravity="center"
-        android:layout_weight="2.5"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:id="@+id/tvd3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Price   "
-            android:textSize="18sp" />
-
-
-        <TextView
-            android:id="@+id/dish1_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="@color/logo"
-            android:textStyle="bold"
-            android:text="800rs" />
-
-    </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_gravity="center"
-            android:layout_weight="2.5"
+            android:layout_weight="0.8"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -117,146 +203,81 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Desciption   "
-                android:textSize="18sp" />
+                android:text="Name   "
+                android:textSize="22sp" />
 
 
             <TextView
-                android:id="@+id/dish1_description"
+                android:id="@+id/dish2_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Spicy burger for spicy people"
+                android:textSize="22sp"
                 android:textColor="@color/logo"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:text="Cheese Burger" />
 
         </LinearLayout>
-
-    </LinearLayout>
-    
-    
-    <LinearLayout
-
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:gravity="center"
-        >
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_gravity="center"
+            android:layout_weight="0.8"
             android:gravity="center"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            >
+            android:orientation="horizontal">
 
 
-            <ImageView
-                android:id="@+id/dish2_image"
-                android:layout_width="220dp"
-                android:layout_height="220dp"
-                android:layout_gravity="center"
-                android:scaleType="fitXY"
-                android:src="@drawable/signinlogo"
-                ></ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Price   "
+                android:textSize="22sp" />
+
+
+            <TextView
+                android:id="@+id/dish2_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textColor="@color/logo"
+                android:textStyle="bold"
+                android:text="1500rs" />
 
         </LinearLayout>
 
-
-
-
-        
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_gravity="center"
-        android:layout_weight="2.5"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="top"
+            android:layout_weight="0.8"
             android:gravity="center"
-            android:text="Name   "
-            android:textSize="18sp" />
+
+            android:orientation="horizontal">
 
 
-        <TextView
-            android:id="@+id/dish2_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="@color/logo"
-            android:textStyle="bold"
-            android:text="Cheese Burger" />
+            <TextView
 
-    </LinearLayout>
-    
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_gravity="center"
-        android:layout_weight="2.5"
-        android:gravity="center"
-        android:orientation="horizontal">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Desciption   "
+                android:textSize="22sp" />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Price   "
-            android:textSize="18sp" />
+            <TextView
+                android:id="@+id/dish2_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textColor="@color/logo"
+                android:textStyle="bold"
+                android:text="Cheesy and Messy burger" />
 
-
-        <TextView
-            android:id="@+id/dish2_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="@color/logo"
-            android:textStyle="bold"
-            android:text="1500rs" />
+        </LinearLayout>
 
     </LinearLayout>
-    
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_gravity="center"
-        android:layout_weight="2.5"
-        android:gravity="center"
-        android:orientation="horizontal">
 
 
-        <TextView
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Desciption   "
-            android:textSize="18sp" />
-
-
-        <TextView
-            android:id="@+id/dish2_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="@color/logo"
-            android:textStyle="bold"
-            android:text="Cheesy and Messy burger" />
-
-    </LinearLayout>
-        
-    </LinearLayout>
-    
-    
 </LinearLayout>
-    

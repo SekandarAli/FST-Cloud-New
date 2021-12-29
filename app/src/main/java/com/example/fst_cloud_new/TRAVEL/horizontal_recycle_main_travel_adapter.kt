@@ -53,10 +53,7 @@ class horizontal_recycle_main_travel_adapter (var items : ArrayList<horizontal_r
             itemImage = itemView.findViewById(R.id.image)
             itemName = itemView.findViewById(R.id.name)
 
-            itemView.setOnClickListener(View.OnClickListener {
-                var intent = Intent(context, TravelMainPageFST::class.java)
-                startActivity(context, intent, null)
-            })
+
 
         }
 

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import com.example.fst_cloud_new.ADMIN.AdiminLogin
 import com.example.fst_cloud_new.ADMIN.AdminPanel
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.HOMEPAGE.HOMEPAGE
@@ -41,7 +42,7 @@ class FSTRegisterPage : AppCompatActivity() {
 
         logo2.setOnLongClickListener{
 
-            intent = Intent(this, AdminPanel::class.java)
+            intent = Intent(this, AdiminLogin::class.java)
 
             startActivity(intent)
             return@setOnLongClickListener true

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context=".SIGN_IN.FSTSignIn">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+
+
+            <ImageView
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/signinlogo"
+                ></ImageView>
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="top"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv1"
+            style="@style/heading"
+            android:text="Admin Panel Access"
+            android:layout_gravity="center"/>
+
+        <EditText
+
+            android:id="@+id/adminemail"
+            style="@style/editTextsignin"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/logo"
+            android:drawableRight="@drawable/ic_email"
+            android:drawablePadding="20sp"
+            android:hint="Enter email"
+            android:singleLine="true"></EditText>
+
+
+        <EditText
+
+            android:id="@+id/adminpassword"
+            style="@style/editTextsignin"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/logo"
+            android:drawableRight="@drawable/ic_password"
+            android:hint="Enter password"
+            android:inputType="textPassword"
+            android:singleLine="true"></EditText>
+
+
+
+        <Button
+            android:id="@+id/admin_login"
+            style="@style/buttonsign"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            android:text="Sign In"
+            android:textAllCaps="false"></Button>
+
+
+        <!--    <TextView-->
+        <!--        android:id="@+id/tv2"-->
+        <!--        style="@style/heading"-->
+        <!--        android:layout_marginTop="20dp"-->
+        <!--        android:text="Or login using" />-->
+
+    </LinearLayout>
+
+</LinearLayout>

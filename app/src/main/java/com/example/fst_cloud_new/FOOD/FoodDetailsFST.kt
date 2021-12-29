@@ -29,6 +29,7 @@ class FoodDetailsFST : AppCompatActivity() {
     lateinit var rating_recycle : RecyclerView
     lateinit var adapter: food_detail_ratingRecycle_adapter
 
+
     //shared preference variable username
     var userName : String = ""
     var restaurantName : String = ""
@@ -44,9 +45,10 @@ class FoodDetailsFST : AppCompatActivity() {
         setContentView(R.layout.activity_food_details_fst)
 
         supportActionBar?.hide()
+
         rating_review_list = ArrayList()
         mAuth = FirebaseAuth.getInstance()
-        val back : ImageView = findViewById(R.id.back)
+//        val back : ImageView = findViewById(R.id.back)
         detailimage = findViewById(R.id.detailimage)
 
         detailname = findViewById(R.id.detailname)
@@ -54,7 +56,11 @@ class FoodDetailsFST : AppCompatActivity() {
         ratingBar = findViewById(R.id.ratingBar)
         review = findViewById(R.id.ed_review)
         var btn_submit = findViewById<Button>(R.id.btn_submit)
-
+//var btn_back = findViewById<ImageView>(R.id.back_food).setOnClickListener {
+//
+//    var intent = Intent(this,FoodMainPageFST::class.java)
+//    startActivity(intent)
+//}
         //Recycle View Setting
         rating_recycle = findViewById(R.id.recycle_retings)
         rating_recycle.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
@@ -94,11 +100,11 @@ class FoodDetailsFST : AppCompatActivity() {
 
         btn_submit.setOnClickListener {addData()}
 
-        back.setOnClickListener{
-            intent = Intent(this, FoodMainPageFST::class.java)
-            Toast.makeText(this, "rating = " + ratingBar.rating, Toast.LENGTH_SHORT).show()
-            // startActivity(intent)
-        }
+//        back.setOnClickListener{
+//            intent = Intent(this, FoodMainPageFST::class.java)
+//            Toast.makeText(this, "rating = " + ratingBar.rating, Toast.LENGTH_SHORT).show()
+//            // startActivity(intent)
+//        }
 
         getRating()
 
@@ -176,9 +182,9 @@ class FoodDetailsFST : AppCompatActivity() {
     {
         val intent  = Intent(this, ShoeCompareAble::class.java)
 
-        intent.putExtra("name",detailname.text.toString())
-        intent.putExtra("description",detaildescription.text.toString())
-        intent.putExtra("image",image)
+//        intent.putExtra("name",detailname.text.toString())
+//        intent.putExtra("description",detaildescription.text.toString())
+//        intent.putExtra("image",image)
 
         startActivity(intent)
 

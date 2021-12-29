@@ -47,32 +47,32 @@ class TravelFragment (context: Context): Fragment() {
 
         items.add(
             horizontal_recycle_fragment_food_model(
-                "Murree",
+                "Abbottabad",
                 R.drawable.t1
             )
         )
         items.add(
             horizontal_recycle_fragment_food_model(
-                "Nathiagali",
+                "Haripur",
                 R.drawable.t2
             )
         )
         items.add(
             horizontal_recycle_fragment_food_model(
-                "Ilyasi Mosque",
+                "Havelian",
                 R.drawable.t3
             )
         )
 
         items.add(
             horizontal_recycle_fragment_food_model(
-                "Harno",
+                "Nathiagali",
                 R.drawable.t4
             )
         )
         items.add(
             horizontal_recycle_fragment_food_model(
-                "shimla Pahari",
+                "Murree",
                 R.drawable.t5
             )
         )

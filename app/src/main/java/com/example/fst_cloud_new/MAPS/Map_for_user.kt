@@ -1,8 +1,15 @@
 package com.example.fst_cloud_new.MAPS
 
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import com.example.fst_cloud_new.FOOD.FoodMainPageFST
+import com.example.fst_cloud_new.HOMEPAGE.HOMEPAGE
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.databinding.ActivityMapForUserBinding
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -30,6 +37,9 @@ class Map_for_user : AppCompatActivity(), OnMapReadyCallback {
     var shop_title : ArrayList<String> = arrayListOf()
     var shop_latit = ""
 
+    lateinit var travel_LatLnG : ArrayList<LatLng>
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,13 +64,14 @@ class Map_for_user : AppCompatActivity(), OnMapReadyCallback {
         shop_longitude = (intent!!.getSerializable("shop_longitude") as ArrayList<String>?)!!
         shop_title = (intent!!.getSerializable("shop_title") as ArrayList<String>?)!!
 
-        Toast.makeText(this, "shop_latitude = " + shop_latitude.size, Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, "Map for user = " + shop_latitude.size, Toast.LENGTH_SHORT).show()
+
+
+
 
 
 
     }
-
-
 
 
 
@@ -71,6 +82,8 @@ class Map_for_user : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
 
+
+        //shop
         for (i in 0..shop_latitude.size-1) {
             var markerOptions =MarkerOptions()
 
@@ -78,13 +91,13 @@ class Map_for_user : AppCompatActivity(), OnMapReadyCallback {
 
             markerOptions.position(location)
 
-            markerOptions.title(shop_title[i]).snippet("shop")
+            markerOptions.title(shop_title[i]).snippet("Shop")
            markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
 
 
 
             val cameraPosition = CameraPosition.Builder()
-                .target(location).zoom(13f).build()
+                .target(location).zoom(10f).build()
             googleMap.animateCamera(
                 CameraUpdateFactory
                     .newCameraPosition(cameraPosition)
@@ -96,7 +109,7 @@ class Map_for_user : AppCompatActivity(), OnMapReadyCallback {
         }
 
 
-
+//restaurant
 
         for (i in 0..latitude.size-1) {
             var markerOptions =MarkerOptions()
@@ -118,10 +131,33 @@ class Map_for_user : AppCompatActivity(), OnMapReadyCallback {
 
             googleMap.addMarker(markerOptions)
 
+            if (ActivityCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return
+            }
+            mMap.isMyLocationEnabled = true
+
         }
 
 
 
     }
 
+    override fun onBackPressed() {
+        var intent = Intent(this, FoodMainPageFST::class.java)
+        startActivity(intent)
+    }
 }

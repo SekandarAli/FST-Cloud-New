@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.example.fst_cloud_new.FOOD.FoodMainPageFST
+import com.example.fst_cloud_new.HOMEPAGE.HOMEPAGE
 import com.google.firebase.database.*
 import es.dmoral.toasty.Toasty
 
@@ -30,9 +32,9 @@ class Map_data_holder_activity : AppCompatActivity() {
 
 
 
-        getUserData()
+       getUserData()
         getShopData()
-        Toast.makeText(this, "size = " + shop_latitude.size, Toast.LENGTH_SHORT).show()
+      //  Toast.makeText(this, "Data activity" + shop_latitude.size, Toast.LENGTH_SHORT).show()
 
     }
 
@@ -65,7 +67,7 @@ class Map_data_holder_activity : AppCompatActivity() {
 
                     }
 bundle.putStringArrayList("latitude",latitude)
-                   Toast.makeText(this@Map_data_holder_activity, "lat size =  " + latitude.size, Toast.LENGTH_SHORT).show()
+                  // Toast.makeText(this@Map_data_holder_activity, "lat size =  " + latitude.size, Toast.LENGTH_SHORT).show()
                 }
                 else
                 {
@@ -133,7 +135,7 @@ bundle.putStringArrayList("latitude",latitude)
                     bundle.putStringArrayList("longitude",longitude)
 var intent = Intent(this@Map_data_holder_activity,Map_for_user::class.java)
                     intent.putExtras(bundle)
-                    startActivity(intent)
+                   startActivity(intent)
                 }
                 else
                 {
@@ -192,7 +194,7 @@ var intent = Intent(this@Map_data_holder_activity,Map_for_user::class.java)
 
                     }
                     bundle.putStringArrayList("shop_latitude",shop_latitude)
-                    Toast.makeText(this@Map_data_holder_activity, "lat size =  " + shop_latitude.size, Toast.LENGTH_SHORT).show()
+                 //   Toast.makeText(this@Map_data_holder_activity, "lat size =  " + shop_latitude.size, Toast.LENGTH_SHORT).show()
                 }
                 else
                 {
@@ -227,7 +229,7 @@ var intent = Intent(this@Map_data_holder_activity,Map_for_user::class.java)
 
                     }
                     bundle.putStringArrayList("shop_title",shop_title)
-                    Toast.makeText(this@Map_data_holder_activity, "lat size =  " + shop_latitude.size, Toast.LENGTH_SHORT).show()
+                 //   Toast.makeText(this@Map_data_holder_activity, "lat size =  " + shop_latitude.size, Toast.LENGTH_SHORT).show()
                 }
                 else
                 {
@@ -289,4 +291,6 @@ var intent = Intent(this@Map_data_holder_activity,Map_for_user::class.java)
         }
 
     }
+
+
 }

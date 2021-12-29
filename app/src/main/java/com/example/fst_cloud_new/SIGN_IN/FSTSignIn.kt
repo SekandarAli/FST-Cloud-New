@@ -62,18 +62,18 @@ class FSTSignIn : AppCompatActivity() {
 
 
 
+//
+//
+//        val googlesignInOptions =  GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
+//            .requestIdToken(getString(R.string.default_web_client_id))
+//            .requestEmail()
+//            .build()
+
+         //   googlesignTnclient = GoogleSignIn.getClient(this, googlesignInOptions)
 
 
-        val googlesignInOptions =  GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
-
-            googlesignTnclient = GoogleSignIn.getClient(this, googlesignInOptions)
-
-
-        firebaseAuthuth = FirebaseAuth.getInstance()
-        checkUser()
+       // firebaseAuthuth = FirebaseAuth.getInstance()
+      //  checkUser()
 
 
 

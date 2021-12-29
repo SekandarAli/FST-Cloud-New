@@ -17,6 +17,7 @@ import com.example.fst_cloud_new.HOMEPAGE.HOMEPAGE
 import com.example.fst_cloud_new.MAPS.Map_Vendor
 import com.example.fst_cloud_new.R
 import com.example.fst_cloud_new.SIGN_UP.FST_Vendor_Signup
+import com.example.fst_cloud_new.Start_Pages.FSTRegisterPage
 import com.example.fst_cloud_new.VENDOR_Shop_AND_Restaurant.Vendor_Dish_Main_Page
 import com.example.fst_cloud_new.Vendor_Dish.Vendor_Dish_Add_Data
 import com.example.fst_cloud_new.Vendor_Dish.Vendor_Dish_Show_Data
@@ -69,14 +70,14 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
         isUserVerified()
 
 
-        vendor_add_dish_data = findViewById(R.id.vendor_add_dish_data)
-
-        vendor_add_dish_data.setOnClickListener {
-
-            intent = Intent(this,Vendor_Dish_Add_Data::class.java)
-            startActivity(intent)
-
-        }
+//        vendor_add_dish_data = findViewById(R.id.vendor_add_dish_data)
+//
+//        vendor_add_dish_data.setOnClickListener {
+//
+//            intent = Intent(this,Vendor_Dish_Add_Data::class.java)
+//            startActivity(intent)
+//
+//        }
 
 
 
@@ -230,6 +231,9 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
                         Toasty.info(this, "Please wait for the confirmation of your restaurant data, a notification will be send to you after confirmation",
                             Toast.LENGTH_LONG).show()
 
+                        var i = Intent(this,FSTRegisterPage::class.java)
+                        startActivity(i)
+
 
 
 
@@ -334,7 +338,7 @@ class Vendor_Resturant_Add_Data : AppCompatActivity() {
                        var intent = Intent(this@Vendor_Resturant_Add_Data,Vendor_Dish_Add_Data::class.java)
                        startActivity(intent)
                    }else{
-                       Toast.makeText(this@Vendor_Resturant_Add_Data, "verified = " + isVerified + "not verified yet" , Toast.LENGTH_SHORT).show()
+                       Toasty.error(this@Vendor_Resturant_Add_Data, "verified = " + isVerified + "not verified yet" , Toast.LENGTH_SHORT).show()
 
                    }
                                }

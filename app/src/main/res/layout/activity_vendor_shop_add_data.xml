@@ -46,7 +46,7 @@
             style="@style/heading"
             android:layout_gravity="center"
             android:textSize="20sp"
-            android:text="Add data of your shop" />
+            android:text="Add Shop Data" />
 
         <Button
 
@@ -113,7 +113,7 @@
                 style="@style/vendor_Location"
                 android:text="Select Location"
                 android:textAllCaps="false"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/button"
                 android:id="@+id/vendor_Location_data"
                 ></Button>
@@ -139,14 +139,14 @@
 
 
 
-            <Button
-                style="@style/vendor_Location"
-                android:text="Add Shops Category Data"
-                android:textAllCaps="false"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/button"
-                android:id="@+id/vendor_add_shop_category_data"
-                ></Button>
+<!--            <Button-->
+<!--                style="@style/vendor_Location"-->
+<!--                android:text="Add Shops Category Data"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:background="@drawable/button"-->
+<!--                android:id="@+id/vendor_add_shop_category_data"-->
+<!--                ></Button>-->
 
 
             <!--            <Button-->

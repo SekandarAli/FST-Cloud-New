@@ -35,17 +35,17 @@ class Main_horizontal_card_adapter (var items : ArrayList<Main_horizontal_card_m
         holder.itemName.text = items[position].name
         holder.itemImage.setImageResource(items[position].image)
 
-        holder.view.setOnClickListener(View.OnClickListener {
-
-            var intent = Intent(context, FoodDetailsFST::class.java)
-            intent.putExtra("name",items[position].name)
-            //intent.putExtra("description",descriptionn)
-            intent.putExtra("image",items[position].image)
-
-
-            context.startActivity(intent)
-
-        })
+//        holder.view.setOnClickListener(View.OnClickListener {
+//
+//            var intent = Intent(context, FoodDetailsFST::class.java)
+//            intent.putExtra("name",items[position].name)
+//            //intent.putExtra("description",descriptionn)
+//            intent.putExtra("image",items[position].image)
+//
+//
+//            context.startActivity(intent)
+//
+//        })
     }
 
 

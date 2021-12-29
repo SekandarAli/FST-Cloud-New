@@ -21,82 +21,82 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:layout_weight="1.5">
+<!--            <LinearLayout-->
+<!--                android:layout_width="fill_parent"-->
+<!--                android:layout_height="fill_parent"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="1.5">-->
 
 
-                <androidx.appcompat.widget.Toolbar
+<!--                <androidx.appcompat.widget.Toolbar-->
 
-                    android:id="@+id/toolbar"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="@color/logo"
-                    android:minHeight="?attr/actionBarSize"
-                    >
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
+<!--                    android:id="@+id/toolbar"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="?attr/actionBarSize"-->
+<!--                    android:background="@color/logo"-->
+<!--                    android:minHeight="?attr/actionBarSize"-->
+<!--                    >-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:orientation="horizontal">-->
 
-
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="4">
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:src="@drawable/ic_back"
-                                android:id="@+id/back"
-                                android:backgroundTint="@color/logo"
-
-                                />
-                        </LinearLayout>
-
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="fill_parent"-->
-<!--                            android:layout_height="fill_parent"-->
-<!--                            android:layout_weight="1.5"-->
-<!--                            >-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="match_parent"-->
-<!--                                android:text="Location here"-->
-<!--                                android:textSize="20sp"-->
-<!--                                android:textStyle="bold"-->
-<!--                                android:gravity="center"-->
-<!--                                ></TextView>-->
-<!--                        </LinearLayout>-->
 
 <!--                        <LinearLayout-->
 <!--                            android:layout_width="fill_parent"-->
 <!--                            android:layout_height="fill_parent"-->
 <!--                            android:layout_weight="4">-->
-
 <!--                            <ImageView-->
 <!--                                android:layout_width="wrap_content"-->
 <!--                                android:layout_height="wrap_content"-->
-<!--                                android:drawableRight="@drawable/ic_location"-->
-<!--                                android:backgroundTint="@color/logo"-->
 <!--                                android:layout_gravity="center"-->
-<!--                                android:src="@drawable/ic_location" />-->
+<!--                                android:src="@drawable/ic_back"-->
+<!--                                android:id="@+id/back_food"-->
+<!--                                android:backgroundTint="@color/logo"-->
 
-
-
+<!--                                />-->
 <!--                        </LinearLayout>-->
-                    </LinearLayout>
-                </androidx.appcompat.widget.Toolbar>
+
+<!--&lt;!&ndash;                        <LinearLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_width="fill_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_height="fill_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_weight="1.5"&ndash;&gt;-->
+<!--&lt;!&ndash;                            >&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:text="Location here"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:textSize="20sp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:textStyle="bold"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                                ></TextView>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </LinearLayout>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                        <LinearLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_width="fill_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_height="fill_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_weight="4">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:drawableRight="@drawable/ic_location"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:backgroundTint="@color/logo"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:src="@drawable/ic_location" />&ndash;&gt;-->
 
 
 
-            </LinearLayout>
+<!--&lt;!&ndash;                        </LinearLayout>&ndash;&gt;-->
+<!--                    </LinearLayout>-->
+<!--                </androidx.appcompat.widget.Toolbar>-->
+
+
+
+<!--            </LinearLayout>-->
 
 
             <LinearLayout

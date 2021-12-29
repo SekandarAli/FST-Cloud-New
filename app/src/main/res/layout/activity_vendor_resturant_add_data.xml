@@ -47,7 +47,7 @@
             style="@style/heading"
             android:layout_gravity="center"
             android:textSize="20sp"
-            android:text="Add data of your restaurant" />
+            android:text="Add Restaurant Data" />
 
         <Button
 
@@ -116,7 +116,7 @@
             <Button
                 android:id="@+id/vendor_Location_data"
                 style="@style/buttonsign"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/button"
                 android:text="Select Location"
                 android:textAllCaps="false"></Button>
@@ -139,15 +139,15 @@
 <!--                ></Button>-->
 
 
-            <Button
-                style="@style/vendor_Location"
-                android:text="Add Dishes Data"
-                android:textAllCaps="false"
-                android:textSize="15sp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/button"
-                android:id="@+id/vendor_add_dish_data"
-                ></Button>
+<!--            <Button-->
+<!--                style="@style/vendor_Location"-->
+<!--                android:text="Add Dishes Data"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textSize="15sp"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:background="@drawable/button"-->
+<!--                android:id="@+id/vendor_add_dish_data"-->
+<!--                ></Button>-->
 
 
             <!--            <Button-->

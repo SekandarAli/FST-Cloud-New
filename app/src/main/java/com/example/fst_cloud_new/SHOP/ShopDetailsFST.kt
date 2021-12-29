@@ -1,11 +1,15 @@
 package com.example.fst_cloud_new.SHOP
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fst_cloud_new.Compare.ShoeCompareAble
+import com.example.fst_cloud_new.Compare.showCompareable_shop
 import com.example.fst_cloud_new.FOOD.FoodMainPageFST
 import com.example.fst_cloud_new.FOOD.food_detail_model
 import com.example.fst_cloud_new.FOOD.food_detail_ratingRecycle_adapter
@@ -27,6 +31,9 @@ class ShopDetailsFST : AppCompatActivity() {
     lateinit var adapter: shop_detail_ratingRecycle_adapter
 
 
+    var userName : String = ""
+
+    @SuppressLint("WrongConstant")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop_details_fst)
@@ -35,13 +42,19 @@ class ShopDetailsFST : AppCompatActivity() {
         supportActionBar?.hide()
         rating_review_list = ArrayList()
         mAuth = FirebaseAuth.getInstance()
-        val back : ImageView = findViewById(R.id.back)
+//        val back : ImageView = findViewById(R.id.back)
         val detailimage : ImageView = findViewById(R.id.detailimage)
         detailname = findViewById(R.id.detailname)
         val detaildescription : TextView = findViewById(R.id.detailDescription)
         ratingBar = findViewById(R.id.ratingBar)
         review = findViewById(R.id.ed_review)
         var btn_submit = findViewById<Button>(R.id.btn_submit)
+
+//        var btn_back = findViewById<ImageView>(R.id.back_shop).setOnClickListener {
+//
+//            var intent = Intent(this,ShopMainPageFST::class.java)
+//            startActivity(intent)
+//        }
 
         //Recycle View Setting
         rating_recycle = findViewById(R.id.recycle_retings)
@@ -59,13 +72,22 @@ class ShopDetailsFST : AppCompatActivity() {
 
 
         btn_submit.setOnClickListener {addData()}
+
+        var btn_compare = findViewById<Button>(R.id.btn_compare).setOnClickListener { compare() }
+
+        //get shared preferences
+
+        var userNamesharedP = getSharedPreferences("get_username_on_signUp", Context.MODE_APPEND)
+        userName = userNamesharedP.getString("user_name","anonymous").toString()
+
+
         getRating()
 
-        back.setOnClickListener{
-            intent = Intent(this, FoodMainPageFST::class.java)
-            Toast.makeText(this, "rating = " + ratingBar.rating, Toast.LENGTH_SHORT).show()
-            // startActivity(intent)
-        }
+//        back.setOnClickListener{
+//            intent = Intent(this, FoodMainPageFST::class.java)
+//            Toast.makeText(this, "rating = " + ratingBar.rating, Toast.LENGTH_SHORT).show()
+//            // startActivity(intent)
+//        }
     }
 
     fun addData(){
@@ -76,7 +98,7 @@ class ShopDetailsFST : AppCompatActivity() {
 
         var shop_rating = ratingBar.rating.toString()
         var shop_review = review.text.toString()
-        var userName = "Assad"
+
 
         var model = shop_detail_model(shop_rating,shop_review,userName)
 
@@ -124,6 +146,16 @@ class ShopDetailsFST : AppCompatActivity() {
             }
         })
 
+
+    }
+
+    fun compare()
+    {
+        val intent  = Intent(this, showCompareable_shop::class.java)
+
+
+
+        startActivity(intent)
 
     }
 }

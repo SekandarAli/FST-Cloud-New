@@ -60,10 +60,7 @@ class vertical_recycle_main_travel_adapter (var items : ArrayList<vertical_recyc
             itemDescription = itemView.findViewById(R.id.description)
             itemRating = itemView.findViewById(R.id.rating)
 
-            itemView.setOnClickListener(View.OnClickListener {
-                var intent = Intent(context, TravelMainPageFST::class.java)
-                ContextCompat.startActivity(context, intent, null)
-            })
+
 
         }
 

@@ -43,6 +43,7 @@ The terms used in this Privacy Policy have the same meanings as in our Terms and
     </string>
     <string name="title_activity_map_for_user">Map</string>
     <string name="title_activity_map2">Map</string>
+    <string name="title_activity_map_travel">Map</string>
 </resources>
 
 

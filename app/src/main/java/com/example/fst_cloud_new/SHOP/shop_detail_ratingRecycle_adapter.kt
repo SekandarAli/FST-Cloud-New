@@ -21,6 +21,7 @@ class shop_detail_ratingRecycle_adapter (var context : Context, var review_List 
         var currentItem = review_List[position]
         holder.rating.text  = currentItem.shop_rating
         holder.review.text  = currentItem.shop_review
+        holder.user_name.text = currentItem.userName
 
     }
 
